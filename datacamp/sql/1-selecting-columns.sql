@@ -1,3 +1,4 @@
+----------------------------------------
 -- Onboarding | Errors
 -- If you submit the code to the right, you'll see that you get two types of errors.
 
@@ -46,6 +47,7 @@ AS result;
 result
 -- SQL is cool
 
+----------------------------------------
 -- SELECTing single columns
 -- While SQL can be used to create and modify databases, the focus of this course will be querying databases. A query is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
 
@@ -76,3 +78,72 @@ SELECT release_year FROM films;
 -- Select the name of each person in the people table.
 
 SELECT name FROM people;
+
+----------------------------------------
+-- SELECTing multiple columns
+-- Well done! Now you know how to select single columns.
+
+-- In the real world, you will often want to select multiple columns. Luckily, SQL makes this really easy. To select multiple columns from a table, simply separate the column names with commas!
+
+-- For example, this query selects two columns, name and birthdate, from the people table:
+
+-- SELECT name, birthdate
+-- FROM people;
+-- Sometimes, you may want to select all columns from a table. Typing out every column name would be a pain, so there's a handy shortcut:
+
+-- SELECT *
+-- FROM people;
+-- If you only want to return a certain number of results, you can use the LIMIT keyword to limit the number of rows returned:
+
+-- SELECT *
+-- FROM people
+-- LIMIT 10;
+-- Before getting started with the instructions below, check out the column names in the films table!
+
+-- Instructions 1/4
+-- 25 XP
+-- Get the title of every film from the films table.
+
+SELECT title from films;
+
+-- Get the title and release year for every film.
+
+SELECT title, release_year
+FROM films;
+
+-- Get the title, release year and country for every film.
+
+SELECT title, release_year, country
+FROM films;
+
+-- Get all columns from the films table.
+
+SELECT *
+FROM films;
+
+----------------------------------------
+-- SELECT DISTINCT
+-- Often your results will include many duplicate values. If you want to select all the unique values from a column, you can use the DISTINCT keyword.
+
+-- This might be useful if, for example, you're interested in knowing which languages are represented in the films table:
+
+-- SELECT DISTINCT language
+-- FROM films;
+-- Remember, you can check out the data in the tables by clicking on the table name!
+
+-- Instructions 1/3
+-- 35 XP
+-- Get all the unique countries represented in the films table.
+
+SELECT DISTINCT country 
+FROM films;
+
+-- Get all the different film certifications from the films table.
+
+SELECT DISTINCT certification
+FROM films;
+
+-- Get the different types of film roles from the roles table.
+
+SELECT DISTINCT role
+FROM roles;
