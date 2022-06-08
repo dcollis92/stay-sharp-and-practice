@@ -127,5 +127,73 @@ and release_year > 2000
 AND release_year < 2010
 
 ----------------------------------------
+-- WHERE AND OR
+-- What if you want to select rows based on multiple conditions where some but not all of the conditions need to be met? For this, SQL has the OR operator.
+
+-- For example, the following returns all films released in either 1994 or 2000:
+
+-- SELECT title
+-- FROM films
+-- WHERE release_year = 1994
+-- OR release_year = 2000;
+-- Note that you need to specify the column for every OR condition, so the following is invalid:
+
+-- SELECT title
+-- FROM films
+-- WHERE release_year = 1994 OR 2000;
+-- When combining AND and OR, be sure to enclose the individual clauses in parentheses, like so:
+
+-- SELECT title
+-- FROM films
+-- WHERE (release_year = 1994 OR release_year = 1995)
+-- AND (certification = 'PG' OR certification = 'R');
+-- Otherwise, due to SQL's precedence rules, you may not get the results you're expecting!
+
+-- Q: What does the OR operator do?
+
+-- A: Display only rows that meet at least one of the specified conditions.
+
+----------------------------------------
+-- WHERE AND OR (2)
+-- You now know how to select rows that meet some but not all conditions by combining AND and OR.
+
+-- For example, the following query selects all films that were released in 1994 or 1995 which had a rating of PG or R.
+
+-- SELECT title
+-- FROM films
+-- WHERE (release_year = 1994 OR release_year = 1995)
+-- AND (certification = 'PG' OR certification = 'R');
+-- Now you'll write a query to get the title and release year of films released in the 90s which were in French or Spanish and which took in more than $2M gross.
+
+-- It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
+
+-- Get the title and release year for films released in the 90s.
+
+SELECT title, release_year
+FROM films
+WHERE release_year > 1989
+AND release_year < 2000
+
+-- Now, build on your query to filter the records to only include French or Spanish language films.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year >= 1990 AND release_year < 2000)
+AND (LANGUAGE = 'French' OR LANGUAGE = 'Spanish')
+
+-- Finally, restrict the query to only return films that took in more than $2M gross.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year >= 1990 AND release_year < 2000)
+AND (language = 'French' OR language = 'Spanish')
+AND gross > 2000000
+
 ----------------------------------------
 ----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+
+
