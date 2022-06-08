@@ -36,5 +36,37 @@ FROM people
 ORDER BY birthdate;
 
 ----------------------------------------
+-- Sorting single columns (2)
+-- Let's get some more practice with ORDER BY!
+
+-- Get the title of films released in 2000 or 2012, in the order they were released.
+
+SELECT title 
+FROM films
+WHERE release_year IN (2000, 2012)
+ORDER BY release_year;
+
+-- Get all details for all films except those released in 2015 and order them by duration.
+
+SELECT *
+FROM films
+WHERE release_year <> 2015
+ORDER BY duration;
+
+-- Get the title and gross earnings for movies which begin with the letter 'M' and order the results alphabetically.
+
+SELECT title, gross
+FROM films
+where title LIKE 'M%'
+ORDER BY title;
+
 ----------------------------------------
+Sorting single columns (DESC)
+To order results in descending order, you can put the keyword DESC after your ORDER BY. For example, to get all the names in the people table, in reverse alphabetical order:
+
+SELECT name
+FROM people
+ORDER BY name DESC;
+Now practice using ORDER BY with DESC to sort single columns in descending order!
+
 ----------------------------------------
