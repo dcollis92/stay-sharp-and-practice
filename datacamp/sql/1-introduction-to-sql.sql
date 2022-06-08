@@ -19,3 +19,13 @@ AS result;
 -- result
 -- DataCamp <3 SQL
 
+-- Onboarding | Multi-step Exercises
+-- The following multi-step exercise allows you to practice a new concept through repetition. Check it out!
+
+-- Submit the query in the editor! Don't worry, you'll learn how it works soon.
+
+SELECT 'SQL'
+AS result;
+
+-- result
+-- SQL
