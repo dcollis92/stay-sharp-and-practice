@@ -12,9 +12,9 @@
 -- >= greater than or equal to
 -- For example, you can filter text records such as title. The following code returns all films with the title 'Metropolis':
 
--- SELECT title
--- FROM films
--- WHERE title = 'Metropolis';
+SELECT title
+FROM films
+WHERE title = 'Metropolis';
 -- Notice that the WHERE clause always comes after the FROM statement!
 
 -- Note that in this course we will use <> and not != for the not equal operator, as per the SQL standard.
@@ -25,9 +25,9 @@
 
 -- For example, the following query selects all details for films with a budget over ten thousand dollars:
 
--- SELECT *
--- FROM films
--- WHERE budget > 10000;
+SELECT *
+FROM films
+WHERE budget > 10000;
 -- Now it's your turn to use the WHERE clause to filter numeric values!
 
 -- Get all details for all films released in 2016.
@@ -54,9 +54,9 @@ WHERE release_year > 2000;
 
 -- For example, this query gets the titles of all films which were filmed in China:
 
--- SELECT title
--- FROM films
--- WHERE country = 'China';
+SELECT title
+FROM films
+WHERE country = 'China';
 -- Now it's your turn to practice using WHERE with text values!
 
 -- Important: in PostgreSQL (the version of SQL we're using), you must use single quotes with WHERE.
@@ -91,17 +91,17 @@ WHERE certification = 'R'
 
 -- For example,
 
--- SELECT title
--- FROM films
--- WHERE release_year > 1994
--- AND release_year < 2000;
+SELECT title
+FROM films
+WHERE release_year > 1994
+AND release_year < 2000;
 -- gives you the titles of films released between 1994 and 2000.
 
 -- Note that you need to specify the column name separately for every AND condition, so the following would be invalid:
 
--- SELECT title
--- FROM films
--- WHERE release_year > 1994 AND < 2000;
+SELECT title
+FROM films
+WHERE release_year > 1994 AND < 2000;
 -- You can add as many AND conditions as you need!
 
 -- Get the title and release year for all Spanish language films released before 2000.
@@ -132,10 +132,10 @@ AND release_year < 2010
 
 -- For example, the following returns all films released in either 1994 or 2000:
 
--- SELECT title
--- FROM films
--- WHERE release_year = 1994
--- OR release_year = 2000;
+SELECT title
+FROM films
+WHERE release_year = 1994
+OR release_year = 2000;
 -- Note that you need to specify the column for every OR condition, so the following is invalid:
 
 -- SELECT title
@@ -143,10 +143,10 @@ AND release_year < 2010
 -- WHERE release_year = 1994 OR 2000;
 -- When combining AND and OR, be sure to enclose the individual clauses in parentheses, like so:
 
--- SELECT title
--- FROM films
--- WHERE (release_year = 1994 OR release_year = 1995)
--- AND (certification = 'PG' OR certification = 'R');
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+AND (certification = 'PG' OR certification = 'R');
 -- Otherwise, due to SQL's precedence rules, you may not get the results you're expecting!
 
 -- Q: What does the OR operator do?
@@ -159,10 +159,10 @@ AND release_year < 2010
 
 -- For example, the following query selects all films that were released in 1994 or 1995 which had a rating of PG or R.
 
--- SELECT title
--- FROM films
--- WHERE (release_year = 1994 OR release_year = 1995)
--- AND (certification = 'PG' OR certification = 'R');
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+AND (certification = 'PG' OR certification = 'R');
 -- Now you'll write a query to get the title and release year of films released in the 90s which were in French or Spanish and which took in more than $2M gross.
 
 -- It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
@@ -193,16 +193,16 @@ AND gross > 2000000
 -- BETWEEN
 -- As you've learned, you can use the following query to get titles of all films released in and between 1994 and 2000:
 
--- SELECT title
--- FROM films
--- WHERE release_year >= 1994
--- AND release_year <= 2000;
+SELECT title
+FROM films
+WHERE release_year >= 1994
+AND release_year <= 2000;
 -- Checking for ranges like this is very common, so in SQL the BETWEEN keyword provides a useful shorthand for filtering values within a specified range. This query is equivalent to the one above:
 
--- SELECT title
--- FROM films
--- WHERE release_year
--- BETWEEN 1994 AND 2000;
+SELECT title
+FROM films
+WHERE release_year
+BETWEEN 1994 AND 2000;
 -- It's important to remember that BETWEEN is inclusive, meaning the beginning and end values are included in the results!
 
 ----------------------------------------
@@ -211,10 +211,10 @@ AND gross > 2000000
 
 -- For example, suppose we have a table called kids. We can get the names of all kids between the ages of 2 and 12 from the United States:
 
--- SELECT name
--- FROM kids
--- WHERE age BETWEEN 2 AND 12
--- AND nationality = 'USA';
+SELECT name
+FROM kids
+WHERE age BETWEEN 2 AND 12
+AND nationality = 'USA';
 -- Take a go at using BETWEEN with AND on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
 
 -- Get the title and release year of all films released between 1990 and 2000 (inclusive).
@@ -251,20 +251,20 @@ AND (language = 'Spanish' or language = 'French');
 -- WHERE IN
 -- As you've seen, WHERE is very useful for filtering results. However, if you want to filter based on many conditions, WHERE can get unwieldy. For example:
 
--- SELECT name
--- FROM kids
--- WHERE age = 2
--- OR age = 4
--- OR age = 6
--- OR age = 8
--- OR age = 10;
+SELECT name
+FROM kids
+WHERE age = 2
+OR age = 4
+OR age = 6
+OR age = 8
+OR age = 10;
 -- Enter the IN operator! The IN operator allows you to specify multiple values in a WHERE clause, making it easier and quicker to specify multiple OR conditions! Neat, right?
 
 -- So, the above example would become simply:
 
--- SELECT name
--- FROM kids
--- WHERE age IN (2, 4, 6, 8, 10);
+SELECT name
+FROM kids
+WHERE age IN (2, 4, 6, 8, 10);
 -- Try using the IN operator yourself!
 
 -- Get the title and release year of all films released in 1990 or 2000 that were longer than two hours. Remember, duration is in minutes!
@@ -290,18 +290,18 @@ WHERE certification IN ('NC-17', 'R');
 -- Introduction to NULL and IS NULL
 -- In SQL, NULL represents a missing or unknown value. You can check for NULL values using the expression IS NULL. For example, to count the number of missing birth dates in the people table:
 
--- SELECT COUNT(*)
--- FROM people
--- WHERE birthdate IS NULL;
+SELECT COUNT(*)
+FROM people
+WHERE birthdate IS NULL;
 -- As you can see, IS NULL is useful when combined with WHERE to figure out what data you're missing.
 
 -- Sometimes, you'll want to filter out missing values so you only get results which are not NULL. To do this, you can use the IS NOT NULL operator.
 
 -- For example, this query gives the names of all people whose birth dates are not missing in the people table.
 
--- SELECT name
--- FROM people
--- WHERE birthdate IS NOT NULL;
+SELECT name
+FROM people
+WHERE birthdate IS NOT NULL;
 
 ----------------------------------------
 -- NULL and IS NULL
@@ -333,14 +333,14 @@ WHERE LANGUAGE IS NULL;
 
 -- The % wildcard will match zero, one, or many characters in text. For example, the following query matches companies like 'Data', 'DataC' 'DataCamp', 'DataMind', and so on:
 
--- SELECT name
--- FROM companies
--- WHERE name LIKE 'Data%';
+SELECT name
+FROM companies
+WHERE name LIKE 'Data%';
 -- The _ wildcard will match a single character. For example, the following query matches companies like 'DataCamp', 'DataComp', and so on:
 
--- SELECT name
--- FROM companies
--- WHERE name LIKE 'DataC_mp';
+SELECT name
+FROM companies
+WHERE name LIKE 'DataC_mp';
 -- You can also use the NOT LIKE operator to find records that don't match the pattern you specify.
 
 -- Got it? Let's practice!

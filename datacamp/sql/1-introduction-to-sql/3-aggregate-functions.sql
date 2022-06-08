@@ -4,16 +4,16 @@
 
 -- For example,
 
--- SELECT AVG(budget)
--- FROM films;
+SELECT AVG(budget)
+FROM films;
 -- gives you the average value from the budget column of the films table. Similarly, the MAX() function returns the highest budget:
 
--- SELECT MAX(budget)
--- FROM films;
+SELECT MAX(budget)
+FROM films;
 -- The SUM() function returns the result of adding up the numeric values in a column:
 
--- SELECT SUM(budget)
--- FROM films;
+SELECT SUM(budget)
+FROM films;
 -- You can probably guess what the MIN() function does! Now it's your turn to try out some SQL functions.
 
 -- Use the SUM() function to get the total duration of all films.
@@ -66,9 +66,9 @@ FROM films;
 
 -- For example, to get the total budget of movies made in the year 2010 or later:
 
--- SELECT SUM(budget)
--- FROM films
--- WHERE release_year >= 2010;
+SELECT SUM(budget)
+FROM films
+WHERE release_year >= 2010;
 
 -- Now it's your turn!
 
@@ -102,38 +102,42 @@ WHERE release_year BETWEEN 2000 and 2012;
 
 -- So, for example, this gives a result of 12:
 
--- SELECT (4 * 3);
+SELECT (4 * 3);
 -- However, the following gives a result of 1:
 
--- SELECT (4 / 3);
+SELECT (4 / 3);
 -- What's going on here?
 
 -- SQL assumes that if you divide an integer by an integer, you want to get an integer back. So be careful when dividing!
 
 -- If you want more precision when dividing, you can add decimal places to your numbers. For example,
 
--- SELECT (4.0 / 3.0) AS result;
+SELECT (4.0 / 3.0) AS result;
+
 -- gives you the result you would expect: 1.333.
 
 ----------------------------------------
 -- It's AS simple AS aliasing
 -- You may have noticed in the first exercise of this chapter that the column name of your result was just the name of the function you used. For example,
 
--- SELECT MAX(budget)
--- FROM films;
+SELECT MAX(budget)
+FROM films;
+
 -- gives you a result with one column, named max. But what if you use two functions like this?
 
--- SELECT MAX(budget), MAX(duration)
--- FROM films;
+SELECT MAX(budget), MAX(duration)
+FROM films;
+
 -- Well, then you'd have two columns named max, which isn't very useful!
 
 -- To avoid situations like this, SQL allows you to do something called aliasing. Aliasing simply means you assign a temporary name to something. To alias, you use the AS keyword, which you've already seen earlier in this course.
 
 -- For example, in the above example we could use aliases to make the result clearer:
 
--- SELECT MAX(budget) AS max_budget,
---        MAX(duration) AS max_duration
--- FROM films;
+SELECT MAX(budget) AS max_budget,
+       MAX(duration) AS max_duration
+FROM films;
+
 -- Aliases are helpful for making results more readable!
 
 -- Get the title and net profit (the amount a film grossed, minus its budget) for all films. Alias the net profit as net_profit.
@@ -159,12 +163,14 @@ FROM films;
 
 -- This means that the following will erroneously result in 400.0:
 
--- SELECT 45 / 10 * 100.0;
+SELECT 45 / 10 * 100.0;
+
 -- This is because 45 / 10 evaluates to an integer (4), and not a decimal number like we would expect.
 
 -- So when you're dividing make sure at least one of your numbers has a decimal place:
 
--- SELECT 45 * 100.0 / 10;
+SELECT 45 * 100.0 / 10;
+
 -- The above now gives the correct answer of 450.0 since the numerator (45 * 100.0) of the division is now a decimal!
 
 -- Get the percentage of people who are no longer alive. Alias the result as percentage_dead. Remember to use 100.0 and not 100!
