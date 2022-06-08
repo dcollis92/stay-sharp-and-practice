@@ -147,3 +147,53 @@ FROM films;
 
 SELECT DISTINCT role
 FROM roles;
+
+----------------------------------------
+-- Learning to COUNT
+-- What if you want to count the number of employees in your employees table? The COUNT() function lets you do this by returning the number of rows in one or more columns.
+
+-- For example, this code gives the number of rows in the people table:
+
+-- SELECT COUNT(*)
+-- FROM people;
+
+----------------------------------------
+-- Practice with COUNT
+-- As you've seen, COUNT(*) tells you how many rows are in a table. However, if you want to count the number of non-missing values in a particular column, you can call COUNT() on just that column.
+
+-- For example, to count the number of birth dates present in the people table:
+
+-- SELECT COUNT(birthdate)
+-- FROM people;
+-- It's also common to combine COUNT() with DISTINCT to count the number of distinct values in a column.
+
+-- For example, this query counts the number of distinct birth dates contained in the people table:
+
+-- SELECT COUNT(DISTINCT birthdate)
+-- FROM people;
+-- Let's get some practice with COUNT()!
+
+-- Count the number of rows in the people table.
+
+-- SELECT COUNT(*)
+-- FROM people;
+
+-- Count the number of (non-missing) birth dates in the people table.
+
+SELECT COUNT(birthdate)
+FROM people;
+
+-- Count the number of unique birth dates in the people table.
+
+SELECT COUNT(DISTINCT birthdate)
+FROM people;
+
+-- Count the number of unique languages in the films table.
+
+SELECT COUNT(DISTINCT LANGUAGE)
+FROM films;
+
+-- Count the number of unique countries in the films table.
+
+SELECT COUNT(DISTINCT country)
+FROM films;
