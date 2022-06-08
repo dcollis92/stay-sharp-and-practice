@@ -182,10 +182,4 @@ FROM films;
 SELECT (MAX(release_year) - MIN(release_year)) / 10.0 as number_of_decades
 FROM films;
 
-
-
 ----------------------------------------
-
-
-----------------------------------------
-
