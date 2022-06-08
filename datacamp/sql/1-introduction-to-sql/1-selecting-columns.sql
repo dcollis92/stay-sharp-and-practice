@@ -197,3 +197,5 @@ FROM films;
 
 SELECT COUNT(DISTINCT country)
 FROM films;
+
+----------------------------------------
