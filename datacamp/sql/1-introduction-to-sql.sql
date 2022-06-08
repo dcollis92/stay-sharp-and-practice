@@ -29,3 +29,12 @@ AS result;
 
 -- result
 -- SQL
+
+-- Now change 'SQL' to 'SQL is' and click Submit!
+
+SELECT 'SQL is'
+AS result;
+
+-- result
+-- SQL is
+
