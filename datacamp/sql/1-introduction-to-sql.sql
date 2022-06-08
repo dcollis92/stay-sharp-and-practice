@@ -38,3 +38,10 @@ AS result;
 -- result
 -- SQL is
 
+-- Finally, change 'SQL is' to 'SQL is cool' and click Submit!
+
+SELECT 'SQL is cool'
+AS result;
+
+result
+-- SQL is cool
