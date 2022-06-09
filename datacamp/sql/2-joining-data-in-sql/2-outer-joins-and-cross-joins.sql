@@ -125,6 +125,15 @@ GROUP BY region
 ORDER BY avg_gdp DESC;
 
 ----------------------------------------
+-- Right join
+-- Right joins aren't as common as left joins. One reason why is that you can always write a right join as a left join.
+
+-- The left join code is commented out here. Your task is to write a new query using rights joins that produces the same result as what the query using left joins produces. Keep this left joins code commented as you write your own query just below it using right joins to solve the problem.
+
+-- Note the order of the joins matters in your conversion to using right joins!
+
+
+
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
