@@ -127,9 +127,47 @@ INNER JOIN economies AS e
 -- Match on country code and year
 ON c.code = e.code AND e.year = p.year;
 
+-- Review inner join using on
+-- Why does the following code result in an error?
 
+SELECT c.name AS country, l.name AS language
+FROM countries AS c
+  INNER JOIN languages AS l;
 
+-- A: INNER JOIN requires a specification of the key field (or fields) in each table.
 ----------------------------------------
+-- Inner join with using
+-- When joining tables with a common field name, e.g.
+
+SELECT *
+FROM countries
+INNER JOIN economies
+ON countries.code = economies.code
+You can use USING as a shortcut:
+
+SELECT *
+FROM countries
+INNER JOIN economies
+USING (code)
+-- You'll now explore how this can be done with the countries and languages tables.
+
+-- Inner join countries on the left and languages on the right with USING(code).
+-- Select the fields corresponding to:
+-- country name AS country,
+-- continent name,
+-- language name AS language, and
+-- whether or not the language is official.
+-- Remember to alias your tables using the first letter of their names.
+
+-- Select fields
+SELECT c.name AS country, continent, l.name AS language, official
+  -- From countries (alias as c)
+  FROM countries AS c
+  -- Join to languages (as l)
+INNER JOIN languages as l 
+    -- Match using code
+USING (code);
+
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
