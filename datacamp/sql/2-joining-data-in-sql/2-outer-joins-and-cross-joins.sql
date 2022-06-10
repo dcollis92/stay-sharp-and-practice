@@ -206,5 +206,53 @@ WHERE region = 'North America' OR region IS NULL
 ORDER BY region;
 
 ----------------------------------------
+-- Full join (2)
+-- You'll now investigate a similar exercise to the last one, but this time focused on using a table with more records on the left than the right. You'll work with the languages and countries tables.
+
+-- Begin with a full join with languages on the left and countries on the right. Appropriate fields have been selected for you again here.
+
+-- Choose records in which countries.name starts with the capital letter 'V' or is NULL.
+-- Arrange by countries.name in ascending order to more clearly see the results.
+
+SELECT countries.name, code, languages.name AS language
+-- From languages
+FROM languages
+  -- Join to countries
+  FULL JOIN countries
+    -- Match on code
+    USING (code)
+-- Where countries.name starts with V or is null
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+-- Order by ascending countries.name
+ORDER BY countries.name;
+
+-- Repeat the same query as before, using a LEFT JOIN instead of a FULL JOIN. Note what has changed compared to the FULL JOIN result!
+
+SELECT countries.name, code, languages.name AS language
+-- From languages
+FROM languages
+  -- Join to countries
+  LEFT JOIN countries
+    -- Match on code
+    USING (code)
+-- Where countries.name starts with V or is null
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+-- Order by ascending countries.name
+ORDER BY countries.name;
+
+-- Repeat once more, but use an INNER JOIN instead of a LEFT JOIN. Note what has changed compared to the FULL JOIN and LEFT JOIN results.
+
+SELECT countries.name, code, languages.name AS language
+-- From languages
+FROM languages
+  -- Join to countries
+  INNER JOIN countries
+    -- Match using code
+    USING (code)
+-- Where countries.name starts with V or is null
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+-- Order by ascending countries.name
+ORDER BY countries.name;
+
 ----------------------------------------
 ----------------------------------------
