@@ -154,6 +154,57 @@ FROM languages
 ORDER BY city, language;
 
 ----------------------------------------
+-- Full join
+-- In this exercise, you'll examine how your results differ when using a full join versus using a left join versus using an inner join with the countries and currencies tables.
+
+-- You will focus on the North American region and also where the name of the country is missing. Dig in to see what we mean!
+
+-- Begin with a full join with countries on the left and currencies on the right. The fields of interest have been SELECTed for you throughout this exercise.
+
+-- Then complete a similar left join and conclude with an inner join.
+
+-- Choose records in which region corresponds to North America or is NULL.
+
+SELECT name AS country, code, region, basic_unit
+-- From countries
+FROM countries
+  -- Join to currencies
+  FULL JOIN currencies
+    -- Match on code
+    USING (code)
+-- Where region is North America or null
+WHERE region = 'North America' OR region IS NULL
+-- Order by region
+ORDER BY region;
+
+-- Repeat the same query as before, using a LEFT JOIN instead of a FULL JOIN. Note what has changed compared to the FULL JOIN result!
+
+SELECT name AS country, code, region, basic_unit
+-- From countries
+FROM countries
+  -- Join to currencies
+  LEFT JOIN currencies
+    -- Match on code
+    USING (code)
+-- Where region is North America or null
+WHERE region = 'North America' OR region IS NULL
+-- Order by region
+ORDER BY region;
+
+-- Repeat the same query again but use an INNER JOIN instead of a FULL JOIN. Note what has changed compared to the FULL JOIN and LEFT JOIN results!
+
+SELECT name AS country, code, region, basic_unit
+-- From countries
+FROM countries
+  -- Join to currencies
+  INNER JOIN currencies
+    -- Match on code
+    USING (code)
+-- Where region is North America or null
+WHERE region = 'North America' OR region IS NULL
+-- Order by region
+ORDER BY region;
+
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
