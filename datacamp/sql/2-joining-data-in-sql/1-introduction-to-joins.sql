@@ -1,4 +1,33 @@
 ----------------------------------------
+-- INTRODUCTION TO INNER JOIN
+-- 1. Welcome to the course!
+-- Hi, my name is Chester Ismay and I'll be your instructor for this course on Joining Data in PostgreSQL. As the name suggests, the focus of this course is using SQL to join two or more database tables together into a single table, an essential skill for data scientists. In this chapter, you'll learn about the INNER JOIN, which along with LEFT JOIN are probably the two most common JOINs. You'll see diagrams throughout this course that are designed to help you understand the mechanics of the different joins. Let's begin with a diagram showing the layout of some data and then how an INNER JOIN can be applied to that data.
+
+-- 2. Initial data diagram
+-- In the videos in this chapter and the next, we'll often work with two tables named left and right. You can see that matching values of the id field are colored with the same color. The id field is known as a KEY field since it can be used to reference one table to another. Both the left and right tables also have another field named val. This will be useful in helping you see specifically which records and values are included in each join.
+
+-- 3. INNER JOIN diagram
+-- An INNER JOIN only includes records in which the key is in both tables. You can see here that the id field matches for values of 1 and 4 only. With inner joins we look for matches in the right table corresponding to all entries in the key field in the left table.
+
+-- 4. INNER JOIN diagram (2)
+-- So the focus here shifts to only those records with a match in terms of the id field. The records not of interest to INNER JOIN have been faded.
+
+-- 5. INNER JOIN diagram (3)
+-- Here's a resulting single table from the INNER JOIN clause that gives the val field from the right table with records corresponding to only those with id value of 1 or 4, which are colored as yellow and purple. Now that you have a sense for how INNER JOIN works, let's try an example in SQL.
+
+-- 6. prime_ministers table
+-- The prime_ministers table is one of the tables in the leaders database. It is displayed here. Note the countries that are included. Suppose you were interested in determining nations that have both a prime minister and a president AND putting the results into a single table. Next you'll see the presidents table.
+
+-- 7. presidents table
+-- How did I display all of the prime_ministers table in the previous slide? Recall the use of SELECT and FROM clauses as is shown for the presidents table here. Which countries appear in both tables? With small tables like these, it is easy to notice that Egypt, Portugal, Vietnam, and Haiti appear in both tables. For larger tables, it isn't as simple as just picking these countries out visually. So what does the syntax look like for SQL to get the results of countries with a prime minister and a president from these two tables into one?
+
+-- 8. INNER JOIN in SQL
+-- The syntax for completing an INNER JOIN from the prime_ministers table to the presidents table based on a key field of country is shown. Note the use of aliases for prime_ministers as p1 and presidents as p2. This helps to simplify your code, especially with longer table names like prime_ministers and presidents. A SELECT statement is used to select specific fields from the two tables. In this case, since country exists in both tables, we must write p1 and the period to avoid a SQL error. Next we list the table on the left of the inner join after FROM and then we list the table on the right after INNER JOIN. Lastly, we specify the keys in the two tables that we would like to match on.
+
+-- 9. Let's practice!
+-- You'll now practice applying an inner join to two tables and to three tables. Let's get to it!
+
+----------------------------------------
 -- Inner join
 -- Although this course focuses on PostgreSQL, you'll find that these joins and the material here applies to different forms of SQL as well.
 
@@ -136,6 +165,23 @@ FROM countries AS c
 
 -- A: INNER JOIN requires a specification of the key field (or fields) in each table.
 ----------------------------------------
+-- INNER JOIN via USING
+-- 1. INNER JOIN via USING
+-- Congratulations on making it through the first set of exercises on using INNER JOIN to combine two or three tables into one! You'll next learn about the USING keyword in SQL and how it can be used in joins.
+
+-- 2. The INNER JOIN diagram again
+-- Recall the INNER JOIN diagram you saw in the last video. Think about the SQL code needed to complete this diagram. Let's check it out. We select and alias three fields and use the left table on the left of the join and the right table on the right of the join matching based on the entries for the id key field.
+
+-- 3. The INNER JOIN diagram with USING
+-- When the key field you'd like to join on is the same name in both tables, you can use a USING clause instead of the ON clause you have seen so far. Since id is the same name in both the left table and the right table we can specify USING instead of ON here. Note that the parentheses are required around the key field with USING. Let's revisit the example of joining the prime_ministers table
+
+-- 4. Countries with prime ministers and presidents
+-- to the presidents table to determine countries with both types of leaders. How could you fill in the blanks to get the result with USING? (Pause for a few seconds) Did you get it? (PAUSE) Ah, I played a bit of a trick on you here. But why does this work? Since an INNER JOIN includes entries in both tables and both tables contain the countries listed, it doesn't matter the order in which we place the tables in the join if we SELECT these columns. You'll be told in the exercises which table to use on the left and on the right to avoid this confusion. Note again the use of the parentheses around country after USING.
+
+-- 5. Let's practice!
+-- Now you'll test your understanding of INNER JOINs before we delve into an exercise with USING. Go get 'em!
+
+----------------------------------------
 -- Inner join with using
 -- When joining tables with a common field name, e.g.
 
@@ -167,6 +213,32 @@ SELECT c.name AS country, continent, l.name AS language, official
 INNER JOIN languages as l 
     -- Match using code
 USING (code);
+
+----------------------------------------
+-- Self-ish joins, just in CASE 
+-- 1. Self-ish joins, just in CASE
+-- You'll now dive into inner joins where a table is joined with itself. Sounds a little selfish, doesn't it? These types of joins, as you may have guessed, are called self joins. You'll also explore how to slice a numerical field into categories using the CASE command. Joining a table to
+
+-- 2. Join a table to itself?
+-- itself may seem like a bit of a crazy, strange thing to ever want to do. Self-joins are used to compare values in a field to other values of the same field from within the same table. Let's further explore this with an example. Recall the prime_ministers table from earlier. What if you wanted to create a new table showing countries that are in the same continent matched as pairs? Let's explore a chunk of INNER JOIN code using the prime_ministers table.
+
+-- 3. Join prime_ministers to itself?
+-- You might want to pause the video and think about what the resulting table will look like. The country column is selected twice as well as continent. The prime_ministers table is on both the left and the right. The vital step here is setting the key columns by which we match the table to itself. For each country, we will have a match if the country in the "right table" (that is also prime_ministers) is in the same continent. Lastly, since the results of this query are more than can fit on the slide, you'll only see the first 14 records. See how we have exactly this in the result! It's a pairing of each country with every other country in its same continent. But do you see a problem here? We don't want to list the country with itself after all. In the next slide, you'll see a way to do this. Pause to think about how to get around this before continuing. We don't want to include rows
+
+-- 4. Finishing off the self-join on prime_ministers
+-- where the country is the same in the country1 and country2 fields. The AND clause can check that multiple conditions are met. Here a match will not be made between prime_ministers and itself if the countries match. You, thus, have the correct table now; the results here are again limited in order for them to fit on the slide. Notice that self-join doesn't have a syntax quite as simple as INNER JOIN (You can't just write SELF JOIN in SQL code).
+
+-- 5. CASE WHEN and THEN
+-- The next command isn't a join, but is a useful tool in your repertoire. You'll be introduced to using CASE with another table in the leaders database. The states table contains numeric data about different countries in the six inhabited world continents. We'll focus on the field indep_year now. Suppose we'd like to group the year of independence into categories of before 1900, between 1900 and 1930, and after 1930. CASE will get us there! CASE is a way to do multiple if-then-else statements in a simplified way in SQL.
+
+-- 6. Preparing indep_year_group in states
+-- You can now see the basic layout for creating a new field containing the groupings. How might we fill them in? After the first WHEN should specify that we want to check for indep_year being less than 1900. Next we want indep_year_group to contain 'between 1900 and 1930' in the next blank. Lastly any other record not matching these conditions will be assigned the value of 'after 1930' for indep_year_group.
+
+-- 7. Creating indep_year_group in states
+-- Check out the completed query with completed blanks. Notice how the values of indep_year are grouped in indep_year_group. Also observe how continent relates to indep_year_group.
+
+-- 8. Let's practice!
+-- You'll now work on a couple of exercises for practice, then complete a challenge testing your knowledge of the Chapter 1 material.
 
 ----------------------------------------
 -- Self-join
