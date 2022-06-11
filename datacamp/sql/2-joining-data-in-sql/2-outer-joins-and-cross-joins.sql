@@ -281,6 +281,36 @@ FROM countries AS c1
 WHERE region LIKE 'M%esia';
 
 ----------------------------------------
+-- CROSS JOIN 
+-- A table of two cities
+-- This exercise looks to explore languages potentially and most frequently spoken in the cities of Hyderabad, India and Hyderabad, Pakistan.
+
+-- Create a CROSS JOIN with cities AS c on the left and languages AS l on the right.
+-- Make use of LIKE and Hyder% to choose Hyderabad in both countries.
+-- Select only the city name AS city and language name AS language.
+
+-- Select fields
+SELECT c.name AS city, l.name AS language
+-- From cities (alias as c)
+FROM cities AS c        
+  -- Join to languages (alias as l)
+  CROSS JOIN languages AS l
+-- Where c.name like Hyderabad
+WHERE c.name LIKE 'Hyder%';
+
+-- Use an INNER JOIN instead of a CROSS JOIN. Think about what the difference will be in the results for this INNER JOIN result and the one for the CROSS JOIN.
+
+-- Select fields
+SELECT c.name AS city, l.name AS language
+-- From cities (alias as c)
+-- From cities (alias as c)
+FROM cities AS c        
+  -- Join to languages (alias as l)
+  INNER JOIN languages AS l
+    -- Match on country code
+    ON c.country_code = l.code
+-- Where c.name like Hyderabad
+WHERE c.name LIKE 'Hyder%';
 
 ----------------------------------------
 ----------------------------------------
