@@ -67,3 +67,63 @@ SELECT code
 ORDER BY country_code;
 
 ----------------------------------------
+-- Union all
+-- As you saw, duplicates were removed from the previous two exercises by using UNION.
+
+-- To include duplicates, you can use UNION ALL.
+-- Determine all combinations (include duplicates) of country code and year that exist in either the economies or the populations tables. Order by code then year.
+-- The result of the query should only have two columns/fields. Think about how many records this query should result in.
+-- You'll use code very similar to this in your next exercise after the video. Make note of this code after completing it.
+
+-- Select fields
+SELECT code, year
+  -- From economies
+  FROM economies
+	-- Set theory clause
+	UNION ALL
+-- Select fields
+SELECT country_code, year
+  -- From populations
+  FROM populations
+-- Order by code, year
+ORDER BY code, year;
+
+----------------------------------------
+-- 1. INTERSECTional data science
+-- You saw with UNION and UNION ALL via examples that they do not do quite the same thing as what a join does. They only bind fields on top of one another in the two tables. The set theory clause INTERSECT works in a similar fashion to UNION and UNION ALL, but remember from the Venn diagram that INTERSECT only includes those records in common to both tables and fields selected. Let's investigate the diagram for INTERSECT and the corresponding SQL code to achieve it.
+
+-- 2. INTERSECT diagram and SQL code
+-- The result of the INTERSECT on left_one and right_one is only the records in common to both left_one and right_one: 1 and 4. Let's next see how you could use INTERSECT to determine all countries having both a prime minister and a president.
+
+-- 3. Prime minister and president countries
+-- The code for each of these set operations has a similar layout. You first select which fields you'd like to include in your first table, and then you specify the name of the first table. Next you specify the set operation to perform. Lastly, you denote which fields in the second table you'd like to include and then the name of the second table. The result of the query is the four countries with both a prime minister and a president in the leaders database.
+
+-- 4. INTERSECT on two fields
+-- Next, let's think about what would happen if we tried to select two columns instead of one from our previous example. The code shown does just that. What will be the result of this query? Will this also give you the names of the countries that have both a prime minister and a president? Hmmm [PAUSE] The actual result is an empty table. Why is that? When INTERSECT looks at two columns it includes both columns in the search. So it didn't find any countries with prime ministers AND presidents having the same name. INTERSECT looks for RECORDS in common, not individual key fields like what a join does to match. This is an important distinction.
+
+-- 5. Let's practice!
+-- Let's get some practice!
+
+----------------------------------------
+-- Intersect
+-- UNION ALL will extract all records from two tables, while INTERSECT will only return records that both tables have in common. In this exercise, you will create a similar query as before, however, this time you will look at the records in common for country code and year for the economies and populations tables.
+
+-- Note the number of records from the result of this query compared to the similar UNION ALL query result of 814 records.
+
+-- Use INTERSECT to determine the records in common for country code and year for the economies and populations tables.
+-- Again, order by code and then by year, both in ascending order.
+
+-- Select fields
+SELECT code, year 
+  -- From economies
+  FROM economies
+	-- Set theory clause
+	INTERSECT
+-- Select fields
+SELECT country_code, year
+  -- From populations
+  FROM populations
+-- Order by code and year
+ORDER BY code, year;
+
+----------------------------------------
