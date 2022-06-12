@@ -144,5 +144,17 @@ SELECT name
   FROM cities;
 
 ----------------------------------------
+-- 1. EXCEPTional
+-- Way to go! You've made it to the last of the four set theory clauses in this course. EXCEPT allows you to include only the records that are in one table, but not the other. Let's mix things up and look into the SQL code and result first and then dive into the diagram.
+
+-- 2. Monarchs that aren't prime ministers
+-- You saw earlier that there are some monarchs that also act as the prime minister for their country. One way to determine those monarchs in the monarchs table that do not also hold the title of prime minister is to use the EXCEPT clause. [CLICK] This SQL query selects the monarch field from monarchs and then looks for common entries with the prime_ministers field, while also keeping track of the country for each leader. [CLICK] You can see in the resulting query that only the two European monarchs are not also prime ministers in the leaders database.
+
+-- 3. EXCEPT diagram
+-- This diagram gives the structure of EXCEPT clauses. Only the records that appear in the left table BUT DO NOT appear in the right table are included.
+
+-- 4. Let's practice!
+-- After a couple exercises on using EXCEPT clauses, you'll check out the last two types of joins for the course: semi-joins and anti-joins. I'll see you in the next video for them!
+
 ----------------------------------------
 ----------------------------------------
