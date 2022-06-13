@@ -201,9 +201,33 @@ SELECT name
 ORDER BY capital;
 
 ----------------------------------------
+-- 1. Semi-joins and Anti-joins
+-- You'll now close this chapter by returning to joins. The six joins you've worked with so far are all additive joins in that they add columns to the original "left" table. Can you name all six? (1. INNER JOIN, 2. self-join, 3. LEFT JOIN, 4. RIGHT JOIN, 5. FULL JOIN, and 6. CROSS JOIN).
 
+-- 2. Building up to a semi-join
+-- The last two joins we will cover use a right table to determine which records to keep in the left table. In other words, you use these last two joins (semi-join and anti-join) in a way similar to a WHERE clause dependent on the values of a second table. Let's try out some examples of semi-joins and anti-joins and then return to the diagrams for each. Suppose that you are interested in determining the presidents of countries that gained independence before 1800. Let's first determine which countries this corresponds to in the states table. Recall from your knowledge of SQL before you knew anything about JOINs how this could be done. To get only the countries meeting this condition you can use the WHERE clause. We'll next set up the other part of the query to get the
+
+-- 3. Another step towards the semi-join
+-- presidents we want. What code is needed to retrieve the president, country, and continent columns from the presidents table in that order? [PAUSE] Now we need to use this result with the one in the previous slide to further filter the country field in the presidents table to give us the correct result. Let's see how this might be done next.
+
+-- 4. Finish the semi-join (an intro to subqueries)
+-- In the first query of this example, we determined that Portugal and Spain were both independent before 1800. In the second query, we determined how to display the table in a nice form to answer our question. In order to combine the two tables together we will again use a WHERE clause and then use the first query as the condition to check in the WHERE clause. Check it out! This is your first example of a subquery: a query that sits inside of another query. You'll explore these more in Chapter 4. What does this give as a result? Is it the presidents of Spain and of Portugal? Since Spain does not have a president, it is not included here and only the Portuguese president is listed. The semi-join chooses records in the first table where a condition IS met in a second table. An anti-join chooses records in the first table where a condition IS NOT met in the second table. How might you determine countries in the Americas founded after 1800?
+
+-- 5. An anti-join
+-- Using the code from the previous example, you only need to add a few pieces of code. So what goes in the blanks? [PAUSE] Fill in the WHERE clause by choosing only those continents ending in America and then fill in the other space with a NOT to exclude those countries in the subquery. The presidents of
+
+-- 6. The result of the anti-join
+-- countries in the Americas founded after 1800 are given in the table.
+
+-- 7. Semi-join and anti-join diagrams
+-- The semi-join matches records by key field in the right table with those in the left. It then picks out only the rows in the left table that match that condition. The anti-join picks out those columns in the left table that do not match the condition on the right table. Semi-joins and anti-joins don't have the same built-in SQL syntax that INNER JOIN and LEFT JOIN have. They are useful tools in filtering one table's records on the records of another table.
+
+-- 8. Let's practice!
+-- This chapter's challenge exercise will ask you to combine set theory clauses with semi-joins. Before you get to that, you'll try out some exercises on semi-joins and anti-joins. See you again in Chapter 4!
 
 ----------------------------------------
+
+
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
