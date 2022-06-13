@@ -226,7 +226,43 @@ ORDER BY capital;
 -- This chapter's challenge exercise will ask you to combine set theory clauses with semi-joins. Before you get to that, you'll try out some exercises on semi-joins and anti-joins. See you again in Chapter 4!
 
 ----------------------------------------
+-- Semi-join
+-- You are now going to use the concept of a semi-join to identify languages spoken in the Middle East.
 
+-- Begin by selecting all country codes in the Middle East as a single field result using SELECT, FROM, and WHERE.
+
+-- Select code
+SELECT code
+  -- From countries
+  FROM countries
+-- Where region is Middle East
+WHERE region = 'Middle East';
+
+-- Below the commented code, select only unique languages by name appearing in the languages table.
+-- Order the resulting single field table by name in ascending order.
+
+-- Select field
+SELECT DISTINCT name 
+  -- From languages
+  FROM languages
+-- Order by name
+ORDER BY name;
+
+-- Combine the previous two queries into one query by adding a WHERE IN statement to the SELECT DISTINCT query to determine the unique languages spoken in the Middle East.
+-- Order the result by name in ascending order.
+
+-- Query from step 2
+SELECT DISTINCT name
+  FROM languages
+-- Where in statement
+WHERE code IN
+  -- Query from step 1
+  -- Subquery
+  (SELECT code
+   FROM countries
+   WHERE region = 'Middle East')
+-- Order by name
+ORDER BY name;
 
 ----------------------------------------
 ----------------------------------------
