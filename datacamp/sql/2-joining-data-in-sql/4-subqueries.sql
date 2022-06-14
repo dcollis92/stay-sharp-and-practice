@@ -267,7 +267,41 @@ SELECT code, inflation_rate, unemployment_rate
 ORDER BY inflation_rate;
 
 ----------------------------------------
+-- Subquery review
+
+-- Q: Within which SQL clause are subqueries most frequently found?
+-- A: WHERE
+
 ----------------------------------------
+-- 1. Course Review
+-- Only the challenge problems remain! Way to go! You're on your way to being a SQL query warrior using PostgreSQL! Before you tackle the three challenge problems, let's review the main topics covered throughout the course.
+
+-- 2. Types of joins
+-- In SQL, a join combines columns from one or more tables in a relational database via a lookup process. There are four different types of joins you learned about in this course. First, an INNER JOIN is also denoted as just JOIN in SQL. A special case of an INNER JOIN you explored is called a self-join. Second, there are three OUTER JOINs denoted as LEFT JOIN (or LEFT OUTER JOIN), RIGHT JOIN (or RIGHT OUTER JOIN), and FULL JOIN (or FULL OUTER JOIN). Third, you worked with CROSS JOINs to create all possible combinations between two tables. Lastly, you investigated semi-joins and anti-joins. Remember that words appearing in ALL capital letters correspond to the joins having simple SQL syntax. Self-joins, semi-joins, and anti-joins don't have built-in SQL syntax.
+
+-- 3. INNER JOIN vs LEFT JOIN
+-- An INNER JOIN keeps only the records in which the key field (or fields) is in both tables. A LEFT JOIN keeps all the records in fields specified in the left table and includes the matches in the right table based on the key field or fields. Key field values that don't match in the right table are included as missing data in the resulting table of a LEFT JOIN.
+
+-- 4. RIGHT JOIN vs FULL JOIN
+-- A RIGHT JOIN keeps all the records specified in the right table and includes the matches from the key field (or fields) in the left table. Those that don't match are included as missing values in the resulting table from the RIGHT JOIN query. A FULL JOIN is a combination of a LEFT JOIN and a RIGHT JOIN showing exactly which values appear in both tables and those that appear in only one or the other table.
+
+-- 5. CROSS JOIN with code
+-- A CROSS JOIN matches all records from fields specified in one table with all records from fields specified in another table. Remember that a CROSS JOIN does not have an ON or USING clause, but otherwise looks very similar to the code for an INNER JOIN, LEFT JOIN, RIGHT JOIN, or FULL JOIN.
+
+-- 6. Set Theory Clauses
+-- Recall that UNION includes every record in both tables but DOES NOT double count those that are in both tables whereas UNION ALL DOES replicate those that are in both tables. INTERSECT gives only those records found in both of the two tables. EXCEPT gives only those records in one table BUT NOT the other.
+
+-- 7. Semi-joins and Anti-joins
+-- When you'd like to filter your first table based on conditions set on a second table, you should use a semi-join to accomplish your task. If instead you'd like to filter your first table based on conditions NOT being met on a second table, you should use an anti-join. Anti-joins are particularly useful in diagnosing problems with other joins in terms of getting fewer or more records than you expected.
+
+-- 8. Types of basic subqueries
+-- The most common type of subquery is done inside of a WHERE clause. The next most frequent types of subqueries are inside SELECT clauses and inside FROM clauses. As you'll see in the challenge exercises, subqueries can also find their way into the ON statement of a join in ways similar to what you've seen inside WHERE clauses too.
+
+-- 9. Own the challenge problems! You got this!
+-- Well, you are only three exercises away from mastering the content in this course. You are a true SQL ninja. Now take down these last three problems using all the skills you've built up in this course!
+
 ----------------------------------------
+
+
 ----------------------------------------
 ----------------------------------------
