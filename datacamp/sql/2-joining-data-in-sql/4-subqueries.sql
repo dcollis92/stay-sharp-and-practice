@@ -334,6 +334,62 @@ SELECT DISTINCT c.name, e.total_investment, e.imports
 ORDER BY c.name;
 
 ----------------------------------------
+-- Final challenge (2)
+-- Whoofta! That was challenging, huh?
 
+-- Let's ease up a bit and calculate the average fertility rate for each region in 2015.
+
+-- Include the name of region, its continent, and average fertility rate aliased as avg_fert_rate.
+-- Sort based on avg_fert_rate ascending.
+-- Remember that you'll need to GROUP BY all fields that aren't included in the aggregate function of SELECT.
+
+-- Select fields
+SELECT c.region, c.continent, AVG(fertility_rate) AS avg_fert_rate
+  -- From left table
+  FROM countries AS c
+    -- Join to right table
+    INNER JOIN populations AS p
+      -- Match on join condition
+      ON c.code = p.country_code
+  -- Where specific records matching some condition
+  WHERE year = 2015
+-- Group appropriately
+GROUP BY c.region, c.continent
+-- Order appropriately
+ORDER BY avg_fert_rate;
+
+----------------------------------------
+-- Final challenge (3)
+-- Welcome to the last challenge problem. By now you're a query warrior! Remember that these challenges are designed to take you to the limit to solidify your SQL knowledge! Take a deep breath and solve this step-by-step.
+
+-- You are now tasked with determining the top 10 capital cities in Europe and the Americas in terms of a calculated percentage using city_proper_pop and metroarea_pop in cities.
+
+-- Do not use table aliasing in this exercise.
+
+-- Select the city name, country code, city proper population, and metro area population.
+-- Calculate the percentage of metro area population composed of city proper population for each city in cities, aliased as city_perc.
+-- Focus only on capital cities in Europe and the Americas in a subquery.
+-- Make sure to exclude records with missing data on metro area population.
+-- Order the result by city_perc descending.
+-- Then determine the top 10 capital cities in Europe and the Americas in terms of this city_perc percentage.
+
+-- Select fields
+SELECT name, country_code, city_proper_pop, metroarea_pop,
+      -- Calculate city_perc
+      (city_proper_pop / metroarea_pop * 100) AS city_perc
+  -- From appropriate table
+  FROM cities
+  -- Where 
+  WHERE name IN
+    -- Subquery
+    (SELECT capital
+     FROM countries
+     WHERE (continent = 'Europe'
+        OR continent LIKE '%America'))
+       AND metroarea_pop IS NOT NULL
+-- Order appropriately
+ORDER BY city_perc DESC
+-- Limit amount
+LIMIT 10;
 
 ----------------------------------------
