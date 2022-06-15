@@ -23,3 +23,11 @@ function squareSum(numbers){
       return (n*n) + sum;
     }, 0)
   }
+
+  function squareSum(numbers) {
+    let result = 0
+    for (let n of numbers) {
+      result += n * n
+    }
+    return result
+  }

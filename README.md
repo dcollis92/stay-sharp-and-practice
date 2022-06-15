@@ -7,4 +7,5 @@
 - Hired.com
   - Programming Skills (JavaScript)
   
-- Datacamp (SQL)
+- Datacamp
+  - SQL Fundamentals
