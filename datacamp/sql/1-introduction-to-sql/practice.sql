@@ -11,3 +11,15 @@ WHERE name LIKE 'S%'
 -- Samsung
 
 ----------------------------------------
+-- Which keyword is used to sort results in dscending order?
+
+DESC
+
+----------------------------------------
+-- What does 
+SELECT COUNT(YEAR) FROM states;
+-- return?
+
+-- A: The number of non-missing values in the YEAR column. 
+
+----------------------------------------
