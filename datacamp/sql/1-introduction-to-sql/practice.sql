@@ -73,3 +73,14 @@ total_revenue
 SELECT DISTINCT state, total_revenue
 FROM states
 LIMIT 3;
+
+----------------------------------------
+-- Get the details of those companies that have more than 500 employees and are founded either in 2013 or before 2010
+
+-- Complete the code to return the output
+
+SELECT name, founding_year, employee_number
+FROM companies
+WHERE employee_number > 500 
+  AND (founding_year < 2010 
+    OR founding_year = 2013)
