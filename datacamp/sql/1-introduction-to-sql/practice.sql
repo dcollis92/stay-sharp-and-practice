@@ -51,3 +51,25 @@ FROM films
 LIMIT 5;
 
 ----------------------------------------
+-- Which of the following should be used to terminate a SQL query?
+
+;
+
+----------------------------------------
+-- Select the code to return the output
+
+state
+ARIZONA
+CALIFORNIA
+ALABAMA
+
+total_revenue
+3427976
+23440845
+2678885
+
+----
+
+SELECT DISTINCT state, total_revenue
+FROM states
+LIMIT 3;
