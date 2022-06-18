@@ -84,3 +84,8 @@ FROM companies
 WHERE employee_number > 500 
   AND (founding_year < 2010 
     OR founding_year = 2013)
+
+----------------------------------------
+-- What is the DISTINCT keyword typically used for?
+
+-- To select all of the unique values from a column.
