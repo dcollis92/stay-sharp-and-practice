@@ -1,5 +1,5 @@
 /*
-Balanced brackets
+BALANCED BRACKETS
 
 We are given a string of angle brackets, and we are required to write a function that add brackets at the beginning and end of the string to make all brackets match.
 
