@@ -38,10 +38,10 @@ Need to cross check answers
    - I don't know.
   
 #### Q7. Your website has the following code included in it 
-   ```
-   <script url ="http://mysite.com/myscript.js"></script>
-   ```
-   Adding which one of the following attributes will definitely NOT reduce rendering time?
+```
+<script url ="http://mysite.com/myscript.js"></script>
+```
+Adding which one of the following attributes will definitely NOT reduce rendering time?
    - [X] id
    - defer
    - async
@@ -54,3 +54,32 @@ Need to cross check answers
    - flex-direction
    - flex-basis
    - I don't know
+
+#### Q9. What is the primary job of a load balancer
+   - [X] Load balancers help distribute across multiple resources.
+   - Load balancers cache content close to requesters, reducing latency for commonly requested resources.
+   - Load balancers scale child resources up and down, depending on load.
+   - Load balancers authenticate and authorize requests.
+   - I don't know
+
+#### Q10. Eddie is a waiter who has some regular customers who tip consistently when they come in to eat. He created a small program to calcuate his tips for yesterday and today. How much was he tipped based on his program below?
+```
+function tipPercent(percent) {
+  percent = percent / 100
+
+  return function(billTotal) {
+    return percent * billTotal
+  }
+}
+
+var customer1 = tipPercent(20)
+var customer2 = tipPercent(10)
+
+var yestTips = customer2(20)
+var todayTips = customer1(100) + customer 2(30)
+var totalTips = yestTips + todayTips
+```
+   - 30
+   - 1500
+   - 150
+   - [X] 25
