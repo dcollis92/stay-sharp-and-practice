@@ -25,8 +25,8 @@ Need to cross check answers
 5. When would it be useful to denormalize data in a relational database?
    - When your data is sharded across multiple nodes in a cluster
    - When write latency is more important than read latency
-   - [X] When a 'property' of a record requires a complex, multi-join query to lookup
-   - [X] When you need the ability to do full-text searches on individual records
+   - [ ] When a 'property' of a record requires a complex, multi-join query to lookup
+   - [ ] When you need the ability to do full-text searches on individual records
    - I don't know
   
 6. You are building a blogging website, using a SQL database for storage. You have three tables - user, posts, and comments. Posts and comments are always associated with a user. Comments music be associated with a parent post. Which of the following foreign key constraicts does NOT make sense in this scenario?
@@ -35,3 +35,13 @@ Need to cross check answers
    - comments.post_id referencing posts table
    - comments.user_id referencing users table
    - I don't know.
+  
+7. Your website has the following code included in it 
+   ```
+   <script url ="http://mysite.com/myscript.js"></script>
+   ```
+   Adding which one of the following attributes will definitely NOT reduce rendering time?
+   - [X] id
+   - defer
+   - async
+   - I don't know
