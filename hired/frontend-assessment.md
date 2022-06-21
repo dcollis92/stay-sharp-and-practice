@@ -105,3 +105,30 @@ var totalTips = yestTips + todayTips
    - [X] domain name:`www.google.com` path:`/search` parameters:`?q=hired%20jobs` protocol:`https`
    - domain name:`google` path:`search` parameters:`q` protocol:`hypertext transfer protocol` 
    - I don't know.
+
+#### Q14. When is it a good idea to include authentical credentis is a request's query parameters?
+   - [X] This is never a good idea
+   - For any request type
+   - For PUT and POST requests
+   - Only when using HTTPS
+   - I don't know.
+  
+#### Q15. You have a simple HTML document:
+```
+<html>
+  <body>
+    <div id="oc" class="outer-container">
+      Outer Container Text
+      <div id="ic1" class="inner-container">
+      Inner Container Text
+      </div>
+    </div>
+  </body>
+</html>
+```
+You want to change the color of only "Inner Container Text" to orange. Which of the follow CSS fragments would work?
+   - [X] #ic1 { color: orange; }
+   - ic1 { color: orange; }
+   - .ic1 { color: orange; }
+   - div .ic1 { color: orange; }
+   - div div { color: orange; }
