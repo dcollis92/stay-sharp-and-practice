@@ -1,14 +1,5 @@
 // NEED TO RETAKE 66%
 
-function myMutator(obj) {
-  obj = obj + 1;
-  return obj;
-}
-
-let input = 35;
-myMutator(input);
-console.log(input)
-
 /* 
 The height of a binary tree is the length of the longest path from the root to any node in the tree. Given a binary tree represented in a one dimensional array, return the height of the tree.
 
@@ -75,6 +66,7 @@ const solution = (messages) => {
   return myReceiver.messages;
 };
 
+// PASSED ALL TEST CASES
 
 /*---------------------------------------------*/
 /* 
@@ -116,4 +108,4 @@ const leastFreqNum = (numbers) => {
   return result.sort((a ,b) => a-b)
 };
 
-// passed 5/5 Test Cases
+// PASSED ALL TEST CASES

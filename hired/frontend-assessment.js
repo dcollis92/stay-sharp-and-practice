@@ -35,6 +35,8 @@ const solution1 = (n) => {
   return max
 }
 
+// PASSED ALL TEST CASES
+
 /*---------------------------------------------*/
 /* 
 Your team had a summer intern who didn't quite finish their big "Intern Project", and now it's up to you to get the project completed and deployed.
@@ -82,4 +84,4 @@ const solution2 = (array) => {
 console.log(solution2([9, 6, 7, 4, 7, 2, 2, 4, 2, 3, 7, 7]))
 // Expected Output: [2, 2, 2, 3, 4, 4, 6, 7, 7, 7, 7, 9]
 
-
+// PASSED ALL TEST CASES

@@ -49,3 +49,4 @@ const solution = (prices) => {
   return maxProfit
 };
 
+// PASSED ALL TEST CASES

@@ -41,3 +41,5 @@ const buildPair = (angles) => {
   return leadingTags + str + trailingTags;
 };
 console.log(buildPair(angles));
+
+// PASSED ALL TEST CASES
