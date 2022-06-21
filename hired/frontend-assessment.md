@@ -83,3 +83,10 @@ var totalTips = yestTips + todayTips
    - 1500
    - 150
    - [X] 25
+
+#### Q11. Which of the following statements returns false?
+  - `((key, value) => {key: value})("key", "value") === { "key": "value" }`
+  - `((p1 = 2, p2 = 5, ...rest) => p1 * p2)() === 10`
+  - `(param => { return param * 2 })(2) === 4`
+  - [X] `[1, 2, 3].reduce((a, b) => a + b, 0) === 6`
+  - I don't know.
