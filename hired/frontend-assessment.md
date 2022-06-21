@@ -91,9 +91,17 @@ var totalTips = yestTips + todayTips
   - [X] `[1, 2, 3].reduce((a, b) => a + b, 0) === 6`
   - I don't know.
 
-### Q12. Suppose you write a RESTful API endpoint to create a new object. Which HTTP method should you use?
+#### Q12. Suppose you write a RESTful API endpoint to create a new object. Which HTTP method should you use?
    - GET
    - HEAD
    - [X] POST
    - PATCH
+   - I don't know.
+
+#### Q13. What are the parts of this URL? 
+`https://www.google.com/search?q=hired%20jobs`
+   - domain name:`google.com` path:`/search` parameters:`?q=` protocol:`www`
+   - domain name:`http://google.com` path:`/search` parameters:`?q=hired%20jobs` protocol:`web`
+   - [X] domain name:`www.google.com` path:`/search` parameters:`?q=hired%20jobs` protocol:`https`
+   - domain name:`google` path:`search` parameters:`q` protocol:`hypertext transfer protocol` 
    - I don't know.
