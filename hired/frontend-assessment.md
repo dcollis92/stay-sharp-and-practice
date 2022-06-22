@@ -278,4 +278,41 @@ need to double check
    - DELETE
    - I don't know.
 
-#### Q24.
+#### Q24. Consider the following HTML and CSS
+
+HTML:
+```
+<div class='one'>
+</div>
+<div class='two'>
+</div>
+```
+
+CSS:
+```
+div {
+   background: red !important;
+}
+
+div {
+   width:200px;
+   height:200px;
+   background: blue;
+}
+```
+
+What colors are div.one and div.two respectively?
+
+   - div.one is red; div.two is blue
+   - div.one is blue; div.two is red
+   - [X] Both divs are red
+   - div.one is purple; div.two is red
+   - I don't know.
+
+#### Q25. Given an array of numbers, which one liner would return the sum of all of the numbers?
+
+   - [X] arr.reduce((a,b) => a + b, 0)
+   - arr.map((a,b) => a + b)
+   - arr.filter((a,b) => a + b)
+   - arr.reduce(a,b => a + b, 1)
+   - I don't know.
