@@ -179,7 +179,31 @@ need to double check
    - Array.prototype.fill()
    - I don't know.
 
-#### Q18.
+#### Q18. Suppose you have the following file structure:
+```
+root/
+   foo.js
+   module/
+      foo.js
+      bar.js
+```
+
+root/foo.js
+```
+export default const name = "foo";
+```
+
+root/module/bar.js
+```
+const name = import "./foo.js/"
+console.log(`My name is: ${name}`)
+```
+
+What does executing `bar.js` output?
+   - My name is: undefined
+   - [X] My name is: module.foo (need to double check)
+   - 
+   - I don't know      
 
 #### Q18.
 #### Q18.
