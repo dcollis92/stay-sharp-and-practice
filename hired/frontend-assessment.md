@@ -219,8 +219,13 @@ C: Building an application with AJAX requests enable the creation of Single Page
    - All of the above, A, B, and C
    - I don't know.
 
-#### Q20.
+#### Q20. Which of the following statements is TRUE about arrow functions?
 
+   - Arrow functions bind to the block scope
+   - Arrow functions use the `this` value from the lexical scope in which they are called
+   - Arrow functions create a new scope
+   - [X] None of these
+   - I don't know.
 
 #### Q18.
 #### Q18.
