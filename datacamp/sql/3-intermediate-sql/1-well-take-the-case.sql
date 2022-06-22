@@ -61,7 +61,7 @@ FROM matches_germany
 GROUP BY home_team;
 
 ----------------------------------------
-CASE statements comparing column values
+-- CASE statements comparing column values
 -- Barcelona is considered one of the strongest teams in Spain's soccer league.
 
 -- In this exercise, you will be creating a list of matches in the 2011/2012 season where Barcelona was the home team. You will do this using a CASE statement that compares the values of two columns to create a new group -- wins, losses, and ties.
@@ -112,3 +112,10 @@ LEFT JOIN teams_spain AS t
 ON m.awayteam_id = t.team_api_id
 -- Filter for Barcelona as the home team
 WHERE m.hometeam_id = 8634; 
+
+----------------------------------------
+-- CASE statements comparing two column values part 2
+-- Similar to the previous exercise, you will construct a query to determine the outcome of Barcelona's matches where they played as the away team. You will learn how to combine these two queries in chapters 2 and 3.
+
+-- Did their performance differ from the matches where they were the home team?
+
