@@ -227,7 +227,26 @@ C: Building an application with AJAX requests enable the creation of Single Page
    - [X] None of these
    - I don't know.
 
-#### Q18.
+#### Q21. What will this code output? 
+```
+function multiplyAndAdd(x, y, z) {
+   return (this.multiplier || 1) * (x + y + z);
+}
+
+const myMultiplier = {
+   multipler: 4
+};
+
+console.log(multiplyAndAdd.call(myMultiplier, 0, 1, 3));
+```
+
+   - [X] 4
+   - 16
+   - 0
+   - undefined
+   - I don't know.
+
+
 #### Q18.
 #### Q18.
 #### Q18.
