@@ -247,7 +247,7 @@ console.log(multiplyAndAdd.call(myMultiplier, 0, 1, 3));
    - I don't know.
 
 
-#### Q21. What is the size property of the set object, `s`, after running this code?
+#### Q22. What is the size property of the set object, `s`, after running this code?
 ```
 s = new Set();
 s.add(0);
@@ -268,5 +268,14 @@ need to double check
    - [X] 9
    - I don't know.
 
-#### Q18.
-#### Q18.
+#### Q23. What HTTP method is used for a pre-flight CORS request?
+
+   - [X] OPTIONS
+   - PUT
+   - POST
+   - GET
+   - HEAD
+   - DELETE
+   - I don't know.
+
+#### Q24.
