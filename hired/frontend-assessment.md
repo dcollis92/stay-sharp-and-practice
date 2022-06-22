@@ -205,8 +205,23 @@ What does executing `bar.js` output?
    - 
    - I don't know      
 
-#### Q18.
-#### Q18.
+#### Q19. Which of the following are true statements regarding the advantages of using AJAX instead of form submission for sending data to an external server?
+A: AJAX requests are asynchronous, allowing the user to continue interacting with the page while the request is processing.
+B: Since AJAX requests reload the page, this ensures the current view matches the state of the data on the server.
+C: Building an application with AJAX requests enable the creation of Single Page Applications.
+
+   - [X] A and C
+   - C
+   - A and B
+   - B and C
+   - B
+   - A
+   - All of the above, A, B, and C
+   - I don't know.
+
+#### Q20.
+
+
 #### Q18.
 #### Q18.
 #### Q18.
