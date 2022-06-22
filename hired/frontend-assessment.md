@@ -247,6 +247,26 @@ console.log(multiplyAndAdd.call(myMultiplier, 0, 1, 3));
    - I don't know.
 
 
-#### Q18.
+#### Q21. What is the size property of the set object, `s`, after running this code?
+```
+s = new Set();
+s.add(0);
+s.add(1);
+s.add(1);
+s.add(2);
+s.add(3);
+s.add(5);
+s.add("1");
+s.add("1");
+s.add("2");
+```
+
+need to double check
+   - 8
+   - 7
+   - 6
+   - [X] 9
+   - I don't know.
+
 #### Q18.
 #### Q18.
