@@ -161,3 +161,29 @@ Which of the following statements is true?
    - `let` should always be used instead of `var`
    - `let` is hoised to the function scope. `var` is hoised to the block scope.
    - I don't know.
+
+#### Q17. Given a list of students' numeric test scores, what is the most appropriate method to produce a list with the numeric test scores translated to letter grades?
+```
+fn([
+   { student: 'Alice', score: 87 },
+   { student: 'Bob', score: 73 },
+   { student: 'Charlie', score: 92 }
+])
+// output: [{ student: 'Alice', grade: 'B' },  { student: 'Bob', grade: 'C' }, { student: 'Charlie', grade: 'A' }]
+```
+
+need to double check
+   - [X] Array.prototype.map()
+   - Array.prototype.copyWithin()
+   - Array.prototype.every()
+   - Array.prototype.fill()
+   - I don't know.
+
+#### Q18.
+
+#### Q18.
+#### Q18.
+#### Q18.
+#### Q18.
+#### Q18.
+#### Q18.
