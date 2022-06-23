@@ -101,13 +101,13 @@ Example Maze #1:
   [1, 0, 0, 0, 0],
 ]
 
-You'll recieve starting and destinate coordinates as (row, column) notation. This means (0, 2) in the example maze is a middle cell in the top row, because the row is 0 and the column is 2. The start and destination coordinates will always have a value of 0.
+You'll receive starting and destination coordinates as (row, column) notation. This means (0, 2) in the example maze is a middle cell in the top row, because the row is 0 and the column is 2. The start and destination coordinates will always have a value of 0.
 
-Your cunction will determine whether it is possible to get from the starting coordinate to the destination coordinate by only moving across 0-valued cells.
+Your function will determine whether it is possible to get from the starting coordinate to the destination coordinate by only moving across 0-valued cells.
 
 Looking at our example maze again, lets assume that 
 start = (0, 1) and dest = (4, 3)
-Here's the same maze, but this time the valid path is marked by replacing the 0 value with an asterick (*).
+Here's the same maze, but this time the valid path is marked by replacing the 0 value with an asterisk (*).
 
 [
   [1, *, *, 1, 1],
@@ -158,35 +158,73 @@ let maze = [
               [1, 0, 0, 0, 0]
             ]
 
-            const solution = (maze, startRow, startCol, destRow, destCol) => {
-              this.maze = maze;
-         
-                   // if the start and dest are the same
-                 if(this.maze[startCol][startRow] == this.maze[destRow][destCol]) {
-                   return true;
-                 } else if(this.maze[startCol][startRow] == 0) {
-                     // reassign array value to random int so we don't revisit it again
-                     this.maze[startCol][startRow] = 2;
-                     // checking if within L boundary
-                     if(startCol < this.maze.length + 1) {
-                         return (startCol - 1, startRow);
-                     }
-                     // checking if within R boundary
-                     if(startRow < this.maze[startCol].length + 1) {
-                         return (startCol, startRow - 1);
-                     }
-                     if(startCol < 0) {
-                         return (startCol + 1, startRow);
-                     }
-                     if(startRow < 0) {
-                         return (startCol, startRow + 1);
-                     }
-                 } else {
-                     // if the maze can't be completed
-                   return false
-                 }
-             };
+const solution = (maze, startRow, startCol, destRow, destCol) => {
+  this.maze = maze;
+        
+  // if the start and dest are the same
+  if(this.maze[startCol][startRow] == this.maze[destRow][destCol]) {
+          return true;
+  } else if(this.maze[startCol][startRow] == 0) {
+       // reassign array value to random int so we don't revisit it again
+      this.maze[startCol][startRow] = 2;
+       // checking if within L boundary
+      if(startCol < this.maze.length + 1) {
+        return (startCol - 1, startRow);
+      }
+       // checking if within R boundary
+      if(startRow < this.maze[startCol].length + 1) {
+        return (startCol, startRow - 1);
+      }
+      if(startCol < 0) {
+        return (startCol + 1, startRow);
+      }
+      if(startRow < 0) {
+        return (startCol, startRow + 1);
+      }
+    } else {
+       // if the maze can't be completed
+        return false
+    }
+ };
 
 console.log(solution([[1, 0, 0, 1, 1], [1, 1, 0, 1, 1], [1, 0, 0, 1, 1], [1, 0, 1, 1, 0], [1, 0, 0, 0, 0]], 0, 1, 3, 4))
 
 // PASSED 3/5 TEST CASES. NEEDS ADJUSTMENTS
+
+/*---------------------------------------------*/
+/* 
+You're working for AirBed & Breakfast on the payments team. Your team is planning to roll out a payment algorithm that computes the payment per transaction including tax. An engineer on your team has committed code to accomplish this, but your team's manager has reviewed the code and left a comment saying it is not performant.
+
+Fix the code so that the function is called only once per distinct transaction value.
+
+Example input:
+Transactions: [10,24,12,8,10,24]
+tax: 1.4
+
+Example output:
+4
+
+Explanation: 
+the function should be called 4 times, 
+*/
+
+const taxCalc = (transactions, taxRate) => {
+  let numCalls = 0;
+
+  const calculateCostAfterTax = (cost, taxRate) => {
+    numCalls = numCalls + 1;
+    return cost * taxRate;
+  };
+
+  const computeTotal = taxRate => {
+    return cost => {
+      return calculateCostAfterTax(cost, taxRate);
+    };
+  };
+
+  // filter new distinct values creating a new Set
+  const distTransactions = [... new Set(transactions)]
+
+  distTransactions.map(computeTotal(taxRate));
+  return numCalls;
+};
