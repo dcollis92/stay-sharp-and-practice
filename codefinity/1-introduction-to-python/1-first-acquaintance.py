@@ -118,6 +118,9 @@ print(356 % 17)
 # In the second line, calculate 0.99 to the 365 power;
 # In the fourth line, calculate 1.01 to the 365 power.
 
-
+# Calculate the first expression
+print(0.99 ** 365)
+# Calculate the second expression
+print(1.01 ** 365)
 
 # What does this task show us? If you improve by 1 percent every day, you will become 37 times better in a year. Do not give up on learning! :)
