@@ -143,3 +143,28 @@ print("and I'm learning Python.")
 # Calculate math expression
 print((2894 // 274) ** 4)
 # print("Code end")
+
+# ----------------------------------------
+# Quiz for "Introduction to Python"
+
+# How to raise number 10 to the third power?
+
+10**3
+
+# What symbol should you use to comment line of code?
+
+#
+
+# Which line of code will return "string"? Watch carefully!
+
+print('string')
+
+# What symbol do you need to use to calculate the remainder of the division?
+
+%
+
+# What symbol should you use to calculate the whole part of division?
+
+//
+
+# 100% 5/5 Correct
