@@ -78,3 +78,46 @@ print(2580 + 198)
 print(23 * 42)
 # Calculate third expression
 print(1512 / 27)
+
+# ----------------------------------------
+# More Challenging Math
+# There are several more useful math operations available in Python. They are:
+
+# "//" - integer part of division
+# % - the remainder of a division
+# ** - raising to a power
+# Please note, that you can't use the traditional ^ symbol for raising to the power in Python as it gives a different result. The syntax for these operations is the same as the simplest arithmetic, for instance 18 // 4 is 4, since we take the integer part of division (the division result is 4.5). 14 % 5 is 4 since we can subtract number 5 two times and there will be number 4 left. 4**3 will be 64 as the result of multiplying 4*4*4.
+
+
+# Task
+
+# In the second line, calculate the integer part of the division of 234 by 32;
+# In the fourth line, find the remainder of the division of 356 by 17.
+
+# Calculate the integer part of division
+print(234 // 32)
+# Calculate the remainder of division
+print(356 % 17)
+
+# When can these operations be useful?
+
+# For example, we can modulate the situation: you have 50 dollars and need to buy as many packs of cookies as you can (each costs 6 dollars). You need to calculate the maximum number of packs you can buy and how much money will be left. With these operations, it can be easily done.
+
+# 50//6 equals 8 since you subtract 6 as maximum 8 times. This will be the number of snacks we can buy.
+
+# 50%6 equals 2 since 2 dollars will be left after subtracting 6 eight times.
+
+# ----------------------------------------
+# Challenge
+# Let's practice a bit.
+
+# Please note, that in order to raise to the power we should use the ** operator.
+
+# Task
+
+# In the second line, calculate 0.99 to the 365 power;
+# In the fourth line, calculate 1.01 to the 365 power.
+
+
+
+# What does this task show us? If you improve by 1 percent every day, you will become 37 times better in a year. Do not give up on learning! :)
