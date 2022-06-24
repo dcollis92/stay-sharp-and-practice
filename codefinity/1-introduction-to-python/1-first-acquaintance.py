@@ -124,3 +124,22 @@ print(0.99 ** 365)
 print(1.01 ** 365)
 
 # What does this task show us? If you improve by 1 percent every day, you will become 37 times better in a year. Do not give up on learning! :)
+
+# ----------------------------------------
+# Bringing It All Together
+# Let's use the recently acquired knowledge to solve the next task.
+
+
+# Task
+
+# On the third line within the print function, replace "name" with your name.
+# Calculate the whole part of the division of 2894 by 274 and raise the result to the 4 power (line 6).
+# Comment on the first and the seventh lines so they will not be seen in the console.
+
+# print("Code start")
+# Replace name
+print("Hello, my name is", "Dave")
+print("and I'm learning Python.")
+# Calculate math expression
+print((2894 // 274) ** 4)
+# print("Code end")
