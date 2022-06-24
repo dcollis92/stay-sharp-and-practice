@@ -71,3 +71,10 @@ print(95873/472)
 # 2580 plus 198
 # 23 multiplied by 42
 # 1512 divided by 27
+
+# Calculate first expression
+print(2580 + 198)
+# Calculate second expression
+print(23 * 42)
+# Calculate third expression
+print(1512 / 27)
