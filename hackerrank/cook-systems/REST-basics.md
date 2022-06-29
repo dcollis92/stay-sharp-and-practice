@@ -18,6 +18,7 @@ Pick ONE option
 
 #### Q3. A button group is given below:
 ![button image 1](https://i.imgur.com/K0AOuw8.png)
+
 The color of the button must change when the mouse hovers over it as given below:
 ![button image 2](https://i.imgur.com/tyk7uRx.png)
   ```
