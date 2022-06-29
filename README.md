@@ -30,3 +30,6 @@
   - Programming Skills (JS)
   - Frontend Assessment (JS/HTML/CSS)
   - Fullstack Assessment (JS/HTML/CSS)
+
+#### LinkedIn
+  - LI Learning: Learning Regular Expressions (Regex)
