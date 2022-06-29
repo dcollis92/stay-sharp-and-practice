@@ -81,4 +81,44 @@ In this movie we'll talk about choosing a Regular Expression Engine. Each implem
 
 ----
 
+### 1.3 Notation conventions and modes
 
+Transcript:
+Before we dive into learning about regular expressions, I want to just spend a moment talking about some of the notation conventions and modes that we're going to be using. The way that we define a regular expression in writing is usually by putting it inside two forward slashes. Those are the limiters that let us know that we're talking about a regular expression. So forward slash, abc, forward slash lets us know that there's a regular expression, and the expression is abc. The forward slashes are not part of the expression, they're just the delimiters that hold it. So you're going to be using it without forward slashes most of the time. Now, some programming languages are going to want you to add those forward slashes in there in order to delimit it, so that the programming language can know that it's a regular expression, but in other cases, you won't. You'll just simply type them in as a string. Now the reason we use those forward slashes is to contrast it against the text strings that we're using to match it against. So this regular expression of abc is going to match the literal characters in a text string, abc. And we have quotes around that as delimiters to let us know that it's a text string. But when we're using our javascript tool, we're going to be using those text strings without quotes. So even though I have quotes around it, you're not going to use them. In regexr we can actually see that. You can see, here's the expression, and if I just select everything there, and delete it, you can see that it still has those brackets around it and I can't get rid of them. They're just built into it. So it opens, it says open indicates the start of a regular expression, close indicates the end of a regular expression, and the start of regular expression flags. We'll come back to those flags in a minute. But I can't erase them, and when I type in here, it just puts it right in between them, to let me know that that's the regular expression. Down here is the text. This is the thing that would be a text string, but we don't need to put the quotes around it. In this case, we can just put the string itself, that's the text, it's like we're looking at a text document. And so we understand that it's a string, and in other contexts you might need to put the quotes around it. So now, let's talk about those flags for a moment. If I click over here on flags, you'll see that I have a couple of options, and I can click on this one, and you'll see that it added a g after the slashes. If I click on this one, it adds an i. If I click on the first one again it takes away the g, I can add m for multiline, and so on. These are flags, and they indicate different modes that we're using with our regular expression. For now, turn all of those modes off. So what do those different modes mean? Well, the standard mode is just when we have those forward slashes with our regular expression inside. Global has the g after it. And global says match this over and over and over again throughout the document. Don't just find the first match, find all the matches, look globally. So if we have a 50 page document, it's going to look through all 50 pages. If we take it away, then it's going to look for the first match, and then say, yep, I found it, and it's done. So it's the difference between find and find all. And then i is for case insensitive. Lets us know that when we're searching, it shouldn't pay attention to whether it's uppercase or lowercase letters. It's a useful convenience. But there are other ways that we can specify this which we'll learn later on. And then, m is for multiline. Can our regular expression match text that stretches across more than one line, or does it have to all be on the same line? By default, it cannot span more than one line. Multiline says that it can. I also want to take this as a moment to mention grep to you. Grep is a program that's very common on Unix-based systems, and grep actually gets its name from g/re/p. Now we just saw the global flag at the end, but it used to be that global flag was at the beginning, in the early days of regular expressions. And so this stood for global regular expression print, to print out the results. So globally search for a regular expression and print out the results. That's what this program is doing. And grep is a very common program, and you'll see this term used a lot. It's often used as a verb. Someone will say let me grep that document for you, and that's what they mean is, I'm going to take a regular expression and search that document. And now, you know where the word grep comes from. It comes from the notation convention and the mode that we use with regular expressions.
+
+----
+
+### BULLET POINT NOTES
+
+#### Notation Conventions
+  - Regular expression
+    - /abc/ 
+    - two forward slashes act as limiters to signify this as Regex
+    - Used without forward slashes most of the time
+  
+  - Text string 
+    - "abc"
+    - /abc/ compares against "abc"
+    - JS tool uses without quotes
+
+----
+
+#### Regex Flags
+
+Flags indicate different modes being used in the Regex
+
+Modes
+  - Standard: /re/
+  - Global: /re/g 
+    - finds all matches, only matches the first without it
+  - Case insensitive: /re/i 
+    - ignores case sensitivity
+  - Multiline: /re/m 
+    - Default can't span more than one line, /m allows it to span past that
+  - can be concatenated i.e. /re/gim
+
+----
+
+## 2. Characters
+
+### 2.1 Literal characters
