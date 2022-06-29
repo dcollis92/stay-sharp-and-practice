@@ -2,12 +2,10 @@
 
 ## Different practice problems
 
-#### Codefinity
-  - Ch1: Introduction to Python
-
 #### Codewars
   - 8 kyu (JS)
   - 7 kyu (JS)
+  - 6 kyu (JS)
 
 #### Datacamp
   - SQL Fundamentals
