@@ -52,7 +52,18 @@ grouped[4]     // undefined
 grouped[5]     // [50]
 */
 
-function groupIn10s() {
-  let grouped = []
+function groupIn10s(...numbers) {
+  let result = []
 
+  for (let number of numbers) {
+     let group = Math.floor(number/10)
+     if (!result[group]) result[group] = []
+     result[group].push(number)
+  }
+  return result.map(num => num.sort())
 }
+
+// grouped = main array
+// index 0 = 1st array (0-9)
+// index 1 = 2nd array (10-19) 
+// and so on and so on
