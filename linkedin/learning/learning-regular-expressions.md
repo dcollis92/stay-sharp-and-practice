@@ -157,8 +157,57 @@ We will begin learning the syntax of regular expressions by starting with the si
 
 ---- 
 
+### 2.2 Metacharacters
 
+Transcript:
+In this movie, we're going to learn about metacharacters. If it's not a literal character, then it's a metacharacter, that is, a character with special meaning. Metacharacters can be used to transform literal characters into powerful expressions. There are only a few metacharacters for us to learn. Sometimes these characters can have more than one meaning, and we're going to need to understand their context in order to know how they operate inside a particular regular expression. Most of this tutorial is going to be spent learning how to use these different metacharacters inside regular expressions. Before we dive into learning each of the metacharacters in turn, let's start by just going into our RegExer tool, and if I just start typing some of these symbols, I'll do a space, a period, then a asterisk, and then a space, and a period, and a plus sign, and then let's do another space, I'll do brackets, ABC, and then brackets, then let's do a space, and a dollar sign, space, and a question mark, a space, let's do some parentheses, ABC, and then let's do a space, followed by backslash D, and then curly braces, two, comma, three, and curly braces again. Now we're going to learn what all of these mean later. Don't worry about what they mean for now. What I want to show you is that this tool colors these different symbols in different ways, and that's very helpful when we're trying to craft a regular expression, because it helps us to look at a complex RegEx, and understand what it's doing. Often, when we work with a RegEx insider programming language, you won't get this coloring, so it's very helpful to have tools like this that can help you to build your regular expression, and then, once you have it working the way you want, you can take it and plug it into your programming language. All right, so now that we know what metacharacters are, and we've seen how the highlighting works, let's dive into learning our first metacharacter, and it's probably the most important one: the wildcard metacharacter. 
 
+----
+
+### BULLET POINT NOTES  
   
-  
+#### Metacharacters
+  - Characters with special meaning
+  - Transform literal characters into powerful expressions
+  - Only a few to learn
+  - \ . * + - {} [] ^ $ | ? () : ! =
+  - Can have more than one meaning
+
+#### regexr highlight example:
+  - /zz .* .+ [abc] $ ? (abc) \d{2,3}/
+  - regexr colors each piece to help identify each component
+
+----
+
+### 2.3 The Wildcart Metacharacter
+
+Transcript:
+Let's learn our first metacharacter, the wildcard. At some point you've probably played a card game where one or more of the cards was a wildcard. If twos are wildcards, a player holding a two in their hand can use it to represent any card they want. In other words, the two card matches anything. The wildcard metacharacter is similar. The character we use is a period or a dot by itself. It matches any character except for a new line. For example, if we had a RegEx that had H period T, which is H wildcard T, it will match hat, hot, and hit, but it would not match heat. The wildcard is only one single character. Just like if we were playing cards, a single two card can't suddenly become three aces. It's at most a stand in for a single ace. Now, the wildcard is the broadest match possible. It's also probably the most common metacharacter that's going to be used and it's also the most common mistake that people make. Let me give you an example. You might write a regular expression, nine dot zero zero thinking that it will match a nine with a decimal and two zeros. Maybe you're looking for some kind of money that's in a document. Well, it does match nine period zero zero, but it also matches nine five zero zero and nine dash zero zero. Do you see why? It matches all of them because it's a wildcard. It can represent all three of those characters. It's not a literal period and that's a very common mistake. You want to be careful of that. We're going to learn how to fix that mistake in the next movie, but it illustrates an important truth about regular expressions and that is a good regular expression should match the text that you want to target and only that text, nothing more. You don't want to be overly permissive about what you let through and what you find. You want to find the thing that you're looking for, but only that thing. You don't want to get back any false positives. Let's try some of these out. Let's begin by just taking the regular expression that's here out. Let's put in that H dot T example. You'll notice that it colors this differently to let me know that it is a special metacharacter. When I roll over it, RegExer tells me dot matches any character except line breaks. So, now down here let's try H-A-T. It matches. Let's try H-O-T, it matches. How 'about H-I-T? It matches. Let's try H-E-A-T. It doesn't match. The dot is a single character. It's very important. Each symbol, unless it's been told otherwise with other metacharacters, represents only one character in the string. Let's try doing H space T and you'll see that it does match. It doesn't matter that it's a space. The wildcard character can match anything except for a line break. Let's try something crazy. Let's put in a pound sign T. It matches that as well. If we go here and we put in a line break, you'll see that it no longer matches. This is considered a character. You can see I could highlight, but it's a character that doesn't match our period. Let's try another example. Let's put in dot A dot A dot A as our regular expression. So now we've got three wildcards followed by three literal characters, which is an A. For our text, it should match, banana. That is a letter followed by A, a letter followed by A, and a letter followed by A. It'll also match, papaya. So now, we have a regular expression that matches both banana and papaya. Let's actually put a space and we'll do it next to it. Let's switch into Global mode and that way you can see that it matches both of those. This is very important because we've written our first regular expression that can match more than one pattern in the text. We looked for common traits between them. Both of these words have some character followed by an A three different times. A lot of what we're doing in regular expressions is going to be trying to write expressions that can match those different patterns that we're looking for, that can identify the common traits for everything we want to find. Try an exercise on your own. Enter the strings, silver and then a space, sliver and then a space, and slider, and then come up to your regular expressions and write a regular expression using wildcards that will match all three of these words. 
+
+----
+
+### BULLET POINT NOTES
+
+#### Wildcard Metacharacter
+  - Metacharacter: .
+  - Meaning: Any character except newline
+  - example:
+      - /h.t/ matches "hat", "hot" and "hit", but not "heat"
+  - only one single character
+  - Broadest match possible
+  - Most common metacharacter
+  - Most common mistake
+  - example:
+    - /9.00/ matches "9.00", "9500", and "9-00"
+    
+### Tip: a good regular expression should match the text you want to target and only that text, nothing more.
+
+#### regexr example: 
+  - /.a.a.a/ matches "papaya" and "banana" 
+  - /s...er/ matches "sliver", "silver", and "slider"
+
+----
+
+### 2.4
+
 
