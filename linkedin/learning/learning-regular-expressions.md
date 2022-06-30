@@ -235,4 +235,31 @@ We need to learn how to escape metacharacters. To escape a metacharacter, we're 
   - regex: /resume.\.txt/g matches the first two
   
 ---- 
+
+### 2.5 Other special characters
+
+Transcript:
+There are a few special characters that we need to consider. First, there are spaces. Remember that a space is a character and if you want to match a space than you need to put a literal space into your regular expression. For tabs it's not so simple. A tab is indicated using \t. Notice how the backslash is escaping the t. The t doesn't have its normal meaning, it now has a special meaning. This is often referred to as a control character and it's commonly used inside strings in different programming languages. Line returns are similar, but there are three possibilities, \r, \n, and then the combination of \r\n. \r is a line return. \n is a new line. You can see how they're very similar. The thing is some operating systems us one or the other or both together. So it may depend on whether the file that you're working with was created on Windows, Mac, or Linux. Let's start with the simplest example. We just have c space a space t and then we'll make a regular expression that is just c space a space t. And we could also put dots in there, they work the same way. A space is a character. Now let's try another example. Let's make a and then \t b. Now you can see that \t gets special coloring. When I roll over it it says that it is an escaped character and it matches a tab character. So now let's try coming down here and make text that has a and I'll hit the tab key b, and you see it matches. And it represents the tab key as being this arrow here. That's just the choice that they've made in this editor. It could be denoted a lot of different ways. Sometimes it'll just be like a little tiny arrow. Now let's try another example with a text. Let's say that we have abc and let's hit return and then let's type def. Now how can we write a regular expression that would match that? Let's say c and d with something in between. So it would be \r, doesn't match, \n does match. You can see that it's called a line feed character or new line character. \r is a carriage return. So in this case this is actually working with JavaScript, that's what I'm using right here. And then it's a JavaScript engine for this, so this text string is not actually in a file. So \n, it's going to allow me to match text that's spread across multiple lines. 
+
+----
+
+### BULLET POINT NOTES
+
+#### Other Special Characters
+  - Spaces
+  - Tabs (\t)
+  - Line returns (\r, \n, \r\n)
+    - \r (line return)
+    - \n (new line)
+    - either or both together are used depending on the operating system (Windows, Mac, Linux)
+
+#### regexr example:
+  - regex: /a\tb/
+  - text: a b (tab space in between)
+  - regex: /c\nd/
+  - text: abc
+          def
+  - \n works in the JS engine
+  
+----
   
