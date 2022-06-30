@@ -230,9 +230,9 @@ We need to learn how to escape metacharacters. To escape a metacharacter, we're 
 
 #### regexr example:
   - text: his_export.txt her_export.txt
-  - regex: /h.._export\.txt/g
-  - resume1.txt resume2.txt resume3_txt.zip
-  - regex: /resume.\.txt/g matches the first two
+    - regex: /h.._export\.txt/g
+  - text: resume1.txt resume2.txt resume3_txt.zip
+    - regex: /resume.\.txt/g matches the first two
   
 ---- 
 
@@ -254,11 +254,11 @@ There are a few special characters that we need to consider. First, there are sp
     - either or both together are used depending on the operating system (Windows, Mac, Linux)
 
 #### regexr example:
-  - regex: /a\tb/
-  - text: a b (tab space in between)
-  - regex: /c\nd/
+  - text: a   b (tab space in between)
+    - regex: /a\tb/
   - text: abc
           def
+    - regex: /c\nd/
   - \n works in the JS engine
   
 ----
