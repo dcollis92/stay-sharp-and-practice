@@ -130,3 +130,35 @@ We will begin learning the syntax of regular expressions by starting with the si
 
 ### BULLET POINT NOTES
 
+#### Literal Characters
+  - /car/ matches "car"
+  - /car/ also matches the first three letters of "carnival"
+  - Similar to searching in a word processor
+  - Simplest match there is
+  - Case-sensitive (by default)
+  - add /i to make case-intensitive ("Carnival")
+  - recommend to not make case-intensitive to make your searches more exact/less-prown to error
+
+----
+
+#### Standard (non-global matching)
+  - The earliest (leftmost) match is always preferred
+  - /zz/ matches the first set of Zs in "pizzazz"
+
+#### Global matching
+  - All matches are found throughout the text.
+  - /zz/g 
+  
+#### example:
+  - regex: /cat/
+  - text: "The cow, camcel, and cat communicated.
+  - engine reads left => right until it finds a match
+  - if /g, cat and communi cat ed are both found, otherwise only the first match.
+
+---- 
+
+
+
+  
+  
+
