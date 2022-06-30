@@ -208,6 +208,31 @@ Let's learn our first metacharacter, the wildcard. At some point you've probably
 
 ----
 
-### 2.4
+### 2.4 Escaping Metacharacters
 
+Transcript:
+We need to learn how to escape metacharacters. To escape a metacharacter, we're going to use another metacharacter, the backslash. A backslash metacharacter tells the regex engine that the next character, the one that comes right after it, should be escaped. What does it mean to escape a metacharacter? It tells the regex engine, to treat the metacharacter that follows, as a literal character instead. For example, if you wanted to match a literal period, you would use a backslash plus a period. No longer means it's a wildcard, now it's the literal period. This fixes the most common of mistakes, which we saw on the last movie. With a backslash in front of the period, nine backslash period zero zero, matches nine dot zero zero, but not nine five zero zero or nine dash zero zero, and if you want a literal backslash character, well then you escape it with a backslash too. The first one is a metacharacter, and it tells it that the second character that follows it is going to be a literal backslash, not a metacharacter. Now escaping is really done only for metacharacters. Literal characters should never be escaped, because adding them, may give them meaning. You should also note, that quotation marks are not metacharacters in most cases and they don't need to be escaped. That may be different than what you do inside a programming language, where you might need to escape a quotation mark because it's inside a string. Inside a regular expression, a quotation mark is usually just a regular character. So let's try some of these. Let's come to our text and let's try the example that we saw before, nine dot zero zero, nine five zero zero, and nine dash zero zero. Let's come up here to our regular expression and with the global flag on, let's type nine period zero zero, and you'll see that it matches all of them. That's what we would expect, but now let's put that backslash in front of the period. You'll see now it only matches the first one, because it tells it, hey this is not a special character anymore, now it's a literal period, and you can see that it changes it from being a red dot, to being a sort of a pinkish dot. It's not making it a regular basic character, but it is taking away it's meaning. It says here this is an escaped character, matches a period character. So it's an escaped character, not a regular character. Alright let's try another example. Let's say that we have two files, one is called his_export.txt, and the other one is called her_export.txt. We want to write a regular expression that will match both of these file names. So I might start by just writing the literal text, his _export .txt, now I have a regular expression that matches the first one, now what do I need to change in my regular expression to make it match the second one? Well let's come over here and change his to be dot dot, now it matches both because I have wildcards, the only two characters that are different. Now notice that this is also a wildcard, it's colored the same, and sure enough if we scroll down here, you'll see that it tells us, it's a dot, matches any character except line breaks. Now this is fine, this will work in this case, but really to write a good regular expression, we want to escape that, we don't want to make that silly mistake we just saw with nine dot zero zero, we mean a literal period, then we should escape it so that we get a literal period, not a wildcard. Don't be lazy, or you may make a mistake. Let me give you an example, let's say that instead of these that I have resume1.txt and resume2.txt and also resume3 _txt .zip, so now if we come up here and we try writing a regular expression, we have resume1.txt, let's change this one into a wildcard, look at that, now I've matched not only the first two, but also part of the third one because it matches this underscore because it's a wildcard. Instead what I want to do, is put the backslash there, not matches exactly the two I mean, I want to have a wildcard followed by a literal period. There's one last thing that I want to point out to you, notice that I got these regular expression, open and close here, those indicate the beginning and end of a regular expression, now in the case here, if I type a forward slash, it knows that this is a forward slash, but it also gives me a helpful hint down here saying it's an un-escaped forward slash, this may cause issues if copying and pasting this expression into code. If my code is using that forward slash as a delimiter, to know where the regular expression starts, well then it's going to think that that's the end of the regular expression. So this is a case where we do want to escape it. Now It knows that I mean a literal forward slash, it's a little bit of a quirky one because in this code editor that I'm working in here, it doesn't need to be escaped, but if I take it somewhere else, and those delimiters that start and end the expression come into play, then suddenly it makes a very big difference. Escaping metacharacters, especially the wildcard metacharacter, is an important thing to remember, it seems simple, but it will trip you up if you're not careful. 
 
+----
+
+### BULLET POINT NOTES
+
+#### Escaping Metacharacters
+  - Metacharacter: \
+  - Meaning: Escape the next character
+  - allows use of metacharacters as literal characters
+  - Match a period wih /\./ 
+  - /9\.00/ matches "9.00", but not "9500" or "9-00"
+  - Match a backslash by escaping a backslash (\\)
+  - Only for metacharacters
+  - Literal characters should never be escaped; may give them meaning
+  - Quotation marks are not metacharacters; do not need to be escaped
+
+#### regexr example:
+  - text: his_export.txt her_export.txt
+  - regex: /h.._export\.txt/g
+  - resume1.txt resume2.txt resume3_txt.zip
+  - regex: /resume.\.txt/g matches the first two
+  
+---- 
+  
