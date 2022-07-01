@@ -21,7 +21,7 @@ console.log(charMap)
 // counting
 let max = 0
 let maxChar = ''
-
+    
 for (let char in charMap) {
   if (charMap[char] > max) {
     max = charMap[char]
