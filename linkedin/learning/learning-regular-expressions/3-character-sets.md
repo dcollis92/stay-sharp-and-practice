@@ -41,3 +41,37 @@ In this chapter, we'll learn about character sets. We will begin by learning two
 ----
 
 ### 3.2 Character Ranges
+
+Transcript:
+Now that we know about character sets, we can talk about character ranges, 'cause character ranges are going to help us to work with character sets. First, let's take a look at a couple of character sets. If we had a character set that was to match any number, we could define it inside square brackets as zero one two three four five six seven eight nine. If we wanted to match any lower case letter, then we could create a character set and put all the lower case letters A through Z inside. And if we wanted to match any upper case letter, we could do the same thing. But if we wanted to have a character set that would match any upper case letter, any lower case letter or any number, you can see we would be writing out a lot of information. We'd have a very long regular expression and it would only be targeting a single character. That's crazy. Character ranges take the pain out of this. We use the metacharacter, which is just a dash or hyphen to indicate a range of characters. This hyphen includes all characters between two characters, so it assumes that characters have some sort of order to them so that it can know what characters should go between two characters. With numbers, that's pretty easy. If you have the number zero, you have a dash and then a five, it indicates all the numbers from zero to five. With letters, we can do the same thing. You can even do it with symbols, but it's not as intuitive. Now a dash is only a metacharacter inside a character set. If it's outside those square brackets, it's a literal dash. So its context does matter. But whenever a dash is inside a character set, it becomes a metacharacter, and it indicates a range. So inside a character set, we could have zero dash nine for all of the numbers. We could have A dash Z, upper case for all the upper case characters, and A dash Z for all of the lower case characters. You can see that's a lot shorter to write. And you can combine them together. So I could have a character set that has A dash D, W dash Y, they would match the letters A, B, C, D, W, X or Y. Another word of caution that I want to give you about character ranges is that you might be tempted to write a character set that's 50 dash 99, thinking that it's going to match all the numbers from 50 to 99. But that's not how character ranges or character sets work. This is not going to find all numbers from 50 to 99. Remember, it's only going to match a single character to begin with, so it can't target two characters. The net effect of a regular expression like this is to be exactly the same as zero dash nine, and that's because the RegExr engine is going to read it as a character set that includes the number five, the range from zero to nine, and the number nine, which is essentially the same thing as saying zero to nine. You just repeated yourself unnecessarily. So be careful. It's not a number range, it's a character range. Let's try some examples. Let's leave our existing text here, but let's go up to the character set, and let's erase that and let's just put in a character set with all of the capital letters from A to Z. And you'll see it that now it flagged all of the capital letters for us N, K, O and G. Those are the ones that it matched. Five matches total. If we were instead to change it from A to M, you'll see that it only finds two. It's the character set from A to M. If we instead made it the lower case letters A to Z, you'll see it finds everything except those characters. It finds 37 matches now, all of the lower case characters. And if we were to put in A dash Z in front of it, now it's a character set of all upper case letters and all lower case letters together. It left out the punctuation and the spaces. Those still didn't match. Let's try an example using numbers. Let's select all, try to make a character set zero dash nine, and then down here let's put in a phone number. I'll just use 555-666-7890. You can see that it matched all of those numbers. Every one of the digits gets matched because it's all numbers from zero to nine. If we wanted to match the phone number with a real pattern, we could repeat this. I'm just going to copy it and let's paste it. I'll do it three times and you'll see it matched three numbers, and let's do dash and then we'll do three times and then a dash and then four more times. Now it matches the whole phone number. Notice here that the dash inside is a character range, but outside the square brackets, it's just a literal character. You could use this same technique to match zip codes or ID numbers or Social Security numbers in the exact same way. Character ranges are a useful tool when working with character sets.
+
+---- 
+
+### __BULLET POINT NOTES__
+
+#### Character Ranges
+  - Metacharacter: -
+  - Meaning: range of characters
+  - Includes all characters between two characters
+  - Only a meta character inside a character set; a literal dash otherwise
+  - [0-9]
+  - /[A-Za-z]/
+  - !!!CAUTION!!!
+    - [50-99] is not all numbers from 50 to 99
+    - It is the same as [0-9]
+    - A character set including 5, 0-9 and 9
+  
+  #### regex example:
+  - text: [Notice:] keep off of the grass
+  - text: [Notice!] keep off of the Grass
+    - regex: /[A-Z]/g (5 matches)
+    - regex: /[A-M]/g (2 matches)
+    - regex: /[a-z]/g (37 matches)
+    - regex: /[A-Za-z]/g (42 matches)
+  - text: 555-666-7890 
+    - regex: /[0-9]/g (10 matches)
+    - regex: /[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/g (1 full match ###-###-####)
+
+----
+
+### 3.3 Negative Character Sets
