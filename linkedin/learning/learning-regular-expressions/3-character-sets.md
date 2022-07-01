@@ -25,7 +25,7 @@ In this chapter, we'll learn about character sets. We will begin by learning two
   - /gr[ea]y/ matches "grey" and "gray"
   - /gr[ea]t/ does NOT match "great"
 
-#### regerx example:
+#### regexr example:
   - text: Apples, Bananas, Peaches
     - regex: /[aeiou]/ matches "e" in Apples
     - regex: /[aeiou]/g matches all lowercase vowels
@@ -61,7 +61,7 @@ Now that we know about character sets, we can talk about character ranges, 'caus
     - It is the same as [0-9]
     - A character set including 5, 0-9 and 9
   
-  #### regex example:
+  #### regexr example:
   - text: [Notice:] keep off of the grass
   - text: [Notice!] keep off of the Grass
     - regex: /[A-Z]/g (5 matches)
@@ -75,3 +75,31 @@ Now that we know about character sets, we can talk about character ranges, 'caus
 ----
 
 ### 3.3 Negative Character Sets
+
+Transcript:
+Now that we know about character sets, we're ready to learn about negative character sets. We create a negative character set using the negative meta character. Which is a carat symbol, or upper pointing arrow. Depending on your keyboard layout it maybe over the six key. It's going to negate a character set. What it means is that the character set is not any one of several characters. That's the opposite of a character set. A character set normally is saying that the partner matches any one of several characters, now we're saying it's not one of several characters. It's a list of characters that can't be there. To do that, you add that negative meta character as the first character inside the character set. It has the effect of making the entire character set into a negative set. So if we had square brackets with the negative character at the beginning as the first character, followed by A-E-I-O-U, it would match any one consonant or non-vowel. It would be saying that a single character cannot be A-E-I-O- or U. It can be anything else just not those. For example, if we had a regular expression that had S-E-E and then inside a negative character set had M and N, it would match "seek" and "sees" but it would not match "seem" or "seen". Those are characters that had been disallowed by the character set. One word of caution though, that same regular expression would not match the word "see" with nothing after it, because "see" with nothing after it doesn't have another character. The negative character set is still looking for a character. It says, "I want to find a character and that character can't be one of these two things". But it still does have to have a character. It also would match "see" period and "see" space, because those are still considered characters. So just be thoughtful when you use it. Lets try an example. Lets make string here, which is just going to be "now we know how to make negative character sets". And then lets come up here and inside a character set, lets start by just writing A-B-C-D-E. And you'll see that it picks several characters. Now that's a regular character set, lets add as the first character that carat. And put that right at the beginning, now it's a negative character set. And you can see that it switched. Now it's the opposite characters. If you take it away again, you can see it switches back, right? So it's looking for any one character which is not an A-B-C-D or E. Now we could keep going and type out F-G-H-I-J-K-L-M-N-O-P, and we could see that as I type them, characters are disappearing. The number of matches over here on the far right is going down. L-M-N-O-P-Q-R-S-T-U-V-W-X-Y and Z, so now there's nine matches and it's all of the spaces and the capital N. Because I just have the upper case letters in here. Now of course this also works with ranges, so we can just say characters A to Z and characters A dash Z. Notice here this negative applies to both sets. It applies to both the lower case letters and the upper case letters. It's negating the entire character set. So don't think that it's just negating the first one and that somehow you need to come and add a second one here. That's not the case, that's not a valid meta character. It's only when it comes in the very first character, that's its context. Lets try another example. Lets write text that says, "It seems I see the sea I seek". And then up here, lets try matching S-E-E and then inside the character set lets put a negative M or N. So you can see now it doesn't match "seem" anymore, I take away the negative. You'll see that it does, right? So we're saying don't match that one, but it does still match "see" space and it does match S-E-E-K. You'll find that sometimes it's easier to describe the character that you're looking for in your pattern. And other times it's going to be more convenient to describe characters that you want to exclude.
+
+----
+
+### __BULLET POINT NOTES__
+
+#### Negative Metacharacter
+  - Metacharacter: ^
+  - Meaning: Negate a character set
+
+#### Negative Character Sets
+  - Not any one of several characters
+  - Add ^ as the first character inside a character set
+  - /[^aeiou]/ matches any one consonant (non-vowel)
+  - /see[^mn]/ matches "seek" and "sees" but not "seem" or "seen"
+    - !!!CAUTION!!!
+      - /see[^mn]/ does not match "see"
+      - /see[^mn]/ does "see." and "see "
+
+#### regexr example:
+  - text: Now we know how to make negative character sets
+    - regex: /[abcde]/g (12 matches)
+    - regex: /[^abcde]/g (35 matches)
+    - regex: /[^a-zA-Z]/g (8 matches, only the spaces)
+  - text: it seems I see the sea I seek.
+    - regex: /see[^mn]/g (matches "see " and "seek")
