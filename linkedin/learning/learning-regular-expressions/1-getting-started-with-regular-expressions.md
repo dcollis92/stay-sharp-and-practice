@@ -1,6 +1,8 @@
 # Learning Regular Expressions
 
-## Introduction
+## __Introduction__
+
+----
 
 ### Write text matching patterns
 
@@ -9,7 +11,9 @@ Regular expressions are an essential skill for any developer or computer program
 
 ----
 
-## 1. Getting Started with Regular Expressions
+## __Ch1. Getting Started with Regular Expressions__
+
+----
 
 ### 1.1 What are regular expressions?
 
@@ -18,7 +22,7 @@ Let's begin by answering the question, "What are regular expressions?" Regular e
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### What are Regular Expressions (Regex)?
   - Symbols representing a text pattern
@@ -64,7 +68,7 @@ In this movie we'll talk about choosing a Regular Expression Engine. Each implem
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### (Most Popular) Regular Expression Engines
   - C/C++
@@ -90,7 +94,7 @@ Before we dive into learning about regular expressions, I want to just spend a m
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### Notation Conventions
   - Regular expression

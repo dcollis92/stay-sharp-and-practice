@@ -1,6 +1,8 @@
 # Learning Regular Expressions
 
-## 2. Characters
+## __Ch2. Characters__
+
+----
 
 ### 2.1 Literal characters
 
@@ -9,7 +11,7 @@ We will begin learning the syntax of regular expressions by starting with the si
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### Literal Characters
   - /car/ matches "car"
@@ -45,7 +47,7 @@ In this movie, we're going to learn about metacharacters. If it's not a literal 
 
 ----
 
-### BULLET POINT NOTES  
+### __----- BULLET POINT NOTES -----__  
   
 #### Metacharacters
   - Characters with special meaning
@@ -67,7 +69,7 @@ Let's learn our first metacharacter, the wildcard. At some point you've probably
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### Wildcard Metacharacter
   - Metacharacter: .
@@ -96,7 +98,7 @@ We need to learn how to escape metacharacters. To escape a metacharacter, we're 
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### Escaping Metacharacters
   - Metacharacter: \
@@ -124,7 +126,7 @@ There are a few special characters that we need to consider. First, there are sp
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### Other Special Characters
   - Spaces
@@ -151,7 +153,7 @@ It's time for our first challenge assignment. I'm going to give you a set of cha
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 #### 2.6 Challenge: Characters
   - open emerson_self-reliance.txt and copy into regexr editor
@@ -181,7 +183,7 @@ Hopefully you did well with the first challenge assignment. In this movie, I'll 
 
 ----
 
-### BULLET POINT NOTES
+### __----- BULLET POINT NOTES -----__
 
 A:
   - /self/g      64
