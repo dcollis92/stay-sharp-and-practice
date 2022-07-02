@@ -186,3 +186,44 @@ Most regular expression engines allow us to use shorthand character sets. They c
     - regex: /[\D\S]/ (13 matches, all)
 
 ----
+
+## 3.6 Challenge: Character Sets
+
+Transcript:
+It's time for the next challenge assignment. In this challenge, we're going to be using everything that we just learned about character sets. For this challenge assignment, we'll also be using Emerson's Self-Reliance essay, which is included in the exercise files. You can either open that up and work with it in a text editor, or you can copy and paste it into the RegEx tool, so that we can write expressions against it. Once you have that set up and ready to go, try writing a regular expression that matches both the word lives and lived. Then write a regular expression that matches virtue, but not virtues. Also notice, what is the problem in the way that we do this? We'll talk about the problem, and later we'll learn the solution to it, but just notice for now that it's not a perfect solution. There are eight numbers that are in the text. The first four are a date at the top, the second four are numbered paragraphs that have a period after each number. Write a RegEx to match the numbers on the paragraphs, the digit, and the period, but not any of the four numbers in the date. And then use a RegEx to find the 16-character word that starts with C. Pause the movie, take some time to work on these, and in the next movie I'll show you the solution that I came up with.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Challenge: Character Sets
+  - open emerson_self-reliance.txt and copy into regexr editor
+  - Apply global regular expressions to the text "Self-Reliance"
+  - Match both "lives" and "lived"
+  - Match both "virtue" but not "virtues"
+  - Match the numbers and periods on all numbered paragraphs
+  - Find the 16-character word that starts with "c"
+
+A:
+  - /live[sd]/g     7
+  - /virtue[^s]/g   14
+  - ?
+  - /c[\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w]/g (circumnavigation)      
+
+----
+
+## 3.7 Solution: Character Sets
+
+Transcript:
+(upbeat music) - [Instructor] Hopefully, you did well with this challenge assignment. If you got stuck, don't worry. I'm going to walk you through and show you the answers that I came up with. So, once we've got our self-reliance text in our text editor where we can work with it, let's start working on that first task. A regular expression that matches both lives and lived. I think a good way to start is always to write out as much of it as you know, like lives, and then modify it from there to do what we need it to do. So, this will match lives, if we also want it to match lived, then we need to use a character set. So, we can put character set, brackets around the S, so it's either the S or the D. Either one is an acceptable character, it's going to match a character that is either S or D. And if we scroll down here, you'll see there's seven matches, and they're going to occur a little bit further down in the text. Scroll down past the halfway point, there's lives, lives, lived. You see it matches both of those. All right, for our second task, we need to match virtue, but not virtues, with an S at the end. So again, let's start with something that we know, virtue, so this should match virtue, and sure enough, it popped up right there. Now, let's scroll up until we find virtues. There's virtue singular, singular, virtue still singular, little bit further up it's going to occur in the plural form. There it is, virtues. So we need something that won't match this. For this, we can use a negative character set. So, we'll say it's virtue, but not S. So we're saying we want the word virtue, but the next character should not be an S. And sure enough, virtues is not selected anymore. Let's scroll back down to where we had the word virtue, and sure enough, it still is matching virtue. But notice the problem here. We included the space. Even though we have a negative character set, it is still a character. We're not saying find virtue without an S, we're saying find virtue plus a character that is not an S. We're going to learn how to deal with this in upcoming chapters. There are a couple of different solutions you could use. But I just want to reinforce this idea to you, that we are able to exclude a character, but it is still matching against some character. For our next task, we need to work with the numbers. At the very top of the text, we have a date, and we know we can match that date with either a character set that's zero to nine, or we can use the shorthand, which is what I do most often, backslash D. So that's going to match all eight of the numbers. But we want to just zero in on the numbers that are at the end of the text that have a period after them. So we could just put a dot, right? Wrong, because a dot is a wild card character. We want to make sure we escape it to make it a literal period. Now, there's exactly four matches. We scroll down, there near the bottom of the text, we can find them. Now it's matching any digit plus a literal period. Scroll down a little further, you'll see that it captured number two as well. And then for your last task, write a regular expression to find the 16-character word that starts with the letter C. We know it's going to start with the letter C, so let's type a C, and then what do we type after that? Now, you could type a wild card character, a period, but that would match too much, right? That would match spaces as well. We want to match word characters. We could use the square brackets and put the characters that are allowed inside of it, but I'm just going to use that backslash W, so if I have backslash W, there's 1203 matches, if I add another backslash W, another one, that's now a four-character word, five-character word, six characters, seven, eight, nine, ten, 11, 12, 13, 14, 15, and one more, 16. And sure enough, it just happens to be already on the page, the word is circumnavigation. So we were able to find the 16-character word starting with C by using those character sets. While the solution works for us, we can see that it's a bit tedious to have to type all of those backslash Ws in there. In the next chapter, we're going to learn how to use repetition to avoid having to do that.
+
+### __----- BULLET POINT NOTES -----__
+
+### Solution: Character Sets
+A:
+  - /live[sd]/g     7
+  - /virtue[^s]/g   14
+  - /\d\./g         4
+  - /c\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w/g (circumnavigation)
+
+---- 
