@@ -72,8 +72,10 @@ Let's learn our first metacharacter, the wildcard. At some point you've probably
 ### __----- BULLET POINT NOTES -----__
 
 ### Wildcard Metacharacter
-  - Metacharacter: .
-  - Meaning: Any character except newline
+| Metacharacter    | Meaning                       | 
+| :--------------- |:----------------------------- |
+| .                | Any character except newline  |
+
   - example:
       - /h.t/ matches "hat", "hot" and "hit", but not "heat"
   - only one single character
@@ -101,8 +103,10 @@ We need to learn how to escape metacharacters. To escape a metacharacter, we're 
 ### __----- BULLET POINT NOTES -----__
 
 ### Escaping Metacharacters
-  - Metacharacter: \
-  - Meaning: Escape the next character
+| Metacharacter    | Meaning                       | 
+| :--------------- |:----------------------------- |
+| \                | Escape the next character     |
+
   - allows use of metacharacters as literal characters
   - Match a period wih /\./ 
   - /9\.00/ matches "9.00", but not "9500" or "9-00"

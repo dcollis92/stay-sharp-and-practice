@@ -14,8 +14,9 @@ In this chapter, we'll learn about character sets. We will begin by learning two
 ### __----- BULLET POINT NOTES -----__
 
 ### Character Set Metacharacters
-  - Metachracters: []
-  - Meanings: Begin and end a character set
+| Metacharacter    | Meaning                       |
+| :--------------- |:----------------------------- |
+| []               | Begin and end a character set |
 
 ### Define a Chracter Set
   - Any one of several characters
@@ -50,8 +51,10 @@ Now that we know about character sets, we can talk about character ranges, 'caus
 ### __----- BULLET POINT NOTES -----__
 
 ### Character Ranges
-  - Metacharacter: -
-  - Meaning: range of characters
+| Metacharacter    | Meaning             | 
+| :--------------- |:------------------- |
+| -                | range of characters |
+
   - Includes all characters between two characters
   - Only a meta character inside a character set; a literal dash otherwise
   - [0-9]
@@ -84,8 +87,9 @@ Now that we know about character sets, we're ready to learn about negative chara
 ### __----- BULLET POINT NOTES -----__
 
 ### Negative Metacharacter
-  - Metacharacter: ^
-  - Meaning: Negate a character set
+| Metacharacter    | Meaning                | 
+| :--------------- |:---------------------- |
+| ^                | Negate a character set |
 
 ### Negative Character Sets
   - Not any one of several characters
@@ -133,3 +137,52 @@ Let's take a look at how we can use metacharacters inside character sets. Most m
       - have to escape closing bracket to be able to be a literal character
   - text: file01 file-1 file\1 file_1
     - regex: /file[0\-\\_]1/
+
+----
+
+## 3.5 Shorthand Character Sets
+
+Transcript:
+Most regular expression engines allow us to use shorthand character sets. They can be very useful and save you some typing. If we use the /d in a regular expression, it means any one digit. It's the equivalent of having a character set that has the character range, 0-9 in it. /w is a word character. That would be the equivalent of all letters A-Z, both lowercase and uppercase, all numbers 0-9, and the underscore. You can see that's quite a bit less typing. And then, /s is the shorthand for Whitespace. That's not only a space, like the space between words, but it's also a tab, or any kind of line return, or line feed. There's also the negative version of each of those, which you get by just capitalizing the letter. /D, /W, /S. In the case of /D, it would be anything that's not a digit. So it's any one character, which is not a digit. You won't use those quite as frequently as the first three, but they are there to help you out. Now, these aren't in all regular expression engines, but they are in most of them. The really old regular expression tools, especially the ones you find on UNIX, might not have support for these. So if you find that you're having problems, that could be why, but most regular expression engines by now do support them. I want to give you a word of caution about working with that /w shorthand. It's equivalent is all the lowercase letters, all the uppercase letters, all the numbers, and underscore. Underscore is considered a word character. That may not be intuitive to you. When you think of a character that's in a word, you don't typically think of an underscore being part of a word. Especially not if you're looking at the words that are the text in a book. You wouldn't expect it to be included, but you have to remember that regular expressions are primarily a tool for programmers. And if you have a variable name, or a file name, an underscore is a commonly used character in those contexts. At the same time, a hyphen is not considered a word character. And if you were looking at the text of a book you probably would expect a hyphen to be included. So word character may not mean exactly what you would think. An underscore is included, and a hyphen is not. Let's look at some examples. If we have four /d's in a row, inside a RegEx, it would match a string that had four numbers in it, but not something that had four letters. If we have three /w's in a row, it would match three capital letters, three numbers, or a combination of letters and numbers, and underscores. If we have /w/s/w/w, it would match "I am", with a space in between, but not "Am I". The space would be in the wrong place to match the pattern. One regular expression that can be useful, is to include a hyphen, as well as any word character. So you can make a character set, and inside that set, you can use the shorthand, and then also add the hyphen as well. So here you can see I've got /w, for any word character, and then I've escaped the hyphen with a / to insure that it's the literal hyphen, and not part of a character range. If you were to use one of these shorthand expressions inside a negative character set, it would have the same effect, as using those negative shorthands. In this case, /D. I want to give you another note of caution here though. A negative character set, with /d and /s, is not the same as a character set that has /D and /S. The first one is asking the RegEx engine to find any one character, that is not a digit, or a space character, neither one. But the second version is saying a character which is either not a digit, or not a space character. So that's going to match a lot of things. Anything that is not either a digit or a space character, will get matched. That'll be clearer when we try some examples. So let's start by creating some text here, we'll make 1984 and t-e-x-t, and for our regular expression, we'll just type four /w's in a row, and you can see that it matches both of them. If I change it instead to be just digits, it just matches the first one. Let's try one here, we'll put in blue-green paint, and let's change this to just be a w. Now I've got global matching so it matches everything that is a word character. And you can see there are 14 of them, but did not match the dash, and it did not match the space. Those are not considered word characters. So that may be surprising to you. What you may have actually wanted it to do, was to include the hyphen. If we do that, we'll do /- inside a character set, and now it matches the word characters that we would expect. All right, let's try another example. Let's put in 1234 space 5678 a-b-c. And inside our character set, let's change it to be /d, gets all the digits. Let's do /s and it finds all the spaces. Or you could take out the d if you want to see just the spaces. Now, let's just put a negative in front of it. Now it's going to find any character which is not a digit, or a space. So in this case it's going to be the letters a, b, and c. Now though, let's try that other version, where we do /D /S. Now I'm telling it, find anything which is either not a digit, or not a space. So it goes to the number 1 and it says, 'Is this either not a digit, or not a space?' Well it is a digit, but it is not a space, so it still qualifies. It is a character which is not a space. The logic can get a little tricky when you start grouping together these negative shorthand expressions. As I said, they don't get used as often. Most often you're going to find yourself using the lowercase version instead.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Shorthand Character sets
+| Shorthand   | Meaning            | Equivalent    |
+| :---------- |:------------------ | :------------ |
+| \d          | Digit              | [0-9]         |
+| \w          | Word character     | [a-zA-z0-9_]  |
+| \s          | Whitespace         | [\t\r\n]      |
+| \D          | Not digit          | [^0-9]        |
+| \W          | Not word character | [^a-zA-z0-9_] |
+| \S          | Not whitespace     | [^\t\r\n]     |
+
+  - (Not in ALL Regex Engines, such as UNIX)
+  - !!!CAUTION!!!
+    - \w
+      - [a-zA-z0-9_]
+      - Underscore is a word character
+      - Hyphen is NOT a word character
+  - example:
+    - /\d\d\d\d/ matches "1984", but not "text"
+    - /\w\w\w/ matches "ABC", "123" and "1_A"
+    - /\w\s\w\w/ matches "I am, but not "Am I"
+    - /[\w\-]/ matches any word character or hyphen (useful)
+    - /[^\d]/ is the same as both /\D/ and /[^0-9]/
+  - !!!CAUTION!!!
+    - /[^\d\s]/ is not the same as /[\D\S]/
+      - /[^\d\s]/ = NOT digit OR space character, neither one
+      - /[\D\S]/ = EITHER NOT digit OR NOT space character
+
+### regexr example:
+  - text: blue-green paint
+    - /\w/ (14 matches, no "-" or " ")
+    - /\w\-/ (15 matches, no " ")
+  - text: 1234 5678 abc
+    - regex: /[\d\s]/ (10 matches, no "abc")
+    - regex: /[^\d\s]/ (3 matches, only "abc")
+    - regex: /[\D\S]/ (13 matches, all)
+
+----
