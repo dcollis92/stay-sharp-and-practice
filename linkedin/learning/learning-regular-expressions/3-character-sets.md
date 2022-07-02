@@ -16,28 +16,28 @@ In this chapter, we'll learn about character sets. We will begin by learning two
 ### Character Set Metacharacters
 | Metacharacter    | Meaning                       |
 | :--------------- |:----------------------------- |
-| []               | Begin and end a character set |
+| `[]`             | Begin and end a character set |
 
 ### Define a Chracter Set
   - Any one of several characters
   - But only one character
   - Order of characters in the set does not matter
-  - /[aeiou]/ matches any one vowel
-  - /gr[ea]y/ matches "grey" and "gray"
-  - /gr[ea]t/ does NOT match "great"
+  - `/[aeiou]/` matches any one vowel
+  - `/gr[ea]y/` matches "grey" and "gray"
+  - `/gr[ea]t/` does NOT match "great"
 
 ### regexr example:
   - text: Apples, Bananas, Peaches
-    - regex: /[aeiou]/ matches "e" in Apples
-    - regex: /[aeiou]/g matches all lowercase vowels
-    - regex: /[AEIOUaeiou]/g matches all vowels
-  - regex: /#[0123456789]/g
-    - text: Contestant [#1]
-    - text: Contestant [#2]
-    - text: Contestant [#9]9 (only the first 9)
-  - regex: /Notice[:!;,]/g
-    - text: [Notice:] keep off of the grass
-    - text: [Notice!] keep off of the grass
+    - regex: `/[aeiou]/` matches "e" in Apples
+    - regex: `/[aeiou]/g` matches all lowercase vowels
+    - regex: `/[AEIOUaeiou]/g` matches all vowels
+  - regex: `/#[0123456789]/g`
+    - text: Contestant `#1`
+    - text: Contestant `#2`
+    - text: Contestant `#9`9 (only the first 9)
+  - regex: `/Notice[:!;,]/g`
+    - text: `Notice:` keep off of the grass
+    - text: `Notice!` keep off of the grass
 
 ----
 
@@ -50,30 +50,30 @@ Now that we know about character sets, we can talk about character ranges, 'caus
 
 ### __----- BULLET POINT NOTES -----__
 
-### Character Ranges
 | Metacharacter    | Meaning             | 
 | :--------------- |:------------------- |
-| -                | range of characters |
+| `-`              | range of characters |
 
+### Character Ranges
   - Includes all characters between two characters
   - Only a meta character inside a character set; a literal dash otherwise
-  - [0-9]
-  - /[A-Za-z]/
+  - `[0-9]`
+  - `/[A-Za-z]/`
   - !!!CAUTION!!!
-    - [50-99] is not all numbers from 50 to 99
-    - It is the same as [0-9]
+    - `[50-99]` is not all numbers from 50 to 99
+    - It is the same as `[0-9]`
     - A character set including 5, 0-9 and 9
   
   ### regexr example:
-  - text: [Notice:] keep off of the grass
-  - text: [Notice!] keep off of the Grass
-    - regex: /[A-Z]/g (5 matches)
-    - regex: /[A-M]/g (2 matches)
-    - regex: /[a-z]/g (37 matches)
-    - regex: /[A-Za-z]/g (42 matches)
+  - text: `Notice:` keep off of the grass
+  - text: `Notice!` keep off of the Grass
+    - regex: `/[A-Z]/g` (5 matches)
+    - regex: `/[A-M]/g` (2 matches)
+    - regex: `/[a-z]/g` (37 matches)
+    - regex: `/[A-Za-z]/g` (42 matches)
   - text: 555-666-7890 
-    - regex: /[0-9]/g (10 matches)
-    - regex: /[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/g (1 full match ###-###-####)
+    - regex: `/[0-9]/g` (10 matches)
+    - regex: `/[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/g` (1 full match ###-###-####)
 
 ----
 
@@ -86,27 +86,26 @@ Now that we know about character sets, we're ready to learn about negative chara
 
 ### __----- BULLET POINT NOTES -----__
 
-### Negative Metacharacter
 | Metacharacter    | Meaning                | 
 | :--------------- |:---------------------- |
-| ^                | Negate a character set |
+| `^`              | Negate a character set |
 
 ### Negative Character Sets
   - Not any one of several characters
-  - Add ^ as the first character inside a character set
-  - /[^aeiou]/ matches any one consonant (non-vowel)
-  - /see[^mn]/ matches "seek" and "sees" but not "seem" or "seen"
+  - Add `^` as the first character inside a character set
+  - `/[^aeiou]/` matches any one consonant (non-vowel)
+  - `/see[^mn]/` matches "seek" and "sees" but not "seem" or "seen"
     - !!!CAUTION!!!
-      - /see[^mn]/ does not match "see"
-      - /see[^mn]/ does "see." and "see "
+      - `/see[^mn]/` does not match "see"
+      - `/see[^mn]/` does "see." and "see "
 
 ### regexr example:
   - text: Now we know how to make negative character sets
-    - regex: /[abcde]/g (12 matches)
-    - regex: /[^abcde]/g (35 matches)
-    - regex: /[^a-zA-Z]/g (8 matches, only the spaces)
+    - regex: `/[abcde]/g` (12 matches)
+    - regex: `/[^abcde]/g` (35 matches)
+    - regex: `/[^a-zA-Z]/g` (8 matches, only the spaces)
   - text: it seems I see the sea I seek.
-    - regex: /see[^mn]/g (matches "see " and "seek")
+    - regex: `/see[^mn]/g` (matches "see " and "seek")
 
 ----
 
@@ -122,21 +121,21 @@ Let's take a look at how we can use metacharacters inside character sets. Most m
 ### Metacharacters Inside Character Sets
   - Most metacharacter inside character sets are already escaped
   - Do not need to escape them again
-  - /h[a.]t/ matches "hat" and "h.t", but not "hot"
+  - `/h[a.]t/` matches "hat" and "h.t", but not "hot"
   - Exceptions: ] - ^ \
-  - example: /var[[(][0-9][\])]/ => var [ ( 0 - 9 ) ]
-  - example: /file[0\-\\_]1/ => file 0 - \ _ 1
-  - example: /2013[-/]10[-/]05/ => better to be safe than sorry and escape the dashes for this specific search
+  - example: `/var[[(][0-9][\])]/` => var [ ( 0 - 9 ) ]
+  - example: `/file[0\-\\_]1/` => file 0 - \ _ 1
+  - example: `/2013[-/]10[-/]05/` => better to be safe than sorry and escape the dashes for this specific search
 
 ### regexr example:
   - text: hat hot h.t
-    - regex: /h[a.]t/g
+    - regex: `/h[a.]t/g`
       - . here is a literal character
   - text: var(3) var[4]
-    - regex: /var[([][0-9][\])]/g
+    - regex: `/var[([][0-9][\])]/g`
       - have to escape closing bracket to be able to be a literal character
   - text: file01 file-1 file\1 file_1
-    - regex: /file[0\-\\_]1/
+    - regex: `/file[0\-\\_]1/`
 
 ----
 
@@ -149,41 +148,41 @@ Most regular expression engines allow us to use shorthand character sets. They c
 
 ### __----- BULLET POINT NOTES -----__
 
-### Shorthand Character sets
-| Shorthand   | Meaning            | Equivalent    |
-| :---------- |:------------------ | :------------ |
-| \d          | Digit              | [0-9]         |
-| \w          | Word character     | [a-zA-z0-9_]  |
-| \s          | Whitespace         | [\t\r\n]      |
-| \D          | Not digit          | [^0-9]        |
-| \W          | Not word character | [^a-zA-z0-9_] |
-| \S          | Not whitespace     | [^\t\r\n]     |
+| Shorthand   | Meaning            | Equivalent      |
+| :---------- |:------------------ | :-------------- |
+| `\d`        | Digit              | `[0-9]`         |
+| `\w`        | Word character     | `[a-zA-z0-9_]`  |
+| `\s`        | Whitespace         | `[\t\r\n]`      |
+| `\D`        | Not digit          | `[^0-9]`        |
+| `\W`        | Not word character | `[^a-zA-z0-9_]` |
+| `\S`        | Not whitespace     | `[^\t\r\n] `    |
 
+### Shorthand Character sets
   - (Not in ALL Regex Engines, such as UNIX)
   - !!!CAUTION!!!
-    - \w
-      - [a-zA-z0-9_]
+    - `\w`
+      - `[a-zA-z0-9_]`
       - Underscore is a word character
       - Hyphen is NOT a word character
   - example:
-    - /\d\d\d\d/ matches "1984", but not "text"
-    - /\w\w\w/ matches "ABC", "123" and "1_A"
-    - /\w\s\w\w/ matches "I am, but not "Am I"
-    - /[\w\-]/ matches any word character or hyphen (useful)
-    - /[^\d]/ is the same as both /\D/ and /[^0-9]/
+    - `/\d\d\d\d/` matches "1984", but not "text"
+    - `/\w\w\w/` matches "ABC", "123" and "1_A"
+    - `/\w\s\w\w/` matches "I am, but not "Am I"
+    - `/[\w\-]/` matches any word character or hyphen (useful)
+    - `/[^\d]/` is the same as both `/\D/` and `/[^0-9]/`
   - !!!CAUTION!!!
-    - /[^\d\s]/ is not the same as /[\D\S]/
-      - /[^\d\s]/ = NOT digit OR space character, neither one
-      - /[\D\S]/ = EITHER NOT digit OR NOT space character
+    - `/[^\d\s]/` is not the same as `/[\D\S]/`
+      - `/[^\d\s]/` = NOT digit OR space character, neither one
+      - `/[\D\S]/` = EITHER NOT digit OR NOT space character
 
 ### regexr example:
   - text: blue-green paint
-    - /\w/ (14 matches, no "-" or " ")
-    - /\w\-/ (15 matches, no " ")
+    - `/\w/` (14 matches, no "-" or " ")
+    - `/\w\-/` (15 matches, no " ")
   - text: 1234 5678 abc
-    - regex: /[\d\s]/ (10 matches, no "abc")
-    - regex: /[^\d\s]/ (3 matches, only "abc")
-    - regex: /[\D\S]/ (13 matches, all)
+    - regex: `/[\d\s]/` (10 matches, no "abc")
+    - regex: `/[^\d\s]/` (3 matches, only "abc")
+    - regex: `/[\D\S]/` (13 matches, all)
 
 ----
 
@@ -205,25 +204,25 @@ It's time for the next challenge assignment. In this challenge, we're going to b
   - Find the 16-character word that starts with "c"
 
 A:
-  - /live[sd]/g     7
-  - /virtue[^s]/g   14
+  - `/live[sd]/g`     7
+  - `/virtue[^s]/g `  14
   - ?
-  - /c[\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w]/g (circumnavigation)      
+  - `/c[\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w][\w]/g` (circumnavigation)      
 
 ----
 
 ## 3.7 Solution: Character Sets
 
 Transcript:
-(upbeat music) - [Instructor] Hopefully, you did well with this challenge assignment. If you got stuck, don't worry. I'm going to walk you through and show you the answers that I came up with. So, once we've got our self-reliance text in our text editor where we can work with it, let's start working on that first task. A regular expression that matches both lives and lived. I think a good way to start is always to write out as much of it as you know, like lives, and then modify it from there to do what we need it to do. So, this will match lives, if we also want it to match lived, then we need to use a character set. So, we can put character set, brackets around the S, so it's either the S or the D. Either one is an acceptable character, it's going to match a character that is either S or D. And if we scroll down here, you'll see there's seven matches, and they're going to occur a little bit further down in the text. Scroll down past the halfway point, there's lives, lives, lived. You see it matches both of those. All right, for our second task, we need to match virtue, but not virtues, with an S at the end. So again, let's start with something that we know, virtue, so this should match virtue, and sure enough, it popped up right there. Now, let's scroll up until we find virtues. There's virtue singular, singular, virtue still singular, little bit further up it's going to occur in the plural form. There it is, virtues. So we need something that won't match this. For this, we can use a negative character set. So, we'll say it's virtue, but not S. So we're saying we want the word virtue, but the next character should not be an S. And sure enough, virtues is not selected anymore. Let's scroll back down to where we had the word virtue, and sure enough, it still is matching virtue. But notice the problem here. We included the space. Even though we have a negative character set, it is still a character. We're not saying find virtue without an S, we're saying find virtue plus a character that is not an S. We're going to learn how to deal with this in upcoming chapters. There are a couple of different solutions you could use. But I just want to reinforce this idea to you, that we are able to exclude a character, but it is still matching against some character. For our next task, we need to work with the numbers. At the very top of the text, we have a date, and we know we can match that date with either a character set that's zero to nine, or we can use the shorthand, which is what I do most often, backslash D. So that's going to match all eight of the numbers. But we want to just zero in on the numbers that are at the end of the text that have a period after them. So we could just put a dot, right? Wrong, because a dot is a wild card character. We want to make sure we escape it to make it a literal period. Now, there's exactly four matches. We scroll down, there near the bottom of the text, we can find them. Now it's matching any digit plus a literal period. Scroll down a little further, you'll see that it captured number two as well. And then for your last task, write a regular expression to find the 16-character word that starts with the letter C. We know it's going to start with the letter C, so let's type a C, and then what do we type after that? Now, you could type a wild card character, a period, but that would match too much, right? That would match spaces as well. We want to match word characters. We could use the square brackets and put the characters that are allowed inside of it, but I'm just going to use that backslash W, so if I have backslash W, there's 1203 matches, if I add another backslash W, another one, that's now a four-character word, five-character word, six characters, seven, eight, nine, ten, 11, 12, 13, 14, 15, and one more, 16. And sure enough, it just happens to be already on the page, the word is circumnavigation. So we were able to find the 16-character word starting with C by using those character sets. While the solution works for us, we can see that it's a bit tedious to have to type all of those backslash Ws in there. In the next chapter, we're going to learn how to use repetition to avoid having to do that.
+Hopefully, you did well with this challenge assignment. If you got stuck, don't worry. I'm going to walk you through and show you the answers that I came up with. So, once we've got our self-reliance text in our text editor where we can work with it, let's start working on that first task. A regular expression that matches both lives and lived. I think a good way to start is always to write out as much of it as you know, like lives, and then modify it from there to do what we need it to do. So, this will match lives, if we also want it to match lived, then we need to use a character set. So, we can put character set, brackets around the S, so it's either the S or the D. Either one is an acceptable character, it's going to match a character that is either S or D. And if we scroll down here, you'll see there's seven matches, and they're going to occur a little bit further down in the text. Scroll down past the halfway point, there's lives, lives, lived. You see it matches both of those. All right, for our second task, we need to match virtue, but not virtues, with an S at the end. So again, let's start with something that we know, virtue, so this should match virtue, and sure enough, it popped up right there. Now, let's scroll up until we find virtues. There's virtue singular, singular, virtue still singular, little bit further up it's going to occur in the plural form. There it is, virtues. So we need something that won't match this. For this, we can use a negative character set. So, we'll say it's virtue, but not S. So we're saying we want the word virtue, but the next character should not be an S. And sure enough, virtues is not selected anymore. Let's scroll back down to where we had the word virtue, and sure enough, it still is matching virtue. But notice the problem here. We included the space. Even though we have a negative character set, it is still a character. We're not saying find virtue without an S, we're saying find virtue plus a character that is not an S. We're going to learn how to deal with this in upcoming chapters. There are a couple of different solutions you could use. But I just want to reinforce this idea to you, that we are able to exclude a character, but it is still matching against some character. For our next task, we need to work with the numbers. At the very top of the text, we have a date, and we know we can match that date with either a character set that's zero to nine, or we can use the shorthand, which is what I do most often, backslash D. So that's going to match all eight of the numbers. But we want to just zero in on the numbers that are at the end of the text that have a period after them. So we could just put a dot, right? Wrong, because a dot is a wild card character. We want to make sure we escape it to make it a literal period. Now, there's exactly four matches. We scroll down, there near the bottom of the text, we can find them. Now it's matching any digit plus a literal period. Scroll down a little further, you'll see that it captured number two as well. And then for your last task, write a regular expression to find the 16-character word that starts with the letter C. We know it's going to start with the letter C, so let's type a C, and then what do we type after that? Now, you could type a wild card character, a period, but that would match too much, right? That would match spaces as well. We want to match word characters. We could use the square brackets and put the characters that are allowed inside of it, but I'm just going to use that backslash W, so if I have backslash W, there's 1203 matches, if I add another backslash W, another one, that's now a four-character word, five-character word, six characters, seven, eight, nine, ten, 11, 12, 13, 14, 15, and one more, 16. And sure enough, it just happens to be already on the page, the word is circumnavigation. So we were able to find the 16-character word starting with C by using those character sets. While the solution works for us, we can see that it's a bit tedious to have to type all of those backslash Ws in there. In the next chapter, we're going to learn how to use repetition to avoid having to do that.
 
 ### __----- BULLET POINT NOTES -----__
 
 ### Solution: Character Sets
 A:
-  - /live[sd]/g     7
-  - /virtue[^s]/g   14
-  - /\d\./g         4
-  - /c\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w/g (circumnavigation)
+  - `/live[sd]/g`     7
+  - `/virtue[^s]/g`   14
+  - `/\d\./g`         4
+  - `/c\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w/g` (circumnavigation)
 
 ---- 

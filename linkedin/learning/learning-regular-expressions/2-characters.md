@@ -14,29 +14,29 @@ We will begin learning the syntax of regular expressions by starting with the si
 ### __----- BULLET POINT NOTES -----__
 
 ### Literal Characters
-  - /car/ matches "car"
-  - /car/ also matches the first three letters of "carnival"
+  - `/car/` matches "car"
+  - `/car/` also matches the first three letters of "carnival"
   - Similar to searching in a word processor
   - Simplest match there is
   - Case-sensitive (by default)
-  - add /i to make case-intensitive ("Carnival")
+  - add `/i` to make case-intensitive ("Carnival")
   - recommend to not make case-intensitive to make your searches more exact/less-prown to error
 
 ----
 
 ### Standard (non-global matching)
   - The earliest (leftmost) match is always preferred
-  - /zz/ matches the first set of Zs in "pizzazz"
+  - `/zz/` matches the first set of Zs in "pizzazz"
 
 ### Global matching
   - All matches are found throughout the text.
-  - /zz/g 
+  - `/zz/g `
   
 ### example:
-  - regex: /cat/
+  - regex: `/cat/`
   - text: "The cow, camcel, and cat communicated.
   - engine reads left => right until it finds a match
-  - if /g, cat and communi cat ed are both found, otherwise only the first match.
+  - if `/g`, cat and communi cat ed are both found, otherwise only the first match.
 
 ---- 
 
@@ -53,11 +53,11 @@ In this movie, we're going to learn about metacharacters. If it's not a literal 
   - Characters with special meaning
   - Transform literal characters into powerful expressions
   - Only a few to learn
-  - \ . * + - {} [] ^ $ | ? () : ! =
+  - `\ . * + - {} [] ^ $ | ? () : ! =`
   - Can have more than one meaning
 
 ### regexr highlight example:
-  - /zz .* .+ [abc] $ ? (abc) \d{2,3}/
+  - `/zz .* .+ [abc] $ ? (abc) \d{2,3}/`
   - regexr colors each piece to help identify each component
 
 ----
@@ -71,25 +71,25 @@ Let's learn our first metacharacter, the wildcard. At some point you've probably
 
 ### __----- BULLET POINT NOTES -----__
 
-### Wildcard Metacharacter
 | Metacharacter    | Meaning                       | 
 | :--------------- |:----------------------------- |
-| .                | Any character except newline  |
+| `.`              | Any character except newline  |
 
+### Wildcard Metacharacter
   - example:
-      - /h.t/ matches "hat", "hot" and "hit", but not "heat"
+      - `/h.t/` matches "hat", "hot" and "hit", but not "heat"
   - only one single character
   - Broadest match possible
   - Most common metacharacter
   - Most common mistake
   - example:
-    - /9.00/ matches "9.00", "9500", and "9-00"
+    - `/9.00/` matches "9.00", "9500", and "9-00"
     
 ### Tip: a good regular expression should match the text you want to target and only that text, nothing more.
 
 ### regexr example: 
-  - /.a.a.a/ matches "papaya" and "banana" 
-  - /s...er/ matches "sliver", "silver", and "slider"
+  - `/.a.a.a/` matches "papaya" and "banana" 
+  - `/s...er/` matches "sliver", "silver", and "slider"
 
 ----
 
@@ -102,24 +102,24 @@ We need to learn how to escape metacharacters. To escape a metacharacter, we're 
 
 ### __----- BULLET POINT NOTES -----__
 
-### Escaping Metacharacters
 | Metacharacter    | Meaning                       | 
 | :--------------- |:----------------------------- |
-| \                | Escape the next character     |
+| `\`              | Escape the next character     |
 
+### Escaping Metacharacters
   - allows use of metacharacters as literal characters
-  - Match a period wih /\./ 
-  - /9\.00/ matches "9.00", but not "9500" or "9-00"
-  - Match a backslash by escaping a backslash (\\)
+  - Match a period wih `/\./ `
+  - `/9\.00/` matches "9.00", but not "9500" or "9-00"
+  - Match a backslash by escaping a backslash (`\\`)
   - Only for metacharacters
   - Literal characters should never be escaped; may give them meaning
   - Quotation marks are not metacharacters; do not need to be escaped
 
 ### regexr example:
   - text: his_export.txt her_export.txt
-    - regex: /h.._export\.txt/g
+    - regex: `/h.._export\.txt/g`
   - text: resume1.txt resume2.txt resume3_txt.zip
-    - regex: /resume.\.txt/g matches the first two
+    - regex: `/resume.\.txt/g` matches the first two
   
 ---- 
 
@@ -134,19 +134,19 @@ There are a few special characters that we need to consider. First, there are sp
 
 ### Other Special Characters
   - Spaces
-  - Tabs (\t)
-  - Line returns (\r, \n, \r\n)
-    - \r (line return)
-    - \n (new line)
+  - Tabs (`\t)`
+  - Line returns (`\r`, `\n`, `\r\n`)
+    - `\r` (line return)
+    - `\n` (new line)
     - either or both together are used depending on the operating system (Windows, Mac, Linux)
 
 ### regexr example:
   - text: a   b (tab space in between)
-    - regex: /a\tb/
+    - regex: `/a\tb/`
   - text: abc
           def
-    - regex: /c\nd/
-  - \n works in the JS engine
+    - regex: `/c\nd/`
+  - `\n` works in the JS engine
   
 ----
   
@@ -168,14 +168,14 @@ It's time for our first challenge assignment. I'm going to give you a set of cha
   - What matches /t..ch/ besides "teach"?
 
 A:
-  - /self/gi      64
-  - /himself/gi   20
-  - /herself/gi   0
-  - /itself/gi    12
-  - /myself/gi    6
-  - /yourself/gi  7
-  - /thyself/gi   1
-  - /p..a.e/gi 
+  - `/self/gi`      64
+  - `/himself/gi`   20
+  - `/herself/gi`   0
+  - `/itself/gi`    12
+  - `/myself/gi`    6
+  - `/yourself/gi`  7
+  - `/thyself/gi`   1
+  - `/p..a.e/gi` 
   - touch, tarch, ttach...
 
 ----
@@ -190,14 +190,14 @@ Hopefully you did well with the first challenge assignment. In this movie, I'll 
 ### __----- BULLET POINT NOTES -----__
 
 A:
-  - /self/g      64
-  - /himself/g   20
-  - /herself/g   0
-  - /itself/g    12
-  - /myself/g    6
-  - /yourself/g  7
-  - /thyself/g   1
-  - /p..a.e/g 
+  - `/self/g `     64
+  - `/himself/g`   20
+  - `/herself/g`   0
+  - `/itself/g`    12
+  - `/myself/g`    6
+  - `/yourself/g`  7
+  - `/thyself/g`   1
+  - `/p..a.e/g`
   - touch, tarch, a(ttach)ed, in(to Ch)atham's, clien(t, ch)ild...
     - example shown to illustrate how to you can pick up false positives and need to be more specific in regex
 

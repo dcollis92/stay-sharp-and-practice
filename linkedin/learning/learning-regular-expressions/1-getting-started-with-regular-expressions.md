@@ -98,13 +98,13 @@ Before we dive into learning about regular expressions, I want to just spend a m
 
 #### Notation Conventions
   - Regular expression
-    - /abc/ 
+    - `/abc/` 
     - two forward slashes act as limiters to signify this as Regex
     - Used without forward slashes most of the time
   
   - Text string 
     - "abc"
-    - /abc/ compares against "abc"
+    - `/abc/` compares against "abc"
     - JS tool uses without quotes
 
 ----
@@ -114,13 +114,13 @@ Before we dive into learning about regular expressions, I want to just spend a m
 Flags indicate different modes being used in the Regex
 
 Modes
-  - Standard: /re/
-  - Global: /re/g 
+  - Standard: `/re/`
+  - Global: `/re/g` 
     - finds all matches, only matches the first without it
-  - Case insensitive: /re/i 
+  - Case insensitive: `/re/i` 
     - ignores case sensitivity
-  - Multiline: /re/m 
-    - Default can't span more than one line, /m allows it to span past that
-  - can be concatenated i.e. /re/gim
+  - Multiline: `/re/m` 
+    - Default can't span more than one line, `/m` allows it to span past that
+  - can be concatenated i.e. `/re/gim`
 
 ----
