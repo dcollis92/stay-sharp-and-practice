@@ -144,7 +144,16 @@ WHERE m.awayteam_id = 8634;
 -- Previously, we covered CASE statements with one logical test in a WHEN statement, returning outcomes based on whether that test is TRUE or FALSE. This example tests whether home or away goals were higher, and identifies them as wins for the team that had a higher score. Everything ELSE is categorized as a tie. The resulting table has one column identifying matches as one of 3 possible outcomes.
 
 -- 3. CASE WHEN ... AND then some
--- If you want to test multiple logical conditions in a CASE statement, you can use AND inside your WHEN clause. For example, let's see if each match was played, and won, by the team Chelsea. Let's see the CASE statement in this query. Each WHEN clause contains two logical tests -- the first tests if a hometead_id identifies Chelsea, AND then it tests if the home team scored higher than the away team. If both conditions are TRUE, the new column output returns the phrase "Chelsea home win!". The opposite set of conditions are included in a second when statement -- if the awayteam_id belongs to Chelsea, AND scored higher, then the output returns "Chelsea away win!". All other matches are categorized as a loss or tie. Here's the resulting table.
+SELECT date, hometeam_id, awayteam_id,
+	CASE WHEN hometeam_id = 8455 AND home_goal > away_goal
+						THEN 'Chelsea home win!'
+			 WHEN awayteam_id = 8455 AND home_goal < away_goal
+			 			THEN 'Chelsea away win!'
+			 ELSE 'Loss or tie :(' END AS outcomes
+FROM match
+WHERE hometeam_id = 8455 OR awayteam_id = 8455;
+
+-- If you want to test multiple logical conditions in a CASE statement, you can use AND inside your WHEN clause. For example, let's see if each match was played, and won, by the team Chelsea. Let's see the CASE statement in this query. Each WHEN clause contains two logical tests -- the first tests if a hometeam_id identifies Chelsea, AND then it tests if the home team scored higher than the away team. If both conditions are TRUE, the new column output returns the phrase "Chelsea home win!". The opposite set of conditions are included in a second when statement -- if the awayteam_id belongs to Chelsea, AND scored higher, then the output returns "Chelsea away win!". All other matches are categorized as a loss or tie. Here's the resulting table.
 
 -- 4. What ELSE is being excluded?
 -- When testing logical conditions, it's important to carefully consider which rows of your data are part of your ELSE clause, and if they're categorized correctly. Here's the same CASE statement from the previous slide, but the WHERE filter has been removed. Without this filter, your ELSE clause will categorize ALL matches played by anyone, who don't meet these first two conditions, as "Loss or tie :(". Here are the results of this query. A quick look at it shows that the first few matches are all categorized as "Loss or tie", but neither the hometeam_id or awayteam_id belong to Chelsea.
@@ -153,6 +162,17 @@ WHERE m.awayteam_id = 8634;
 -- The easiest way to correct for this is to ensure you add specific filters in the WHERE clause that exclude all teams where Chelsea did not play. Here, we specify this by using an OR statement in WHERE, which retrieves only results where the id 8455 is present in the hometeam_id or awayteam_id columns. The resulting table from earlier, with the team IDs in bold here, clearly specifies whether Chelsea was home or away team.
 
 -- 6. What's NULL?
+SELECT date,
+CASE WHEN date > '2015-01-01' THEN 'More Recently'
+		 WHEN date < '2012-01-01' THEN 'Older'
+		 END AS date_category
+FROM match;
+SELECT date,
+CASE WHEN date > '2015-01-01' THEN 'More Recently'
+		 WHEN date < '2012-01-01' THEN 'Older'
+		 ELSE NULL END AS date_category
+FROM match;
+
 -- It's also important to consider what your ELSE clause is doing. These two queries here are identical, except for the ELSE NULL statement specified in the second. They both return identical results -- a table with quite a few null results. But what if you want to exclude them?
 
 -- 7. What are your NULL values doing?
@@ -162,11 +182,24 @@ WHERE m.awayteam_id = 8634;
 -- To correct for this, you can treat the entire CASE statement as a column to filter by in your WHERE clause, just like any other column. In order to filter a query by a CASE statement,
 
 -- 9. Where to place your CASE?
+SELECT date, hometeam_id, awayteam_id,
+	CASE WHEN hometeam_id = 8455 AND home_goal > away_goal
+						THEN 'Chelsea home win!'
+			 WHEN awayteam_id = 8455 AND home_goal < away_goal
+			 			THEN 'Chelsea away win!' END AS outcomes
+FROM match
+WHERE	CASE WHEN hometeam_id = 8455 AND home_goal > away_goal
+						THEN 'Chelsea home win!'
+			 WHEN awayteam_id = 8455 AND home_goal < away_goal
+			 			THEN 'Chelsea away win!' END IS NOT NULL;
+
 -- you include the entire CASE statement, except its alias, in WHERE. You then specify what you want to include, or exclude. For this query, I want to keep all rows where this CASE statement IS NOT NULL. My resulting table now only includes Chelsea's home and away wins -- and I don't need to filter by their team ID anymore!
 
 -- 10. Let's practice!
 -- Okay! Let's practice some more complex CASE statements.
+
 ----------------------------------------
+
 
 ----------------------------------------
 
