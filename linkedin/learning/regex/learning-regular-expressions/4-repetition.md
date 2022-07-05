@@ -84,4 +84,50 @@ Now that we've learned about repetition metacharacters, we should also talk abou
     - regex: `/\d\. \w{}\s/g`
       - no error but no matches
   
-  
+----
+
+## 4.3 Greedy Expressions
+
+Transcript:
+In this movie, we won't introduce another meta character. Instead, we're going to talk about an important principle of how regular expressions work. Often, the regular expression engine has to make choices about what it returns as a match. This becomes especially important once we use repetition expressions, because now, our strings are of an indeterminate length and they may match several different things. We need to understand how regular expression engines make that choice by default. Let's look at some examples so we understand what the problem is. Let's say that I have a regular expression looking for some number of digits, some number of word characters, and some number of digits, and I want to apply it to a file name like this. Now, what would be returned? We know that on either side of the regular expression, it has to have some number of digits, but the number of word characters could be a lot of different things. It could decide to just return the first portion from 01 to 07, in which case, the word characters would be represented by that highlighted portion. Or it could say that it's everything from 01 to 99, and the word characters would be everything that's in between. Both of these are valid choices, so which one should the regular expression engine return to us? Before we answer that, let's look at another example. This is a frequent problem that people run into. Let's imagine that I have a comma delimited file that has people's first name, their last name, and their company name comma delimited with quotes around them. So I could write a regular expression that says look for the first name and the last name in this file by looking for the quotes and the commas with wildcard repeated characters in between to grab whatever happens to be there for the first name and the last name. It's a very reasonable approach. We're hoping that it's going to give us back the first name and the last name, but those wildcard characters match a lot of things. It's perfectly valid for the regular expression engine to decide that the first set of wildcards applies to the first name, but the second one includes everything from the last name all the way to the end of the company name. See how that still is true? Look at everything that's in that blue highlighted portion. That corresponds to the second wildcard character. Or it could do the opposite. It could say that the first wildcard character is the first name and the last name and the company is represented by the second wildcard character. To understand which one it's going to choose, we need to understand how the regular expression engine thinks about this kind of problem. Standard repetition quantifiers are greedy. When we say greedy, it means that the expression tries to match the longest possible string. That's its default. It's always going to want to get the longest possible string, so if you have a wildcard with a plus sign, it's going to try and eat up as much of the possible string with that wildcard. Of course, it's still going to have to defer to achieving an overall match. It's not going to just say that that wildcard could apply to the whole string that's in your text. It has to still match. So, for example, if you had a regular expression that had a wildcard and then a .jpg and you had an image file whose name was filename.jpg, then the plus would make the wildcard greedy and it would try to give as much as it could to it, but then it would give back the .jpg in order to make the match work, because if the whole file name was taken over by that wildcard, then you wouldn't have a match. But being greedy means that it always gives back as little as possible. Let's look at another example. Let's imagine that we had Page 266 and we were trying to match that text. So we could have a wildcard zero more times and then a number a certain number of times. And we might expect that that would match our string. Well, the wildcard repeated is going to match Page 26. It's going to match all of that portion. The only thing that's going to be matched by the numbers is the number six. Even though we might think, "Well, the zero to nine "somehow better points to the numbers, "that's what I'm trying to get to," the regular express engine doesn't think of it that way. The wildcard matches numbers just as well as anything else. One way you can think about it is that it tries to match as much as possible before giving control to the next expression part. It can be helpful to see it. Let's imagine that we have that same expression and the same string, Page 266. So when it starts matching, it says, "Okay, I have a wildcard character "repeated zero or more times." So it goes to the P and it says, "Does that match what I've got right now? "Yes, it does." So it goes to the A. "Does that match what I'm working with right now? "Yes, it does." And it keeps going. And all of these characters match that single period repeated with an asterisk. So, finally, it gets to the end of the string. The end of the string doesn't match the wildcard character anymore, but the expression's not done, so it says, "Okay, now I'm going to hand over control "to the second part of the expression." The second part of the expression, is the zero to nine repeated, well, there's no place for that. That doesn't match. But instead of just giving up and saying there's no match here, what it does is it backs up. It backs up and it gives back one of those characters to see if it gave up a character, would it match, and it does. Now it matches. So Page 26 is matched by the wildcard portion and the six is matched by the number character set portion. So now we know the answer to that question we were looking at earlier. If we had this Excel file and we were trying to get the name, the word characters would go as far as it possibly could. That's going to be greedy. And when we go to that comma delimited file, it's going to be greedy with the first one. The first one is going to try and match everything it can and then it's going to give back things until it finally is able to make an overall match. We already saw earlier in this tutorial that regular expressions are eager. They want to return a match to you as fast as they can, but they're also greedy. When you tell them that they can take more text as part of a repetition, they will take as much of that text as they possibly can and give back as little as possible.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### problem:
+  - regex: `/\d\w+\d+/`
+  - text: 01_FY_07_report_99.xls
+    - return: 01_FY_07
+    - return: 01_FY_07_report_99
+      - both are valid choices, but which one do we want returned?
+  - regex: `/".+", ".+"/`
+  - text: "Milton", "Waddams", "Initech, Inc."
+    - return: "`Milton`", "`Waddams`"
+    - return: "`Milton`", "`Waddams", "Initech, Inc.`"
+    - return: "`Milton", "Waddams`", "`Initech, Inc.`"
+      - all valid. wildcard metacharacter is valid for those additional characters.
+
+ ### Greedy Expressions:
+   - To understand which one it's going to choose, we need to understand how the regular expression engine thinks about this kind of problem.
+   - Standard repetition quantifiers are greedy
+   - Expression tries to match the longest possible string
+   - Defers to achieving overall match
+   - `/.+\.jpg/` matches "filename.jpg"
+   - The `+` is greedy, but "gives back" the ".jpg" to make the match
+   - Gives back as little as possible
+   - example:
+     - `/.*[0-9]+/` matches "Page 266"
+     - `.*` matches "Page 26"
+     - `[0-9]+` portion matches only "6"
+       - Technically, `.*` matches the entire text, but the regex is not over
+       - When it goes to the next part of the regex and finds no characters to match, it backs up to see if it can find a character match 
+   - Tries to match as much as possible before giving control to the next expression part 
+
+### Eager and Greedy
+  - Regular expression engines are eager
+    - wants to return a match as fast as it can
+  - Regular expression engines are greedy
+    - wants to take as much of the matched text it can, and give back as little as possible
+
+
