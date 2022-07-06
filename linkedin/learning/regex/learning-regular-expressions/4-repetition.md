@@ -130,4 +130,48 @@ In this movie, we won't introduce another meta character. Instead, we're going t
   - Regular expression engines are greedy
     - wants to take as much of the matched text it can, and give back as little as possible
 
+----
+
+## 4.4 Lazy Expressions
+
+Transcript:
+Now that we know about greedy expressions, and we know that that's the default behavior of the regular expression engine, now we're ready to learn about lazy expressions. Lazy expressions are the opposite, and to trigger a lazy expression, and change that default behavior, we have to use another metacharacter, and it's a question mark. Notice that we've seen this metacharacter before, but it was for a different purpose. Remember we used it for a repetition modifier to say that something should happen either zero or one time, essentially that it's optional. Well now we're going to use that same metacharacter again but its context is going to have a different meaning. So don't get them confused. Let's see some examples. Let's imagine that we have one of our repetition metacharacters, we would follow it with a question mark. So asterisk question mark, plus question mark, or our quantified expression, min and max followed by a question mark, or two question marks together. The first one there is going to be the metacharacter indicating something should be zero or one times. The second one is going to indicate that it should use the lazy behavior to do that. So that's what the question mark does, it instructs a normal quantifier to use the lazy strategy instead of the default greedy strategy when it's making choices. And that lazy strategy means matches little as possible before giving control to the next expression part. Greedy strategy tries to take as much as possible, lazy tries to give up as quick as it can. It still defers to the overall match, and it's not necessarily faster or slower, it's just that it returns different results and it really depends on how you want the expression to function. You're just modifying the instructions so that it uses a different strategy. Let's walk through an example. So in the last movie we saw we have the string page space 266. We wrote a regular expression that would try to match the content there and we saw how the greedy strategy worked. Now I've added a question mark to it. That's going to say that the repetition should be lazy. So what happens is it starts going to the string, it says okay, I have a wild card here that's repeated zero or more times, can I give up yet? Well, it actually can give up before it even gets to the P right? It could be zero times. So it goes to the next part of the expression and says, would that match? No, it wouldn't. It's looking for a number in that second portion. So then it says, all right, so what if I just took the P? Would that match? Looks to the second portion and says, no, that wouldn't match because when we go to the A, that's no good. All right, fine, so the wild card says I'll take another letter, and it takes in another letter, and it keeps going. When it finally gets to the two, it says, can I give up yet? It looks to the next part and it says, zero to nine plus, and it says, okay, good, I can finally be done. It's lazy, it quits. And then the second part of the expression takes over and that is zero to nine with a plus, this time it's the greedy strategy, so it's not going to quit, it's going to keep going until it gets the rest of the string. So the whole thing will end up matching. So now ask yourself, what if you had the same thing and both of them used the lazy strategy? So that the first one tried to give up as quick as it could and the second part tried to give up as quick as it could. What would it return? The answer is it would return just page space two because when that second part got to the number, it would give up as quickly as it could, and as soon as it has the first number, it says, okay, I'm good. Neither one is the right answer, it really depends on what you're looking to match inside the text. If we go back to the other examples we looked at in the last movie where we were working with a file name, you can see the effect that adding the question mark has on that repeated word character. In the first example it was greedy and it tried to take as much as it could. In the second example it tries to give up as quickly as it can because it's lazy. Now the same thing when we're working with a comma delimited file. The second one is probably the results that we were expecting to get. The first one was greedy and added as much as it could to those wild cards. The second one says no, as soon as you find something that could allow you to quit, that's the time to quit. So for that first wild card, as soon as it goes past the word Milton and gets to that first quote, it sees if the quote is a match with the rest of the regular expression and it gives up, and hands control over. Of course, if it had gone past that double quote, and found that the next part didn't match as it continued on, well then it would stop and it would go back to the wild card and the wild card would take on a little bit more until it got to another quote, and it could potentially hand things off again. So neither one of these is really the right or the wrong way to do it, they're not necessarily going to be faster or slower, it's just about directing the regular expression engine so that it knows when it comes to those choices, how do you want it to make a choice?
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+| Metacharacter    | Meaning                        |
+| :--------------- |:------------------------------ |
+| `?`              | Make preceding quantifier lazy |
+
+### Lazy Expressions
+  - `*?` 
+  - `+?`
+  - `{min,max}?`
+  - `??`
+  - Instructs quantifier to use a "lazy strategy" for making choices, instead of default "greedy strategy"
+  - Match as little as possible before giving control to the next expression part
+  - Still defers to overall match
+  - Not necessarily faster or slower
+  - example:
+    - regex: `/.*?[0-9]+/` 
+    - text: Page 266
+      - lazy expression asks "I have a wildcare that can repeat 0 or more times, can I give up yet?"
+      - Each match, the lazy expression checks if the next regex can take over or not
+      - "P" > "a" > "g" > "e" > "  " > 
+      - once it lands on 2, the lazy expression sees that the next expression can take over and thus be done.
+      - regex: `/.*?[0-9]+?/`
+      - text match: `Page 2`66 
+        - if both are lazy, the regex here stops after `2`. The `+` now only has to fulfill one time to meet the criteria.
+      - regex: `/\d+\w+\d+/`
+        - text match: `01_FY_07_report_99`.xls
+      - regex: `/\d+\w+?\d+/`
+        - text match: `01_FY_07`_report_99.xls 
+      - regex: `/".+", ".+"/`
+        - text match: `"Milton", "Waddams", "Intech, Inc."`
+      - regex: `/".+?", ".+?"/`
+        - text match: `"Milton", "Waddams"`, "Intech, Inc."
+
+----
 
