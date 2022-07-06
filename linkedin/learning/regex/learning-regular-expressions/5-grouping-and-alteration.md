@@ -74,3 +74,46 @@ In this movie, we're going to learn to write regular expressions that use altern
     - `/(AA|BB|CC)[]{4}/` matches "AABBAACC" and "CCCCBBBB"
   
 ----
+
+## 5.3 Efficiency When Using Alternation
+
+Transcript:
+I want us to spend a few minutes considering the role of efficiency when writing alternations in your regular expressions. We've already learned two fundamental principles of regular expressions, that they're eager and they're greedy. The first one is really the one that comes in play here, the fact that regular expressions are eager to return you a result. Let's try as an example in our Regexer tool to change the text to be peanutbutter. And then let's write an alternation up here. Inside of parentheses we'll put peanut, and then alternate it with peanutbutter. Now we can see that both of these should return a match. But the regular expression engine reads from left to right and as soon as as it finds something that satisfies it, it's eager to return that result to you. So it returns peanut even though peanutbutter would have matched more. So it's eager to return a result to us. Now of course, we know that we could have rewritten this a different way. And we could have made just the butter portion the alternating bit, and I could have put a question mark after it. Now it can be present or not present and we know that it's greedy by default so it's going to take the whole thing, peanutbutter, unless we tell it to be lazy, by adding another question mark. In which case it will then just take peanut and give up as soon as it can. So we have to give some thought to the way that the regular expression engine is going to make its choices and think about what kind of efficiency it's going to have as it's looking at a text. We already know that it doesn't have a concept of what would be a better match. It's always going to be eager to return the results unless we've told it that it can use repetition in which case it'll be greedy. Let's try another example. Let's change peanutbutter to just be the alphabet, A-B-C-D-E-F, we'll just keep typing. Okay, now I have the full alphabet written there as my text, and let's change our regular expression to be alternation between abc or def or ghi or jkl. So you can see it matched four different things here. If we take off the global flag, you'll see that it just matches the first one and that's because it's eager, it doesn't look for later matches in the string, it returns the first match that it finds. Now try this, put xyz at the front so that that's the first choice. Now it didn't go find xyz further down in the string. Notice that it started with the first part of the string and looked for something that matched there, it did not scan to the end. Remember this text might not just be a simple line, it might be a 20-page document that we're scanning. So it's not going to look through the whole document looking for that first choice. It's going to start at the beginning of the document, and see if it finds a pattern that matches one of these choices. If we watch how the regular expression engine works I think it can help you to see this. Let's imagine that I have a phrase, I think those are thin trees. And my regular expression is an alternation between four words, three, see, thee, or tree. That's what we're looking for. The way that regular expression engine approaches this problem is it starts at the first character, and it says do I have a pattern match starting with this character? So it looks and says, is I in the first choice? It's not, is I in the second choice? No, and so on. Of course when it finally gets to the T in think, now it has to stop and think about it a little bit more. The first choice starts with a T, so it says, oh this could be good, this might actually match. So it goes and checks the second character. It's an H, again, looks like this might be a good choice. Then it gets to the third character and says, oh no, this is not the first choice of these options. So what does it do then, it rewinds back to the T. It checks it against the second option, S-E-E. Well that's not a match, the first character doesn't match. So then it goes to the next one. It says, oh, the T matches, this is promising, it checks the H, still promising, it gets to the I, and it says no, that third choice isn't good either. So now it rewinds back to the T again. And it tries the fourth option, tree. The T matches, but when it gets to the R it doesn't. So now what does it do? Well, it tried all the possibilities at that third character, the T. So now it starts with the H. Does H match three? No, does H match C? No, and it keeps going, does the same thing when it gets to those. Same kind of thing the first two characters match, so it tries a few and it keeps rewinding. It does the same thing when it gets to thin. It sees some characters that are similar, and then of course finally it gets to trees. When it gets to trees it tries the first three of them, and then finally when it gets to the fourth one, is when it has its success. What I want you to see here is the little dance that it does, as it keeps rewinding back, trying the different possibilities. And I also want you to see that it doesn't say all right, let's take the first option three, and let's scan the whole text looking for the word three to see if it exists. And then let's go back and scan the whole text looking for see, to see if it exists. It doesn't work that way. It starts at a position and it checks the pattern against each of those positions in turn. Because of this, it pays big dividends, if you put the simplest or most efficient expression first. Let's imagine that I had a complex expression like this. And I'm looking for three different things. The first could be any number of word characters followed by two the four digits, and then the second is any four digits, followed by the word export, and then the third is to have the word export followed by any two digits. This alternation would be better if we rearranged it and put them in the reverse order. And when we think back to the previous example where we walked through them, we can understand why. It's very quick for it to check and see, does this character match an E? If it does let's keep looking, but if not let's discard choice number one right away. And then let's go to choice number two. Is it a digit? It has to be a digit or it won't match. If it's a digit, fine, we'll keep looking to see if we have four digits. But if not, let's discard that one very quickly. The third one though, that one takes some time. When it gets to the third one, any word character can match. There's a lot of possibilities there, and it's infinite repetition, and it's greedy. So it's going to try and just grab as many word characters as it can. And it'll go all the way till it gets to something that's not a word character, and then it'll check the rest of it. And if it doesn't work, it's going to backtrack all the way back again and try the next position, all the way through. So you can see it's the most complex because it has that greatest amount of character range, and the greatest repetition so it's not going to be the most efficient to put first. Literal text, small character sets, are always going to be more efficient, because the can be checked very quickly.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Efficiency When Using ALternations
+  - Regular expression engines are eager
+  - Regular expression engines are greedy
+  - example:
+    - regex: `/(three|see|thee|tree)/`
+    - text: `I think those are thin trees.`
+      - scanning pattern: 
+        -  Left -> Right
+        -  `"I"` checked across all OR parameters
+        -  `"t"` > `"h"` > `"i"` checked across
+        -  rewinds back to the `"t"` character each time it checks over and over until a match is or is not made
+        -  finally gets to `"trees"`, checks the first 3 options before comparing it against the 4th where it matches
+   - Put simplest (most efficient) expression first
+     - `/\w+_\d{2,4}|\d{4}_export|export_\d{2}/`
+       - 1st option: any amount of word characters followed by two to four digits
+       - 2nd option: {four digits}_export
+       - 3rd option: export_{two digits}
+     - (Reverse to put the simplest first)
+     - `/export_\d{2}|\d{4}_export|\w+_\d{2,4}/` 
+
+### regexr example:
+  - text: peanutbutter
+  - regex: `/(peanut|peanutbutter)/g`
+    - only patches `peanut` as it is eager to fulfill the first OR statement
+  - alt regex: `/(peanut(butter)?/g` 
+    - matches all
+  - alt regex: `/(peanut(butter)??/g` 
+    - matches only `peanut`
+  - text: abcdefghijklmnopqrstuvwxyz
+  - regex: `/(xyz|abc|def\ghi\jkl)/`
+    - match: `abc`defghijklmnopqrstuvwxyz
+    - scans text first to see if it meets any of the OR clauses
+
