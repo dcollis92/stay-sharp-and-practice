@@ -137,6 +137,28 @@ It's time to use your grouping and alternation skills in another challenge assig
 
 A:
   - `/(my|your|thy)self/g` 14 matches
-  - `/good( |ness|s)/g` 15 matches
+  - `/good( |ness|s)/g` 15 matches (Incorrect)
   - `gdo( |es) no( |t|thing)/g` 16 matches
 
+----
+
+## 5.5 Solution: Grouping and Alternation
+
+Transcript:
+Hopefully you were able to complete this challenge assignment. In this movie, I'll show you the solutions that I came up with. The first challenge was to use grouping and alternation to write a regex which matches myself, yourself, and thyself. So we know that it's going to have self in every case. That's going to be common to all of them. But at the beginning, we've got to have some variation. We've got myself as one possibility, but we also have yourself. So if we put parentheses around myself, we use alternation. Now we can have yourself. Now either one works, myself or yourself. And then thyself was the other possibility. So this matches all three of those. It's not going to match himself, herself, or itself. We don't need to specifically rule them out. They just won't match. My, your, and thy match. We have 14 matches. If we scroll down, we can see there's thyself. Scroll down a bit more. Here's yourself. It matches each one by using grouping and alternation. All right, so now let's write another one for good, goodness, and goods. So we want to do it without using the word good more than once. So here we have good, but what about matching goodness and goods? Well, we could use grouping to match goodness. Let's use ness. Now, goodness may be there or it may not be there. Remember, we've got that question mark that we can use to repeat this portion. Ness becomes a grouped section and we can repeat it as many times as we want. We could have goodness goodness goodness if we had something like a plus sign after it. But we're going to use zero or no times. So now it matches both good, and if we scroll a little further down, you'll see that it matches goodness, also. So what if we want to match goods? Well, we can put alternation in there, too. So here I've got both. Now it's the word good, and then optionally, either ness or s. Either one is fine. There's no problem with mixing alternation with our repetition operators. And then the final assignment was one regex which matches do or does followed by no, not, or nothing. So let's start by doing do, and then we just learned how to also make it match does, right? We can put that question mark after it so it matches both do and does, and then a space, and let's start with just a not, right? This is going to match do not or does not. We also want to make it match at the beginning of a sentence. So let's allow for the possibility that this might be a capital D and use our character set. So either lowercase or uppercase D followed by the literal character o, e or s may or may not appear, then a space, and then the literal characters not. Now, we want to not just match not. We want to match no or nothing. Well, we know we can match no by doing the same thing again, right? Making that optional. Now it matches both do not and does not. It matches do no and it matches does no. But what about nothing? Well, there are a couple of possibilities here. One is we can, in fact, put another group inside that says thing which may or may not appear. So the t may or may not appear and it may be followed by hing, which may or may not appear. If we scroll down, let's see if we can find where one of those is. These are all do nots Let's go down a little further. See if we can find do nothing. There we go, do nothing. So now it is matching. It also matches do not. So this is a perfectly good solution. I want to show you another possibility that you might have thought about that could also work. We could take this and instead use alternation. Do no and then we put in thing, right? So now it's the same as we had before in the last example where we have no and then we can use alternation, either t or thing. But notice what happens here. Do nothing did not match. Why not? Because it's eager. It's eager to return a result. It doesn't look for the best match. It looks for the first match. In this case, if we were to move the t to the end, it would prefer thing first. So the regular expression engine will first say, all right, I have no. Let's see if it's followed by thing. And if it's not, then let's see if it's followed by just a t. So both of these solutions would work. There's a third solution, and it's probably the one that I would actually pick. I'm going to take all of this and let's erase it and let's just put in simple alternation. Let's do no, not, and nothing. This is not quite as fancy, but it's much more readable. It's the one I would probably prefer. But notice we still have that same problem. Do nothing is only returning do no. It's because it's eager to match this first result. We need to just flip these around so that it's nothing, not, and no, and the longest one is always preferred first. If nothing doesn't match, then it tries not. If not doesn't match, then it tries no. Any of these solutions would work. I just think this one is a little more readable.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Solution: Grouping and Alternation
+
+A:
+  - `/(my|your|thy)self/g` 14 matches
+  - `/good(ness|s)?/g` 23 matches
+  - `/[Dd]o(es)? no(t(hing)?)?/g` 35 matches
+  - Alt: `/[Dd]o(es)? no(thing|t)?/g` 35 matches
+  - Alt: `/[Dd]o(es)? (nothing|not|no)/g`
+    - better readability, must make sure longest option is presented first since the regex engine is eager
+
+----
