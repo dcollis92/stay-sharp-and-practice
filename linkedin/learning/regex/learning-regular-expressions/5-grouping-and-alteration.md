@@ -84,7 +84,7 @@ I want us to spend a few minutes considering the role of efficiency when writing
 
 ### __----- BULLET POINT NOTES -----__
 
-### Efficiency When Using ALternations
+### Efficiency When Using Alternations
   - Regular expression engines are eager
   - Regular expression engines are greedy
   - example:
@@ -116,4 +116,27 @@ I want us to spend a few minutes considering the role of efficiency when writing
   - regex: `/(xyz|abc|def\ghi\jkl)/`
     - match: `abc`defghijklmnopqrstuvwxyz
     - scans text first to see if it meets any of the OR clauses
+
+----
+
+## 5.4 Challenge: Grouping and Alternation
+
+Transcript:
+It's time to use your grouping and alternation skills in another challenge assignment. Like our other challenge assignments, we're going to be working with the essay by Ralph Waldo Emerson, Self-Reliance. You can open that up in a text editor and work with it, or you can paste it into the regular expression tool. So we can write regular expressions at the top, which will be applied against it. The first assignment is to use grouping and alternation to match myself, yourself, and thyself, but not himself, herself, and itself. After you've done that the next one is to match good, goodness, and goods, but do it without typing the word, good, more than once. And finally, match all occurrences of either do, or does, followed by no, not, or nothing, even when it occurs at the start of a sentence. Spend some time working on these, using grouping and alternation, and in the next movie, I'll show you the solution that I came up with.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Challenge: Grouping and Alternation
+  - open emerson_self-reliance.txt and copy into regexr editor
+  - Apply global regular expressions to the text "Self-Reliance"
+  - Match: "myself", "yourself", "thyself", but not "himself", "herself", "itself"
+  - Match "good", "goodness", and "goods" without typing "good" more than once
+  - Match "do" or does" followed by "no", "not", or "nothing", even when it occurs at the start of a sentence
+
+A:
+  - `/(my|your|thy)self/g` 14 matches
+  - `/good( |ness|s)/g` 15 matches
+  - `gdo( |es) no( |t|thing)/g` 16 matches
 
