@@ -46,3 +46,31 @@ In this chapter we're going to learn about grouping and alternation. To do that 
     - most regex engines support `$#`, however some support `\#`
 
 ----
+
+### 5.2 Alternation Metacharacters
+
+Transcript:
+In this movie, we're going to learn to write regular expressions that use alternation. To do that, we'll need to learn about the alternation metacharacter, which is just an upright bar or pipe. It'll depend on your keyboard layout, but it's often located on the right side, above the Return key. You can think of this character as being an OR operator, match either the expression on the left, or match the expression on the right. Now, they are ordered, so the leftmost expression gets precedence It'll try the first one, if it's not a match, then it'll proceed to the second one. If it is a match, well then it'll go ahead and just use that match. Multiple choices can be daisy-chained together. You can use those parentheses that we use to create groups, so that you can group the alternation expressions and keep them distinct from the rest of the expression. Let's see some examples. If I have "apple" and then the alternation character, and then "orange", it'll match either "apple" or "orange". If I have "abc", alternation character, "def", alternation character, "ghi", alternation, "jkl", then it would match any one of those strings. Now, it's a good idea to use the parentheses to help keep these distinct, especially if you're looking for anything else, and, by default, I always use the parentheses with mine. Here's an example where "apple", and then either "juice" or "sauce", is not the same as having "apple juice", or "sauce". It can be handy if you think things might be spelled different ways. Let's say you're looking for a document and you're looking for every time that the word "weird" is spelled correctly, and the every time that it's spelt incorrectly. Well you could look for "w" and then alternating between either "ei" or "ie", followed by "rd". You can also use alternations with repetition. Let's say that you had an alternating expression between "AA", "BB", and "CC", repeated four times. That would match any combination, so you could have "AABBAACC" or you could have "CCCCBBBB" or eight A's in a row, eight B's in a row. Each time it repeats it's allowed to use any of those alternating choices. The first matched alternation doesn't affect future matches. Let's try some examples. I'm going to go back to Explain here because we're not doing Replace, and let's make our text be "weird or wierd" and we want to find both of those. So we could write "weird", and we know it'll match the first one. If we put parentheses around the "ei" and then we put that alternation character, we can put "ie", and it'll match both of them. It alternates. Let's try another one, let's try the apple juice, apple sauce example. Let's do "applejuice" and "applesauce". Now let's put in "applejuice" alternated with "sauce" and you'll see that it doesn't do what we would expect, right? It's "applejuice", it matches, or it matches "sauce". If we put parentheses to group it, now it finds both words, "apple" immediately followed by either "juice" or "sauce". And let's try that repetition one, just so we see how that works. Let's imagine that we have text that is "AABBCCAA" and then let's just change this to be alternating between AA, BB, and CC, repeated four times. Right, that still matches. Even if I change this to be BB, it still matches. Right, it doesn't matter what each one of the iterations through the repetition matches, every time it gets the chance to match all three of those.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+| Metacharacter   | Meaning                            |
+| :-------------- |:---------------------------------- |
+| `|`             | Match previous or next expression  |
+
+### Alternation Metacharacter
+  - `|` is an OR operator
+  - Either match expression on the left or match expression on the right
+  - Ordered, leftmost expression gets precedence
+  - Multiple choices can be daisy-chained
+  - Group alternation expressions to keep them distinct
+  - example:
+    - `/apple|orange/` matches "apple" and "orange"
+    - `/abc|def|ghi|jkl/` matches "abc", "def", "ghi", and "jkl"
+    - `/apple(juice|sauce)/` ≠ `/applejuice|sauce/`
+    - `/w(ei|ie)rd/` matches "weird" and "wierd"
+    - `/(AA|BB|CC)[]{4}/` matches "AABBAACC" and "CCCCBBBB"
+  
+----

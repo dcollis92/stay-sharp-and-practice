@@ -171,7 +171,7 @@ Most regular expression engines allow us to use shorthand character sets. They c
     - `/[\w\-]/` matches any word character or hyphen (useful)
     - `/[^\d]/` is the same as both `/\D/` and `/[^0-9]/`
   - !!!CAUTION!!!
-    - `/[^\d\s]/` is not the same as `/[\D\S]/`
+    - `/[^\d\s]/` ≠ `/[\D\S]/`
       - `/[^\d\s]/` = NOT digit OR space character, neither one
       - `/[\D\S]/` = EITHER NOT digit OR NOT space character
 
