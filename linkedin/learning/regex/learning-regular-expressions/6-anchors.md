@@ -169,3 +169,8 @@ There's another type of anchor. We can anchor regular expressions to word bounda
         - this has a word boundary on each side, plus an "s" at the end of the word, meeting all criteria
 
 ----
+
+## 6.4 Challenge: Anchors
+
+Transcript:
+We have another challenge assignment. This one is on everything we just learned about anchors and word boundaries. Just like in previous challenges, we're going to be using the essay that's in the Exercise Files, Emmerson's self-reliance. You can either open that up in a text editor and work with it, or you can copy and paste it into our RegEx tool so we can write regular expressions that we can match against it. Using what you now know about anchors, how many paragraphs start with the capital letter I? As in I read, not I as the beginning of a word, but I as a standalone letter. Then, use regular expressions with anchors to find out how many paragraphs end with a question mark. Then, match all words with exactly 15 letters, including hyphenated words. We're essentially finding all 15-letter words throughout the entire text. Spend some time working on these. In the next movie, I'll show you the solutions that I came up with.
