@@ -108,4 +108,64 @@ In this movie, we'll continue our discussion of start and end anchors by talking
     - regex: `/\A[a-z]+\Z/gm`
       - match: 0 (`\A` and `\Z` don't match line breaks)
              
-----    
+----
+
+### 6.3 Word Boundaries
+
+Transcript:
+There's another type of anchor. We can anchor regular expressions to word boundaries. That is the start or the end of a word. The way we can identify word boundaries is using the metacharacter \b, that's going to indicate a word boundary, the start or end of a word. \B is the opposite. Something that is not a word boundary. You don't use it nearly as often, but it's there if you need it. So word boundaries, like the other anchors are going to reference a position, not an actual character. A word boundary exists before the first word character in the string. After the last word character in the string. And between a word character and a non-word character. Anytime that occurs, anytime there's a shift from word character to non-word character, or from non-word character back to word character, there's another boundary. Remember, our word characters are capital A-Z, a-z, 0-9_. So anytime we change from something that's in this character set to something that's not in this character set, it's a word boundary. So for example, if we had \b, and then \W, which is word character repeated, and another \b that would find four matches in the sentence, "this is a test." This would be the first match. It has a word boundary before the T, and a word boundary after the S, because a space is not one of our word characters. So there's a boundary there. The second match would be "is". There's a word boundary on either side of it, as it shifts from the space to the eye. And as it goes from the S back to a space. And then of course "A" and test. The period is not one of our word characters, so there's also a boundary in between the T and the period. That same regular expression would match all of abc_123, but only part of top-notch. And that's that problem we saw with word characters before. Word character do include underscores and numbers, they do not include hyphens. You want to watch out for that pitfall. You also don't want to mistake word boundaries for spaces. If we have the word New York, there's a space in the middle. And to us visually, the space is the boundary between those two words. But that's not how it works in regular expressions. There's a boundary after the W before the space, and then a second boundary after the space before the Y. So you can't simply substitute in a word boundary in place of a space. You need to account for that space. That space is a character and it has a word boundary on either side of it. If you use the capital B for something that's not a word boundary, and you have the same sentence, "this is a test." It would find two matches. HI, those are two word characters that do not have a word boundary next to them. And E and S those are also word characters that do not have a boundary on either side of them. All the other word characters in this sentence, have word boundaries either before or after them. Let's try and example. I've pasted in a bit of Shakespeare text in here that we can work with. Let's find the letter "E." Now, there's a bunch of Es that it finds here. But what if we want to find "E" only when it's the end of the word? So how can we do that? we could think, well, let's put a space after it. That'll find the Es that are after the end of the word, right? But look at the word temperate, the "E" is at the end of the word, but there's punctuation at the end, it's not a space. So a better way to do this, is instead to say that we're looking for something that has a word boundary after it. Now we have all of the Es that in the words. As soon as the word is done, it's indicated. We can do the same thing if we're looking for the letter A. We can say we want all letter A's that are standalone letter A, right? Doesn't matter whether it's space or punctuation or question mark or whatever comes after it. We want "A" with word boundaries on either side of it. Not all of the "A" that are here. Word boundaries are a helpful way for us to narrow our regular expressions and to anchor them the same way that we anchored the start and end. They can also make your regular expressions more efficient or faster. Let's imagine that we have a regular expression that is looking for a word that ends in "S". So we've got a shorthand for a word character one or more times, and then an "S" after it. And the sentence we're going to be using is "we picked apples." Let's put the word boundaries here and see how much more efficient it's going to be. It's going to start out by looking at the "W". It's going to say is the "W" does it have a word boundary? Well, yes, it does. We have a word boundary. Is the "W" one of our word characters. Yes, it is. So it matches the first part of this regular expression. And the word character can be one or more times, we've satisfied one time let's see if we can go to the next character and still match. Again, another word character matches fine. It goes to the next character and it's not a word character, and it's not an "S." So it doesn't match our regular expression. So it has to rewind back to the HX again, is that word boundary? No, it's not. It goes the next character, is this word boundary? Why yes, it is? But it's not a word character. So it's eliminated. It goes to the next one. Is this a word boundary? Yes, it is. It's a word character? Yes, it is. And it moves along, picking up word characters, till it gets to the end and discovers that there's no "S" at the end, so it doesn't match. Now, here's the big thing. Pay attention here, because this is where the efficiency really kicks in. It's going to rewind back to the "I" to see if it can make a pattern here. If we didn't have that word boundary at the beginning of our expression, then we will be looking for any word character, and "I" is a word character. So it would try "I" to see if it worked. Then it would try "C" to see if that worked. And so on. Each one of those would be tried in turn, but instead because we have that word boundary there, it can immediately be eliminated as a candidate. "I", not going to work, "C", not going to work, "K", and so on. It's going to move on each one of those and not have to backtrack each and every time. And then of course, it finally gets to the word apples, at which point it figures out that it's a word boundary. Then it moves along the string until it finally finds the "S". It also has a word boundary at the end, so it matches our expression. So by adding the word character, we narrow down the choices that have to be tried, we've become more specific about what we're looking for, and that enables the regular expression engine to be more efficient.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+| Metacharacter   | Meaning                           |
+| :-------------- |:--------------------------------- |
+| `\b`            | Word boundary (start/end of word) |
+| `\B`            | Not a word boundary               |
+
+### Word Boundaries
+  - Reference a position, not an actual character
+  - Before the first word character in the string
+  - After the last word character in the string
+  - Between a word character and a non-word character
+  - Word characters: `[A-Za-z0-9_]`
+  - example:
+    - `/\b\w+\b/` finds four matches in "This is a test."
+    - `/\b\w+\b/` matches all of `"abc_123"` but only part of `"top`-notch" (hyphen is not a word character)
+    - `/\bNew\bYork\b/` does not match "New York"
+    - `/\bNew\b \bYork\b/` does match "New York"
+    - `/\B\w+\B/` finds two matches in "T`hi`s is a t`es`t"
+
+### regexr example:
+  - text: Shall I compare thee to a summer's day?
+          Thou art more lovely and more temperate:
+          Rough winds do shake the darling buds of May,
+          And summer's lease hath all too short a date.
+
+  - regex: `/e/g` 
+    - matches: 16, but now we want to specifically match the `e`'s at the end of words
+  - regex: `/e /g` 
+    - matches: 7, though `date` `temperate` did not match
+  - regex: `/e\b/g` 
+    - matches: 9
+
+### example:
+  - regex: `/\b\w+s\b/`
+  - text: We picked apples.
+  - matching process:
+    - Left -> Right
+    - "We "
+      - "W" - has a word boundary, is a word character
+      - "e" - \w+ is 1 or more characters, so this still fits the requirements
+      - " " - space is not a word character AND is not an "s", so the regex engine rewinds back to the e.
+      - "e" - not a word boundary
+      - "_" - word boundary but not a character
+    - "picked "
+      - "p" > "i" > "c" > "k" > "e" > "d"
+      - fits the requirement until the " " which is not an s or word character
+    - "apples"
+      - "a" > "p" > "p" > "l" > "e" > "s"
+        - this has a word boundary on each side, plus an "s" at the end of the word, meeting all criteria
+
+----
