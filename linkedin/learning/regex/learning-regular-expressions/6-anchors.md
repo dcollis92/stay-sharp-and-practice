@@ -174,3 +174,32 @@ There's another type of anchor. We can anchor regular expressions to word bounda
 
 Transcript:
 We have another challenge assignment. This one is on everything we just learned about anchors and word boundaries. Just like in previous challenges, we're going to be using the essay that's in the Exercise Files, Emmerson's self-reliance. You can either open that up in a text editor and work with it, or you can copy and paste it into our RegEx tool so we can write regular expressions that we can match against it. Using what you now know about anchors, how many paragraphs start with the capital letter I? As in I read, not I as the beginning of a word, but I as a standalone letter. Then, use regular expressions with anchors to find out how many paragraphs end with a question mark. Then, match all words with exactly 15 letters, including hyphenated words. We're essentially finding all 15-letter words throughout the entire text. Spend some time working on these. In the next movie, I'll show you the solutions that I came up with.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Challenge: Anchors
+  - open emerson_self-reliance.txt and copy into regexr editor
+  - Apply global regular expressions to the text "Self-Reliance"
+  - How many paragraphs start with "I" as in "I read"?
+  - How many paragraphs end with a question mark?
+  - Match all words with exactly 15 letters, including hyphenated words
+
+----
+
+### Solution: Anchors
+
+Transcript:
+(upbeat music) - [Narrator] In this movie, I'll walk you through my solution to the anchors challenge assignment. Our first challenge was to see how many paragraphs start with the capital letter I all by itself as a single word, as in I read. You see it right here at the very beginning. I space read. We want to find that I, so we could just put in a capital letter I, and that would certainly find it, but if there's any other time where we have a capital letter I, it's also going to find it. When we want to find it is when it's at the beginning of the paragraph, and we can use our anchors to do that. So I'm going to put the opening anchor at the beginning. Now it's not finding it. Do you remember why? It's because we're just using global mode. We're not using the multiline mode, so I also need to switch it to multiline mode, and then it says there are nine matches that it's finding. Now if I had the word imagination as the first word, and it was capitalized, it would also be finding it, so I need to just find it when it's a stand alone word. We could put a space after it. That certainly finds it, but it also finds that extra space. You can see that. It highlighted two characters down here, and we really want it to just match one. This is where a zero width character, like a word boundary, is useful. Now we're saying find the letter I at the beginning of any line, followed immediately by a word boundary. Now we use the caret to indicate the beginning of the line. I just want to show you that if we had used the capital A, it would not work. Now I'm using PCRE for my reg extension. JavaScript won't recognize the A at all, so it's definitely not going to work there, but in PCRE it doesn't work also because the backslash A is the beginning of the string, so if this first character here had been an I, and it had a word boundary after it, well then it's going to match, right? But that's not the case, so let's erase that. So we want to make sure that we're using that caret. For our second task, we want to know how many paragraphs end with a question mark, so we know we're going to want to leave it in multiline mode. Same thing is true as before. We know that the end of each line is going to be matched by that dollar sign, so it's going to say that it's the end of a line, and we want it to match a question mark, so we type in a question mark. You see it's telling us there's an error here. The error is because this question mark is a quantifier. It's not being seen as a literal question mark. We want to put a backslash in front of it to escape it. Now it's a literal question mark. And it says that there's one match. If you scroll down, you could find it. I can also come over here to my text, and very quickly just open up something, look for question mark, dollar sign. It'll find one when I click find. It takes me right to it. So it's right at the end of this paragraph. And once again, if we were to use the PCRE engine, and use backslash Z, it would not match, because it's not the end of the string. It is just the end of the line. And then for our final task, find all words which have exactly 15 letters, including hyphenated words. Well, we know how to find words with 15 letters in them. We can do quantified repetition on a word character, right? So that's going to find 15 matches, but it could also find 16 character words, or 17 character words. It's just saying any 15 characters all in a row, but it doesn't say that there's any kind of boundary on either side of those. You could use a space on either side, but then that would include the space in the match. What we want instead is to use those word boundaries, so we've got 15 characters with a word boundary on either side. It says there's only one match, but remember we also want to include hyphenated words, and this word character doesn't include hyphenated words. It includes underscores, but not hyphens. So let's put a set of brackets around it, so we have a character set, and let's also add backslash dash, so we get a literal dash, and now you see we have three matches that are found. If we take that expression and just copy it, I'll paste it over here, it'll take us straight to those words. We can see what they are. Classifications, million-colored, and thousand-cloven, so it's matching all of those including the hyphens.
+
+----
+
+### __----- BULLET POINT NOTES -----__
+
+### Solution: Anchors
+  - `/^I\b/gm` (4 matches, global and multi-line mode turned on)
+  - `/\?$/gm` (1 match)
+  - `/\b[\w\-]{15}\b/gm` (3 matches)
+
+----
