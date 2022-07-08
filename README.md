@@ -17,7 +17,7 @@
   - Cook Systems
     - Count Binary Substrings (JS)
     - Employee Profile (Java)
-    - Programming Contenst (JS)
+    - Programming Contest (JS)
     - REST API: Capital City (JS)
     - REST-basics (Multiple Choice)
 
