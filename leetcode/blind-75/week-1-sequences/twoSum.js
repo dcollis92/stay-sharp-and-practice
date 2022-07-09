@@ -34,5 +34,18 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 */
 
 var twoSum = function(nums, target) {
-  
+  // initialize an empty object
+  const indices = {};
+
+  nums.forEach((item, idx) => {
+    indices[item] = idx
+  });
+
+  for (let idx = 0; idx < nums.length; idx++) {
+    const compliment = target - nums[idx];
+   
+    if (indices[compliment] !== undefined && indices[compliment] !== idx) {
+      return [idx, indices[compliment]]
+    }
+  }
 };
