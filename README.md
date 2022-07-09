@@ -31,5 +31,13 @@
   - Frontend Assessment (JS/HTML/CSS)
   - Fullstack Assessment (JS/HTML/CSS)
 
+### Leetcode
+  - Blind 75
+    - Week 1 - Sequences
+    - Week 2 - Data Structures
+    - Week 3 - Non-linear data structures
+    - Week 4 - More data structures
+    - Week 5 - Dynamic programming
+
 #### LinkedIn
   - LI Learning: Learning Regular Expressions (Regex)
