@@ -16,14 +16,21 @@ Example 3:
   Output: true
 
 Constraints:
-  1 <= nums.length <= 105
-  -109 <= nums[i] <= 109
+  1 <= nums.length <= 10**5
+  -10**9 <= nums[i] <= 10**9
 */
 
 /**
  * @param {number[]} nums
  * @return {boolean}
  */
- var containsDuplicate = function(nums) {
-    
-};
+
+var containsDuplicate = function(nums) {
+  // create a Set from the nums array
+  // the set will automatically remove any duplicated values
+  // if new set length !== nums length
+  // then a duplicate value was detected and removed
+  return (new Set(nums)).size !== nums.length;
+}
+
+console.log(containsDuplicate([1,1,2,3,4]))
