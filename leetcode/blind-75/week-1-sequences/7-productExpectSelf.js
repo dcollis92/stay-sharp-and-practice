@@ -28,6 +28,32 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
  * @param {number[]} nums
  * @return {number[]}
  */
- var productExceptSelf = function(nums) {
-    
+var productExceptSelf = function(nums) {
+  let len = nums.length
+  let result = Array(len) // [ , , , ]
+  let left = Array(len + 1)
+  let right = Array(len + 1)
+
+  left[0] = 1
+  right[0] = 1
+
+  for (let i = 0; i < len; i++) {
+    left[i + 1] = left[i] * nums[i]
+    // console.log('left: ' + left)
+  }
+
+  for (let j = 0; j < len; j++) {
+    right[j + 1] = right[j] * nums[len - 1 - j]
+    // console.log('right: ' + right)
+  }
+
+  for (let k = 0; k < len; k++) {
+    result[k] = left[k] * right[len - k - 1]
+    // console.log('result: ' + result)
+  }
+
+  return result
+
 };
+
+// console.log(productExceptSelf([1, 2, 3, 4]))

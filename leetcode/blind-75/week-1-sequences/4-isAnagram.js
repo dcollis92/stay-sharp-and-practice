@@ -55,3 +55,30 @@ const isAnagram2 = function(s, t) {
 };
 
 // ^^^ similar answer, 10-15ms faster run time ¯\_(ツ)_/¯ 
+
+// Tim's solution
+var isAnagram3 = function(s, t) {
+  const aCharMap = buildCharMap(s)
+  const bCharMap = buildCharMap(t)
+  
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+    return false
+  }
+
+  for (let char in aCharMap) {
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false
+    }
+  }
+
+  return true
+}
+
+function buildCharMap (str) {
+  const charMap = {}
+
+  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1
+  }
+  return charMap
+}
