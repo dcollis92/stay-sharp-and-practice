@@ -36,16 +36,19 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 */
 
 var twoSum = function(nums, target) {
-  // initialize an empty object
+  // initialize an empty object to assign a key value pair for the nums array
   const indices = {};
 
   nums.forEach((item, idx) => {
+    // design the num and index for each value
     indices[item] = idx
   });
 
   for (let idx = 0; idx < nums.length; idx++) {
+    // to find out which nums added will equal the target, you can subtract the target by each num until it equals a complemented value available
     const compliment = target - nums[idx];
    
+    // check to make sure the compliment is not undefined and not the index we're checking it against 
     if (indices[compliment] !== undefined && indices[compliment] !== idx) {
       return [idx, indices[compliment]]
     }
