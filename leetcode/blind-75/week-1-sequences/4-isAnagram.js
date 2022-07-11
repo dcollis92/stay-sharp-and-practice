@@ -26,6 +26,32 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
  * @param {string} t
  * @return {boolean}
  */
- var isAnagram = function(s, t) {
-    
+
+var isAnagram = function(s, t) {
+  // split each string into an array and sort a->z
+  let sArr = s.split('').sort()
+  let tArr = t.split('').sort()
+  // console.log(sArr)
+  // console.log(tArr)
+
+  // convert back to a string to compare strict equality
+  if (sArr.toString() === tArr.toString()) {
+    return true
+  } else {
+    return false
+  }
 };
+
+// console.log(isAnagram('catt', 'tatc'))
+
+// ^^^ low run time, needs to be faster
+
+const isAnagram2 = function(s, t) {
+  if (s.split('').sort().join('') === t.split('').sort().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// ^^^ similar answer, 10-15ms faster run time ¯\_(ツ)_/¯ 
