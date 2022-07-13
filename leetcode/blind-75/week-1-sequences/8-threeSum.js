@@ -27,13 +27,53 @@ Example 3:
 
 Constraints:
   3 <= nums.length <= 3000
-  -105 <= nums[i] <= 10**5
+  -10**5 <= nums[i] <= 10**5
 */
 
 /**
  * @param {number[]} nums
  * @return {number[][]}
  */
- var threeSum = function(nums) {
-    
+var threeSum = function(nums) {
+  // sort nums
+  nums.sort((a, b) => a - b)
+  // initialize empty object and empty result array
+  const object = {}
+  let result = []
+
+  // iterate over nums length -2, due to l and r edges
+  // left = j && right = k for conventions
+  for (let i = 0; i < nums.length - 2; i++) {
+    let target = -nums[i]        
+    let left = i + 1             
+    let right = nums.length - 1    
+    // [-1,0,1,2,-1,-4]
+    // [ i            ]
+    // [   l         r]  
+    while (left < right) {
+      let curr = nums [left] + nums[right]
+      if (curr > target) {
+        right--
+        // [-1,0,1,2,-1,-4]
+        // [ i            ]
+        // [   l       <-r] 
+      } else if (curr < target) {
+        left++
+        // [-1,0,1,2,-1,-4]
+        // [ i            ]
+        // [   l->       r] 
+      } else {
+        let arr = [nums[i], nums[left], nums[right]]
+        if (!object[arr]) {
+          object[arr] = 1
+          result.push(arr)
+        }
+        left++
+        right--
+      }
+    }
+  }
+  return result
 };
+
+console.log(threeSum([-1,0,1,2,-1,-4]))

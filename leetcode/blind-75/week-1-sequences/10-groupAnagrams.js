@@ -29,5 +29,13 @@ Constraints:
  * @return {string[][]}
  */
  var groupAnagrams = function(strs) {
-    
+    let result = []
+    let strsCopy = [...strs]
+
+    for (let i = 0; i < strs.length; i++) {
+       result.push(strs[i].split('').sort().join(''))
+    }
+    return result
 };
+
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
