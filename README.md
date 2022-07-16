@@ -32,7 +32,7 @@
   - Fullstack Assessment (JS/HTML/CSS)
 
 ### Leetcode
-  - Blind 75
+- [Blind 75](https://www.techinterviewhandbook.org/best-practice-questions/)
     - Week 1 - Sequences
     - Week 2 - Data Structures
     - Week 3 - Non-linear data structures
