@@ -2,18 +2,18 @@
 
 ## Different practice problems
 
-#### Codewars
+### Codewars
   - 8 kyu (JS)
   - 7 kyu (JS)
   - 6 kyu (JS)
 
-#### Datacamp
+### Datacamp
   - SQL Fundamentals
     - Ch1: Introduction to SQL
     - Ch2: Joining Data in SQL
     - Ch3: Intermediate SQL
 
-#### Hackerrank
+### Hackerrank
   - Cook Systems
     - Count Binary Substrings (JS)
     - Employee Profile (Java)
@@ -26,7 +26,7 @@
     - Multiple Choice (Python)
     - Flight Wizard 2 (SQL)
   
-#### Hired.com
+### Hired.com
   - Programming Skills (JS)
   - Frontend Assessment (JS/HTML/CSS)
   - Fullstack Assessment (JS/HTML/CSS)
@@ -39,5 +39,5 @@
     - Week 4 - More data structures
     - Week 5 - Dynamic programming
 
-#### LinkedIn
+### LinkedIn
   - LI Learning: Learning Regular Expressions (Regex)
