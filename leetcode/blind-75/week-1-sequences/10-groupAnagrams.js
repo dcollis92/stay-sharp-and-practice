@@ -55,4 +55,5 @@ var groupAnagrams = function(strs) {
   return result
 };
 
+
 console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
