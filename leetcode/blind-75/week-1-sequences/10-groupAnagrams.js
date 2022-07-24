@@ -28,32 +28,31 @@ Constraints:
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
-  // hash to keep track of letters 
+var groupAnagrams = function (strs) {
+  // hash to keep track of letters
   // and their corresponding words
-  const wordMap = {}
+  const wordMap = {};
   // empty result array for our groupins
-  let result = []
+  let result = [];
 
   // iterate through strs
   for (let word of strs) {
     // split letters
-    let letters = word.split('').sort().join('')
+    let letters = word.split("").sort().join("");
     // check hash for letters
     // if !wordMap[letters], add an empty array
-    wordMap[letters] = wordMap[letters] || []
+    wordMap[letters] = wordMap[letters] || [];
     // push word into the array
-    wordMap[letters].push(word)
+    wordMap[letters].push(word);
   }
 
-  // iterate over object 
+  // iterate over object
   for (let value in wordMap) {
-    // 
-    result.push(wordMap[value])
+    //
+    result.push(wordMap[value]);
   }
 
-  return result
+  return result;
 };
 
-
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
