@@ -24,10 +24,9 @@ const maxDepth = (tree) => {
   return !tree ? 0 : 1 + Math.max(maxDepth(tree.left), maxDepth(tree.right));
 };
 
-
 /*
 Fix broken code
-*/ 
+*/
 
 const solution = (messages) => {
   class Emitter {
@@ -41,7 +40,7 @@ const solution = (messages) => {
     }
 
     trigger() {
-      this.messages.forEach(message => this.event(message));
+      this.messages.forEach((message) => this.event(message));
     }
   }
 
@@ -58,8 +57,8 @@ const solution = (messages) => {
   const myEmitter = new Emitter(messages);
   const myReceiver = new Receiver();
 
-//   myEmitter was not binded correctly to the Receiver
-//   myEmitter.setEvent(myReceiver.ping); old code
+  //   myEmitter was not binded correctly to the Receiver
+  //   myEmitter.setEvent(myReceiver.ping); old code
   myEmitter.setEvent(myReceiver.ping.bind(myReceiver)); // new code
   myEmitter.trigger();
 
@@ -83,29 +82,28 @@ The number 10 occurs only once while every other element repeats.
 
 */
 
-
 const leastFreqNum = (numbers) => {
   // create a map object to sort through the key value pairs
-  let map = {}
+  let map = {};
   // use a for of loop to iterate over each number
   for (let num of numbers) {
-      map[num] = (map[num] || 0) +1
+    map[num] = (map[num] || 0) + 1;
   }
   // create an array and sort the array
-  const array = Object.keys(map).sort((a, b) => map[a]-map[b])
+  const array = Object.keys(map).sort((a, b) => map[a] - map[b]);
   // create a minimum value, the least represented integer
-  let min = map[array[0]]
+  let min = map[array[0]];
   // create an empty array
-  let result = []
+  let result = [];
   // for of loop to iterate over the prior array
   for (let num of array) {
-      // if the number is greater than 1 (index 0), break
-      if (map[num] > min) break
-      // otherwise push the value into the result array
-      result.push(Number(num))
+    // if the number is greater than 1 (index 0), break
+    if (map[num] > min) break;
+    // otherwise push the value into the result array
+    result.push(Number(num));
   }
   // sort the result array in ASC order if there are multiple answers
-  return result.sort((a ,b) => a-b)
+  return result.sort((a, b) => a - b);
 };
 
 // PASSED ALL TEST CASES
