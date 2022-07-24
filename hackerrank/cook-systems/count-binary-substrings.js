@@ -28,22 +28,22 @@ Constraints
 
 function getSubstringCount(s) {
   // initialize varliables
-  let currVal = 0
-  let prevVal = 0
-  // current count 
-  let count = 0
+  let currVal = 0;
+  let prevVal = 0;
+  // current count
+  let count = 0;
 
   for (let i = 0; i < s.length; i++) {
     // if current idx = the prior index
-    if (s[i] === s[i-1]) {
-      currVal++
+    if (s[i] === s[i - 1]) {
+      currVal++;
     } else {
       count += Math.min(currVal, prevVal);
       // update prev value
       prevVal = currVal;
       // update curr value to 1
-      currVal = 1
+      currVal = 1;
     }
   }
-  return count + Math.min(currVal, prevVal)
+  return count + Math.min(currVal, prevVal);
 }
