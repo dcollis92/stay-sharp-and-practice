@@ -14,26 +14,26 @@ Explanation:
 const solution1 = (n) => {
   // define empty variables
   let max = 0;
-  let currStr = '';
+  let currStr = "";
   let char;
   let pos;
   // convert the number to a string
-  let nString = n.toString()
+  let nString = n.toString();
 
   // for loop to interate over the string
   for (let idx = 0; idx < nString.length; idx++) {
-    // assign the character and position 
-    char = nString.charAt(idx)
+    // assign the character and position
+    char = nString.charAt(idx);
     pos = currStr.indexOf(char);
     if (pos !== -1) {
-      currStr = currStr.substring(pos + 1)
+      currStr = currStr.substring(pos + 1);
     }
     currStr += char;
     // reassign max to Math.max (chosing between 0 and the current string length)
-    max = Math.max(max, currStr.length)
+    max = Math.max(max, currStr.length);
   }
-  return max
-}
+  return max;
+};
 
 // PASSED ALL TEST CASES
 
@@ -57,31 +57,30 @@ const solution2 = (array) => {
       if (left[i] < right[j]) {
         // console.log('if block')
         // merged.push(right[i++]);
-        merged.push(left[i++])
+        merged.push(left[i++]);
       } else {
         // console.log('else block')
-        merged.push(right[j++])
+        merged.push(right[j++]);
         // merged.push(left[j++]);
       }
     }
-    return [...merged, ...left.slice(i), ...right.slice(j)]
+    return [...merged, ...left.slice(i), ...right.slice(j)];
   }
 
   function mergeSort(array) {
-    if (array.length <= 1) return array
+    if (array.length <= 1) return array;
 
     let middleIndex = Math.floor(array.length / 2);
 
     let left = array.slice(0, middleIndex);
     let right = array.slice(middleIndex, array.length);
     // console.log('Merge Sort:', 'Left:', left, 'Right:', right)
-    return merge(mergeSort(left), mergeSort(right))
+    return merge(mergeSort(left), mergeSort(right));
   }
-  return mergeSort(array)
+  return mergeSort(array);
 };
 
-
-console.log(solution2([9, 6, 7, 4, 7, 2, 2, 4, 2, 3, 7, 7]))
+console.log(solution2([9, 6, 7, 4, 7, 2, 2, 4, 2, 3, 7, 7]));
 // Expected Output: [2, 2, 2, 3, 4, 4, 6, 7, 7, 7, 7, 9]
 
 // PASSED ALL TEST CASES
@@ -151,43 +150,57 @@ E -> D (left)
 */
 
 let maze = [
-              [1, 0, 0, 1, 1], 
-              [1, 1, 0, 1, 1], 
-              [1, 0, 0, 1, 1], 
-              [1, 0, 1, 1, 0], 
-              [1, 0, 0, 0, 0]
-            ]
+  [1, 0, 0, 1, 1],
+  [1, 1, 0, 1, 1],
+  [1, 0, 0, 1, 1],
+  [1, 0, 1, 1, 0],
+  [1, 0, 0, 0, 0],
+];
 
 const solution = (maze, startRow, startCol, destRow, destCol) => {
   this.maze = maze;
-        
-  // if the start and dest are the same
-  if(this.maze[startCol][startRow] == this.maze[destRow][destCol]) {
-          return true;
-  } else if(this.maze[startCol][startRow] == 0) {
-       // reassign array value to random int so we don't revisit it again
-      this.maze[startCol][startRow] = 2;
-       // checking if within L boundary
-      if(startCol < this.maze.length + 1) {
-        return (startCol - 1, startRow);
-      }
-       // checking if within R boundary
-      if(startRow < this.maze[startCol].length + 1) {
-        return (startCol, startRow - 1);
-      }
-      if(startCol < 0) {
-        return (startCol + 1, startRow);
-      }
-      if(startRow < 0) {
-        return (startCol, startRow + 1);
-      }
-    } else {
-       // if the maze can't be completed
-        return false
-    }
- };
 
-console.log(solution([[1, 0, 0, 1, 1], [1, 1, 0, 1, 1], [1, 0, 0, 1, 1], [1, 0, 1, 1, 0], [1, 0, 0, 0, 0]], 0, 1, 3, 4))
+  // if the start and dest are the same
+  if (this.maze[startCol][startRow] == this.maze[destRow][destCol]) {
+    return true;
+  } else if (this.maze[startCol][startRow] == 0) {
+    // reassign array value to random int so we don't revisit it again
+    this.maze[startCol][startRow] = 2;
+    // checking if within L boundary
+    if (startCol < this.maze.length + 1) {
+      return startCol - 1, startRow;
+    }
+    // checking if within R boundary
+    if (startRow < this.maze[startCol].length + 1) {
+      return startCol, startRow - 1;
+    }
+    if (startCol < 0) {
+      return startCol + 1, startRow;
+    }
+    if (startRow < 0) {
+      return startCol, startRow + 1;
+    }
+  } else {
+    // if the maze can't be completed
+    return false;
+  }
+};
+
+console.log(
+  solution(
+    [
+      [1, 0, 0, 1, 1],
+      [1, 1, 0, 1, 1],
+      [1, 0, 0, 1, 1],
+      [1, 0, 1, 1, 0],
+      [1, 0, 0, 0, 0],
+    ],
+    0,
+    1,
+    3,
+    4
+  )
+);
 
 // PASSED 3/5 TEST CASES. NEEDS ADJUSTMENTS
 
@@ -216,14 +229,14 @@ const taxCalc = (transactions, taxRate) => {
     return cost * taxRate;
   };
 
-  const computeTotal = taxRate => {
-    return cost => {
+  const computeTotal = (taxRate) => {
+    return (cost) => {
       return calculateCostAfterTax(cost, taxRate);
     };
   };
 
   // filter new distinct values creating a new Set
-  const distTransactions = [... new Set(transactions)]
+  const distTransactions = [...new Set(transactions)];
 
   distTransactions.map(computeTotal(taxRate));
   return numCalls;
