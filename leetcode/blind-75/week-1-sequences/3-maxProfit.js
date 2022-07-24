@@ -28,38 +28,38 @@ Constraints:
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-    // initialize variables
-    let maxProf = 0
-    let buyPrice = 0
-    let sellPrice = 0
-    let changeBuyIdx = true;
-  
-    // loop through the array
-    // index value starts at 0
-    // if index is less than the array length -1(since array index values start at 0)
-    // keep looping
-    for (let i = 0; i < prices.length -1; i++) {
-        // sell price is the num directly after the buyPrice
-        sellPrice = prices[i+1]
-        if (changeBuyIdx) {
-            // keep looping if we haven't found a price
-            buyPrice = prices[i]
-        } 
-        if (sellPrice < buyPrice) {
-            // if sell is less than buy, there's no profit
-            // thus keep looping
-            changeBuyIdx = true;
-        } else {
-            // set tempProfit to compare against the potential maxProf
-            let tempProfit = sellPrice - buyPrice;
-            if (tempProfit > maxProf) {
-            // maxProf will keep updating to the highest tempProfit
-                maxProf = tempProfit;
-            }
-            // the loop only breaks once there is not a higher value available for the maxProf
-            changeBuyIdx = false;
-        }
+var maxProfit = function (prices) {
+  // initialize variables
+  let maxProf = 0;
+  let buyPrice = 0;
+  let sellPrice = 0;
+  let changeBuyIdx = true;
+
+  // loop through the array
+  // index value starts at 0
+  // if index is less than the array length -1(since array index values start at 0)
+  // keep looping
+  for (let i = 0; i < prices.length - 1; i++) {
+    // sell price is the num directly after the buyPrice
+    sellPrice = prices[i + 1];
+    if (changeBuyIdx) {
+      // keep looping if we haven't found a price
+      buyPrice = prices[i];
     }
-    return maxProf
+    if (sellPrice < buyPrice) {
+      // if sell is less than buy, there's no profit
+      // thus keep looping
+      changeBuyIdx = true;
+    } else {
+      // set tempProfit to compare against the potential maxProf
+      let tempProfit = sellPrice - buyPrice;
+      if (tempProfit > maxProf) {
+        // maxProf will keep updating to the highest tempProfit
+        maxProf = tempProfit;
+      }
+      // the loop only breaks once there is not a higher value available for the maxProf
+      changeBuyIdx = false;
+    }
+  }
+  return maxProf;
 };
