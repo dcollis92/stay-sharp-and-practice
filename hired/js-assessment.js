@@ -26,18 +26,18 @@ const buildPair = (angles) => {
   let closeTag = 0;
   let openTag = 0;
   for (const char of angles) {
-     if (char === '>') {
-        if (closeTag === 0) {
-           openTag++;
-        } else {
-           closeTag--;
-        };
-     } else {
-        closeTag++;
-     };
-  };
-  const leadingTags = '<'.repeat(openTag);
-  const trailingTags = '>'.repeat(closeTag);
+    if (char === ">") {
+      if (closeTag === 0) {
+        openTag++;
+      } else {
+        closeTag--;
+      }
+    } else {
+      closeTag++;
+    }
+  }
+  const leadingTags = "<".repeat(openTag);
+  const trailingTags = ">".repeat(closeTag);
   return leadingTags + str + trailingTags;
 };
 console.log(buildPair(angles));
