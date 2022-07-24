@@ -69,17 +69,16 @@ The integer 4 has a bit pattern of 0100 which has an odd number of bits set to 1
  * The function accepts INTEGER a_number as parameter.
  */
 
-
 function has_bit_parity(a_number) {
   // initialize value 0
-  let bitPar = 0
+  let bitPar = 0;
   while (a_number != 0) {
-      // if the number is not 0
-      a_number = a_number & (a_number - 1);
-      // bitParity value is updated
-      bitPar = 1;
+    // if the number is not 0
+    a_number = a_number & (a_number - 1);
+    // bitParity value is updated
+    bitPar = 1;
   }
-  return bitPar
+  return bitPar;
 }
 
 // Passed 4/7 test cases
