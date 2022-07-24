@@ -46,18 +46,18 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 // };
 
 // kadane's algorithm = O(n)
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
   // due to working with negative integers, we use MIN_SAFE_INTEGER to compare against
   let maxSum = Number.MIN_SAFE_INTEGER;
   let currentSum = 0;
 
-  for(let i = 0; i <nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     // each loop compares if adding the next integer increases the value or not
-    currentSum = Math.max(currentSum + nums[i], nums[i])
+    currentSum = Math.max(currentSum + nums[i], nums[i]);
     // each loop compares the current value and reassigns the maxSum if it has increased
-    maxSum = Math.max(maxSum, currentSum)
+    maxSum = Math.max(maxSum, currentSum);
   }
-  return maxSum
-}
+  return maxSum;
+};
 
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
