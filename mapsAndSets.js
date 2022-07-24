@@ -11,22 +11,22 @@ map.size – returns the current element count.
 
 */
 
-let map = new Map()
+let map = new Map();
 
-map.set('1', 'str1')
-map.set(1, 'num1')
-map.set(true, 'bool1')
-console.log (map.get(1)) // 'num1'
-console.log (map.get('1')) // 'str1'
+map.set("1", "str1");
+map.set(1, "num1");
+map.set(true, "bool1");
+console.log(map.get(1)); // 'num1'
+console.log(map.get("1")); // 'str1'
 
 // maps can use objects as keys
 
-let john = { name: 'John' }
-let visitsCountMap = new Map()
+let john = { name: "John" };
+let visitsCountMap = new Map();
 
 // john is the key for the map
-visitsCountMap.set(john, 123)
-console.log(visitsCountMap.get(john)) // 123
+visitsCountMap.set(john, 123);
+console.log(visitsCountMap.get(john)); // 123
 
 // Iteration over Map
 // map.keys() - returns an iterable for keys
@@ -34,27 +34,27 @@ console.log(visitsCountMap.get(john)) // 123
 // map.entries() - returns an iterable for entries [key, value]
 
 let recipeMap = new Map([
-  ['cucumber', 500], // --> insert k, v pairs as an array for initialization
-  ['tomatoes', 350],
-  ['onion', 50]
-])
+  ["cucumber", 500], // --> insert k, v pairs as an array for initialization
+  ["tomatoes", 350],
+  ["onion", 50],
+]);
 
 for (let veg of recipeMap.keys()) {
-  console.log(veg) // cucumber, tomatoes, onion
+  console.log(veg); // cucumber, tomatoes, onion
 }
 
 for (let amount of recipeMap.values()) {
-  console.log(amount) // 500, 350, 50
+  console.log(amount); // 500, 350, 50
 }
 
 for (let entry of recipeMap) {
-  console.log(entry) // key, value pairs
+  console.log(entry); // key, value pairs
 }
 
 // map has a built-in forEach method
 recipeMap.forEach((value, key, map) => {
-  console.log(`${key}: ${value}`) // 'cucumber: 500', etc
-})
+  console.log(`${key}: ${value}`); // 'cucumber: 500', etc
+});
 
 /*
 
@@ -72,22 +72,22 @@ set.size – is the elements count.
 repeated calls of set.add(value) with the same value don't do anything. That's the reason why each value appears in a Set only once.
 */
 
-let set = new Set()
+let set = new Set();
 
-let steve = { name: "Steve"}
-let pete = { name: "Pete"}
-let mary = { name: "Mary"}
+let steve = { name: "Steve" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
 
 // visits (some users come multiple times)
-set.add(steve)
-set.add(pete)
-set.add(steve)
-set.add(mary)
-set.add(pete)
-console.log(set.size) // 3
+set.add(steve);
+set.add(pete);
+set.add(steve);
+set.add(mary);
+set.add(pete);
+console.log(set.size); // 3
 
 for (let user of set) {
-  console.log(user.name) // Steve, Pete, Mary
+  console.log(user.name); // Steve, Pete, Mary
 }
 
 // sets are similar to arrays, but array.find checks every element. Set works better because it is optimized internally for uniqueness checks
@@ -95,17 +95,17 @@ for (let user of set) {
 // Iteration over Set
 // we can loop over a set either with for of or forEach
 
-let fruitSet = new Set(["oranges", "apples", "bananas"])
+let fruitSet = new Set(["oranges", "apples", "bananas"]);
 
 for (let value of fruitSet) {
-  console.log(value) // oranges, apples, bananas
+  console.log(value); // oranges, apples, bananas
 }
 
 fruitSet.forEach((value, valueAgain, set) => {
-  console.log(value) // oranges, apples, bananas
-})
+  console.log(value); // oranges, apples, bananas
+});
 
-// the callback function passed in forEach has 3 arguments: a value, the same value, and the target object. This is for compatibility with Map which also accepts 3 arguments for its cb 
+// the callback function passed in forEach has 3 arguments: a value, the same value, and the target object. This is for compatibility with Map which also accepts 3 arguments for its cb
 
 /*
 
@@ -120,25 +120,33 @@ set.entries() – returns an iterable object for entries [value, value], exists 
 // create a function unique(arr) that should return an array with unique items of arr
 
 function uniqueBrute(arr) {
-  let practiceSet = new Set()
+  let practiceSet = new Set();
 
   for (let el of arr) {
     if (!practiceSet.has(el)) {
-      practiceSet.add(el) 
+      practiceSet.add(el);
     }
   }
-  return practiceSet
+  return practiceSet;
 }
 
 function unique(arr) {
-  return Array.from(new Set(arr)) 
+  return Array.from(new Set(arr));
 }
 
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-"Krishna", "Krishna", "Hare", "Hare", ":-O"
+let values = [
+  "Hare",
+  "Krishna",
+  "Hare",
+  "Krishna",
+  "Krishna",
+  "Krishna",
+  "Hare",
+  "Hare",
+  ":-O",
 ];
 
-console.log(unique(values))
+console.log(unique(values));
 
 // Filter anagrams
 // write a function aclean(arr) that returns an array cleaned from anagrams
@@ -146,29 +154,28 @@ console.log(unique(values))
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
 function aclean(arr) {
-  let map = new Map()
+  let map = new Map();
 
   for (let word of arr) {
-    let sorted = word.toLowerCase().split('').sort().join('')
-    map.set(sorted, word)
+    let sorted = word.toLowerCase().split("").sort().join("");
+    map.set(sorted, word);
   }
 
-  return Array.from(map.values())
+  return Array.from(map.values());
 }
 
-console.log(aclean(arr))
+console.log(aclean(arr));
 
 // Iterable Keys
 // we'd like to get an array of map.keys() in a variable and then apply array-specific methods to it
 
-let ikMap = new Map()
+let ikMap = new Map();
 
-ikMap.set("name", "John")
+ikMap.set("name", "John");
 
-let keys = Array.from(ikMap.keys()) // OR
-let spreadKeys = [...ikMap.keys()]
+let keys = Array.from(ikMap.keys()); // OR
+let spreadKeys = [...ikMap.keys()];
 
-
-keys.push("more")
-spreadKeys.push("more")
-console.log(keys, spreadKeys)
+keys.push("more");
+spreadKeys.push("more");
+console.log(keys, spreadKeys);
