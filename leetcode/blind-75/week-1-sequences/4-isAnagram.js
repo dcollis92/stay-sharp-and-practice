@@ -27,18 +27,18 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
  * @return {boolean}
  */
 
-var isAnagram = function(s, t) {
+var isAnagram = function (s, t) {
   // split each string into an array and sort a->z
-  let sArr = s.split('').sort()
-  let tArr = t.split('').sort()
+  let sArr = s.split("").sort();
+  let tArr = t.split("").sort();
   // console.log(sArr)
   // console.log(tArr)
 
   // convert back to a string to compare strict equality
   if (sArr.toString() === tArr.toString()) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 };
 
@@ -46,39 +46,39 @@ var isAnagram = function(s, t) {
 
 // ^^^ low run time, needs to be faster
 
-const isAnagram2 = function(s, t) {
-  if (s.split('').sort().join('') === t.split('').sort().join('')) {
+const isAnagram2 = function (s, t) {
+  if (s.split("").sort().join("") === t.split("").sort().join("")) {
     return true;
   } else {
     return false;
   }
 };
 
-// ^^^ similar answer, 10-15ms faster run time ¯\_(ツ)_/¯ 
+// ^^^ similar answer, 10-15ms faster run time ¯\_(ツ)_/¯
 
 // Tim's solution
-var isAnagram3 = function(s, t) {
-  const aCharMap = buildCharMap(s)
-  const bCharMap = buildCharMap(t)
-  
+var isAnagram3 = function (s, t) {
+  const aCharMap = buildCharMap(s);
+  const bCharMap = buildCharMap(t);
+
   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false
+    return false;
   }
 
   for (let char in aCharMap) {
     if (aCharMap[char] !== bCharMap[char]) {
-      return false
+      return false;
     }
   }
 
-  return true
-}
+  return true;
+};
 
-function buildCharMap (str) {
-  const charMap = {}
+function buildCharMap(str) {
+  const charMap = {};
 
-  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-    charMap[char] = charMap[char] + 1 || 1
+  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1;
   }
-  return charMap
+  return charMap;
 }
