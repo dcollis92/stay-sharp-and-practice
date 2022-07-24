@@ -8,33 +8,34 @@
 
 function spongeMeme(sentence) {
   // convert sentence string => array
-  let strArray = sentence.toLowerCase().split('')
-  let newArray = []
+  let strArray = sentence.toLowerCase().split("");
+  let newArray = [];
   // loop through the array
   for (let i = 0; i < strArray.length; i++) {
-  // if str idx is even
+    // if str idx is even
     if (i % 2 === 0) {
       // convert toUpperCase and push into the new array
-      newArray.push(strArray[i].toUpperCase())
+      newArray.push(strArray[i].toUpperCase());
     } else {
       // push the already lower case char into the new array
-      newArray.push(strArray[i])
+      newArray.push(strArray[i]);
     }
   }
-  return newArray.join('')
+  return newArray.join("");
 }
 
 // text conversion notes
 // first letter is capitalized
 // then AaAaAa
-// if space is present, space completes the pattern as a regular string character, i.e. AaA Aa aA 
+// if space is present, space completes the pattern as a regular string character, i.e. AaA Aa aA
 
 // convert string into an array
 // odd characters are upperCase
 // even characters are lowerCase
 
 // alt solution
-const spongeMeme = sentence => 
-  sentence.split('').map((letter, i) => 
-    i % 2 ? letter.toLowerCase() : letter.toUpperCase()
-  ).join('')
+const spongeMeme = (sentence) =>
+  sentence
+    .split("")
+    .map((letter, i) => (i % 2 ? letter.toLowerCase() : letter.toUpperCase()))
+    .join("");
