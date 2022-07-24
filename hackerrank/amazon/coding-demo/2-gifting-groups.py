@@ -11,12 +11,12 @@
 #     0 1 2
 #     - - -
 # 0 | 1 1 0 |
-# 1 | 1 1 0 | 
+# 1 | 1 1 0 |
 # 2 | 0 0 1 |
 #     - - -
 
 # Every row corresponds to a subscriber and the value M[i][j] determines if j was gifted a book by i. In the above example, user 0 has gifted a book to user 1 and so they are connected [0][1], while person 2 has not received a book from anyone or gifted a book to anyone. Therefore, there are 2 groups.
-# M[i][j]=1 if i==j (each of the people is known to self) 
+# M[i][j]=1 if i==j (each of the people is known to self)
 
 # Determine the number of groups represented in a matrix.
 
@@ -42,24 +42,25 @@ def countGroups(related):
     count = 0
     length = len(related)
     related = convertToArray(related)
-    
-    for indx in range(length):
-        if related[indx][indx] == 1:
-            count +=1
-            dfs(indx, length, related)
+
+    for index in range(length):
+        if related[index][index] == 1:
+            count += 1
+            dfs(index, length, related)
     return count
 
-def dfs(idx, length,matrix):
+# dfs: depthFirstSearch
+def dfs(idx, length, matrix):
     if matrix[idx][idx] == 0:
-        return 
+        return
     for i in range(length):
-        if matrix[idx][i]==1:
-            matrix[idx][i]=0
-            dfs(i,length,matrix)
-            
-            
+        if matrix[idx][i] == 1:
+            matrix[idx][i] = 0
+            dfs(i, length, matrix)
+
+
 def convertToArray(s):
     result = []
     for char in s:
         result.append([int(x) for x in char])
-    return result    
+    return result
