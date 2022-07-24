@@ -39,3 +39,15 @@ Constraints
 - Each related[i] contains a binary string of n zeros and ones. related is a square matrix.
 
 */
+
+/*
+ * Complete the 'countGroups' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts STRING_ARRAY related as parameter.
+ */
+
+function countGroups(related) {
+  // Write your code here
+
+}
