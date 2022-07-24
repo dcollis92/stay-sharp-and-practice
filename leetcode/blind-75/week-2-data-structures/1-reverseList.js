@@ -13,7 +13,7 @@ Constraints:
 
 The number of nodes in the list is the range [0, 5000].
 -5000 <= Node.val <= 5000
- 
+
 
 Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 */
@@ -29,23 +29,23 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
  * @param {ListNode} head
  * @return {ListNode}
  */
-let head = [1,2,3,4]
+let head = [1, 2, 3, 4];
 
- var reverseList = function(head) {
-  return head.reverse()
+var reverseList = function (head) {
+  return head.reverse();
 };
 
-console.log(reverseList(head))
+console.log(reverseList(head));
 
 // ^^^ works here, does not work on leetcode
 
-var reverseList = function(head) {
+var reverseList = function (head) {
   let reversed = null;
-  while(head !== null) {
-      let next = head.next;
-      head.next = reversed;
-      reversed = head
-      head = next;
+  while (head !== null) {
+    let next = head.next;
+    head.next = reversed;
+    reversed = head;
+    head = next;
   }
   return reversed;
 };
