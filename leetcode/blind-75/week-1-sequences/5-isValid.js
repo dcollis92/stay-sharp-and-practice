@@ -29,27 +29,27 @@ Constraints:
  * @param {string} s
  * @return {boolean}
  */
- var isValid = function(s) {
+var isValid = function (s) {
   // initialize an empty stack
   const stack = [];
 
   // create a map with key-value pairs
   const map = new Map([
-    ['(', ')'],
-    ['[', ']'],
-    ['{', '}']
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
   ]);
 
   // loop through the string
-  for (let i = 0 ; i < s.length ; i += 1) {
+  for (let i = 0; i < s.length; i += 1) {
     // if the map has the value of s[i]
     if (map.has(s[i])) {
       // push the value associated with the key at that index
       stack.push(map.get(s[i]));
-      // if index of s does not equal 
+      // if index of s does not equal
     } else if (s[i] !== stack.pop()) {
       return false;
-    } 
+    }
   }
 
   return stack.length === 0;
