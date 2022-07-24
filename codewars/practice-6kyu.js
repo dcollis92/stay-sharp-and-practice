@@ -11,27 +11,33 @@ Examples
 ""  -->  ""
 */
 
-function order1(words){
-  return words.split(' ').sort(function(a, b){
+function order1(words) {
+  return words
+    .split(" ")
+    .sort(function (a, b) {
       return a.match(/\d/) - b.match(/\d/);
-   }).join(' ');
-}    
-
-function order2(words) {
-  return words.split(' ').sort((wordA, wordB) => wordA.match(/\d+/) > wordB.match(/\d+/)).join(' ')
+    })
+    .join(" ");
 }
 
-function orde3(words){
-  var array = words.split(' ');
+function order2(words) {
+  return words
+    .split(" ")
+    .sort((wordA, wordB) => wordA.match(/\d+/) > wordB.match(/\d+/))
+    .join(" ");
+}
+
+function orde3(words) {
+  var array = words.split(" ");
   var sortedArray = [];
-  for(i = 0; i <= array.length; i++) {
-    for(j = 0; j < array.length; j++) {
-      if(array[j].indexOf(i) >= 0) {
+  for (i = 0; i <= array.length; i++) {
+    for (j = 0; j < array.length; j++) {
+      if (array[j].indexOf(i) >= 0) {
         sortedArray.push(array[j]);
       }
     }
   }
-  return sortedArray.join(' ');
+  return sortedArray.join(" ");
 }
 
 /*---------------------------------------------*/
@@ -53,19 +59,19 @@ grouped[5]     // [50]
 */
 
 function groupIn10s(...numbers) {
-  let result = []
+  let result = [];
 
   for (let number of numbers) {
-     let group = Math.floor(number/10)
-     if (!result[group]) result[group] = []
-     result[group].push(number)
+    let group = Math.floor(number / 10);
+    if (!result[group]) result[group] = [];
+    result[group].push(number);
   }
-  return result.map(num => num.sort())
+  return result.map((num) => num.sort());
 }
 
 // grouped = main array
 // index 0 = 1st array (0-9)
-// index 1 = 2nd array (10-19) 
+// index 1 = 2nd array (10-19)
 // and so on and so on
 
 /*---------------------------------------------*/
@@ -77,21 +83,20 @@ Finish the solution so that it returns the sum of all the multiples of 3 or 5 be
 Note: If the number is a multiple of both 3 and 5, only count it once.
 */
 
-  function solution(number){
-    let result = 0
-    
-    if (number <= 0) {
-      return 0
-    }
-  
-    for (let i = 1; i < number; i++) {
-      if (i % 3 === 0 || i % 5 === 0) {
-        result += i
-      }
-    }
-    return result
+function solution(number) {
+  let result = 0;
+
+  if (number <= 0) {
+    return 0;
   }
 
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      result += i;
+    }
+  }
+  return result;
+}
 
 // a single number is passed through
 // finding all multiples of 3 and 5 below the number passed in
@@ -112,17 +117,17 @@ Examples
 */
 
 function findOdd(A) {
-  const numMap = {}
+  const numMap = {};
 
   for (let num of A) {
-    numMap[num] = numMap[num] + 1 || 1
+    numMap[num] = numMap[num] + 1 || 1;
   }
 
   for (let num in numMap) {
     if (numMap[num] % 2 !== 0) {
-      return parseInt(num)
+      return parseInt(num);
     }
-  }  
+  }
 }
 
 /*---------------------------------------------*/
@@ -139,31 +144,30 @@ Examples:
 */
 
 function digital_root(n) {
-  if (n < 10) return n
+  if (n < 10) return n;
 
   return digital_root(
-    n.toString()
-    .split('')
-    .reduce(function(acc, d) {
-      return acc + +d
-    }, 0)
-  )
+    n
+      .toString()
+      .split("")
+      .reduce(function (acc, d) {
+        return acc + +d;
+      }, 0)
+  );
 }
 
 function digital_root(n) {
-  return (n - 1) % 9 + 1;
+  return ((n - 1) % 9) + 1;
 }
 
 function digital_root(n) {
-  if (n < 10)
-    return n;
+  if (n < 10) return n;
 
   for (var sum = 0, i = 0, n = String(n); i < n.length; i++)
     sum += Number(n[i]);
-   
+
   return digital_root(sum);
 }
-
 
 // convert the number to a string
 // .split('') the string into an array
