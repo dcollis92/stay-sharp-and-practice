@@ -17,8 +17,12 @@
 
 ### Hackerrank
 
-- Cook Systems
+- Amazon
+  - Coding-Demo Example Questions
+    - Amazon Transaction Logs (JS/Python)
+    - Gifting Groups (JS/Python)
 
+- Cook Systems
   - Count Binary Substrings (JS)
   - Employee Profile (Java)
   - Programming Contest (JS)
