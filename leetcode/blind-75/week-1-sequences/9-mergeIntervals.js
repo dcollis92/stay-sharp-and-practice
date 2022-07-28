@@ -24,6 +24,32 @@ Constraints:
  * @param {number[][]} intervals
  * @return {number[][]}
  */
- var merge = function(intervals) {
-    
+var merge = function(intervals) {
+  // if theres only 1 number, no need to merge
+  if (intervals.length < 2) return intervals;
+  
+  // sort intervals and the sub arrays
+  intervals.sort((a, b) => a[0] - b[0]);
+  
+  // create empty array to push into
+  const result = [];
+  // initialize previous variable as first array
+  let previous = intervals[0];
+  
+  // loop through array
+  for (let i = 1; i < intervals.length; i++) {
+    if (previous[1] >= intervals[i][0]) {
+      // reassign previous with 1st interval, and the largest interval compared with Math.max
+      previous = [previous[0], Math.max(previous[1], intervals[i][1])];
+    } else {
+        // push previous into the result array
+      result.push(previous);
+      previous = intervals[i];
+    }
+  }
+  
+  // push previous into the result array
+  result.push(previous);
+  
+  return result;
 };
