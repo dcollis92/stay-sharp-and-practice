@@ -20,14 +20,14 @@ Example 2:
 
 Constraints:
   n == height.length
-  2 <= n <= 105
-  0 <= height[i] <= 104
+  2 <= n <= 10**5
+  0 <= height[i] <= 10**4
 */
 
 /**
  * @param {number[]} height
  * @return {number}
  */
- var maxArea = function(height) {
+var maxArea = function(height) {
     
 };
