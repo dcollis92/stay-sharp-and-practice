@@ -62,7 +62,7 @@ function sortOrders(orderList) {
 
   // split orders into each array
   for (let idx of orderList) {
-    order = new Array(idx.split())
+    let order = new Array(idx.split())
     if (order[1].isNumeric()) {
       nonPrime.push(order)
     } else {
@@ -75,8 +75,8 @@ function sortOrders(orderList) {
 
   // split keys from the strings of prime orders
   for (let idx of Range(prime.length)) {
-    orderStr = ' '.join(prime[idx][1])
-    orderKey = prime[idx][0]
+    let orderStr = ' '.join(prime[idx][1])
+    let orderKey = prime[idx][0]
     prime[idx] = [orderStr, orderKey]
   }
 
