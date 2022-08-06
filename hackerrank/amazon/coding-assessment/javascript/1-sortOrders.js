@@ -1,7 +1,7 @@
 /* 
 1. Code Question 1
 
-AMazon is planning to release a new order prioritization algorithm to optimize fulfilling Prime deliveries on time. All orders (Prime or otherwise) are given an alphanumeric ID code. However, Prime orders are given additional metadata that consists of a space-delimited string of positive integers. Each order is therefore defined as their alphanumeric id code, following by a space, followed by their space-delimited metadata.
+Amazon is planning to release a new order prioritization algorithm to optimize fulfilling Prime deliveries on time. All orders (Prime or otherwise) are given an alphanumeric ID code. However, Prime orders are given additional metadata that consists of a space-delimited string of positive integers. Each order is therefore defined as their alphanumeric id code, following by a space, followed by their space-delimited metadata.
 
 You have been tasked with sorting a list of all orders in the order queue to assist in prioritization of fulfillment. They should be sorted according to the following order:
 
@@ -56,6 +56,40 @@ There are four Prime orders (lines with words) in this order list. Become "echo"
  */
 
 function sortOrders(orderList) {
-  // Write your code here
+  // create two empty arrays to push into
+  let prime = []
+  let nonPrime = []
 
+  // split orders into each array
+  for (let idx of orderList) {
+    order = new Array(idx.split())
+    if (order[1].isNumeric()) {
+      nonPrime.push(order)
+    } else {
+      prime.push(order)
+    }
+  }
+
+  // let primeRange = Range(prime)
+  // let nonPrimeRange = Range(nonPrime)
+
+  // split keys from the strings of prime orders
+  for (let idx of Range(prime.length)) {
+    orderStr = ' '.join(prime[idx][1])
+    orderKey = prime[idx][0]
+    prime[idx] = [orderStr, orderKey]
+  }
+
+  prime.sort((a,b) => a-b)
+
+  // reformat for output
+  for (let idx of Range(prime.length)) {
+    prime[idx] = prime[i][1] + " " + prime[idx][0]    
+  }
+
+  for (let idx of Range(nonPrime.length)) {
+    nonPrime[idx] = nonPrime[idx].join(' ')
+  }
+
+    return prime + nonPrime
 }
