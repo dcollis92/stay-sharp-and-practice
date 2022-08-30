@@ -1,5 +1,6 @@
 /* 
 Introduction
+-------------------------
 
 - Get to know Javascript maps and sets
 Transcript:
