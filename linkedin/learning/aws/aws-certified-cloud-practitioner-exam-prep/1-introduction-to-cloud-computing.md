@@ -41,3 +41,28 @@ Selecting transcript lines in this section will navigate to timestamp in the vid
 
 ### Chapter Quiz
 
+Q: Which description best characterizes the cloud?
+
+- [ ] programs and applications existing offsite
+- [x] the internet
+- [ ] remote storage
+- [ ] remote coders and data analysts
+
+Q: How do you typically pay for the use of cloud resources?
+
+- [ ] with annual contracts
+- [x] on a pay-as-you-go basis
+  - You could view the process of paying for cloud usage as similar to dining off of a menu.
+- [ ] by purchasing a license
+- [ ] by contributing hardware
+
+Q: Which technology provides oversight for the cloud?
+
+- [ ] dumb terminals
+- [ ] mainframes
+
+- [ ] virtual machines
+- [x] hypervising
+  - Together with connectivity, hypervising is the enabling technology.
+
+Q: 
