@@ -94,12 +94,25 @@ There are four domains in the AWS Certified Cloud Practitioner Exam. They are cl
 
 Q: Which learning objectives should you have when starting this course?
 
-- to learn about how to enhance security and protect data in the cloud
-  
-- to learn about how to optimally set up a cloud system for the lowest pricing
-  
-- ANSWER: to learn about what the cloud is, why it is used, and how it is used
-  
-CORRECT: The economics of cloud computing as opposed to legacy IT are a big part of the motivation.
+- [ ] to learn about how to enhance security and protect data in the cloud
+- [ ] to learn about how to optimally set up a cloud system for the lowest pricing
+- [x] to learn about what the cloud is, why it is used, and how it is used
+  - The economics of cloud computing as opposed to legacy IT are a big part of the motivation
+- [ ] to learn about the different architectures for compute operations and storage
 
-- to learn about the different architectures for compute operations and storage
+Q: Why do many people choose to use the cloud for everyday tasks?
+
+- [ ] for enhanced security and privacy
+- [ ] for advertising and growing fans and customers
+- [x] for convenience, collaboration, and sophistication
+    - You can use the latest technology and collaborate from anywhere.
+- for simplicity and ease of operations
+
+Q: What marks the origin of cloud computing, and when did it occur?
+
+- [ ] the development of networking in the 1960s
+- [x] the development of mainframe computing in the 1950s
+Correct
+- [ ] Electronic computing begins here, and the idea of having multiple, dumb terminals started the idea of the cloud.
+- [ ] the invention of the transistor in the 1940s
+- [ ] the invention of the web in the late 1980s
