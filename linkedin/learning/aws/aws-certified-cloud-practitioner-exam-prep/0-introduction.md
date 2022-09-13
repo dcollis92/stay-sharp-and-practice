@@ -91,3 +91,15 @@ There are four domains in the AWS Certified Cloud Practitioner Exam. They are cl
 ---
 
 ### Chapter Quiz
+
+Q: Which learning objectives should you have when starting this course?
+
+- to learn about how to enhance security and protect data in the cloud
+  
+- to learn about how to optimally set up a cloud system for the lowest pricing
+  
+- ANSWER: to learn about what the cloud is, why it is used, and how it is used
+  
+CORRECT: The economics of cloud computing as opposed to legacy IT are a big part of the motivation.
+
+- to learn about the different architectures for compute operations and storage
