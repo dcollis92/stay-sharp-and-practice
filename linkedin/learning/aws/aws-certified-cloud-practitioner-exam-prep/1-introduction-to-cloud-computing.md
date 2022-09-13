@@ -65,4 +65,19 @@ Q: Which technology provides oversight for the cloud?
 - [x] hypervising
   - Together with connectivity, hypervising is the enabling technology.
 
-Q: 
+Q: Why do many people choose to use the cloud for everyday tasks?
+
+- [ ] for enhanced security and privacy
+- [ ] for advertising and growing fans and customers
+- [x] for convenience, collaboration, and sophistication
+    - You can use the latest technology and collaborate from anywhere.
+- for simplicity and ease of operations
+
+Q: What marks the origin of cloud computing, and when did it occur?
+
+- [ ] the development of networking in the 1960s
+- [x] the development of mainframe computing in the 1950s
+Correct
+- [ ] Electronic computing begins here, and the idea of having multiple, dumb terminals started the idea of the cloud.
+- [ ] the invention of the transistor in the 1940s
+- [ ] the invention of the web in the late 1980s
