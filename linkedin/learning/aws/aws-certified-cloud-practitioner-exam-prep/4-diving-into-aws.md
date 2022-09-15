@@ -35,6 +35,20 @@ Go to AWS.Amazon.com/free. AWS Free Tier allows new potential customers to test 
 ### Use Case: AWS Free Tier
 
 Transcript:
+So, now that we are armed with an AWS account and AWS Free Tier, let's explore a use case for a real project you can create using mostly free resources. Imagine you have to create and host a WordPress website using AWS. You can very quickly spin up an Elastic Compute Cloud or EC2 Instance, that comes loaded with WordPress. AWS has a marketplace for preconfigured servers called Amazon Machine Images or AMI. These are basically templates of servers that you can create and immediately get it preconfigured to a certain way. In this case, a company called Bitnami has created a WordPress AMI called WordPress Certified by Bitnami. It is Free Tier eligible and runs on an Ubuntu server. You will be led through the setup process and once you're through, you will have a WordPress website set up and ready to go. EC2s have fairly long URLs through, which could be something like ec2-52-204-122-132.compute-1.amazonaws.com. That's usually not a very attractive way to introduce your blog to your new friends. You would probably want something like mycoolblog.com to take your visitors to your brand new blog. AWS has a service to help you do just that. The simplest way is to purchase the domain name that you want using AWS's domain name registrar Route 53. A domain name registrar is like a phone book. To visit a website you input a domain name like mycoolblog.com and the DNS finds it in an online directory of IP addresses. It then sends your request to the appropriate server so you can load the website. By purchasing your domain on Route 53 and matching the domain name with the IP address of your EC2 Instance, you can make the address mycoolblog.com load your WordPress website. Now, Route 53 costs a few dollars a year for the domain registration and charges a separate monthly usage fee, however, the monthly usage fee for me is around 50 cents a month and domain registration itself was around $12, so for a whole year of website hosting the costs are fairly minimal. If you were thinking about starting a blog for cheap using AWS might just be the way to go, and it doesn't hurt that you are getting some hands-on experience with different services at AWS. There are many resources available on how to set one up ranging in complexity from a simple one, like what we just did using Route 53 and EC2, to using other services like CloudFront, AWS Certificate Manager and Elastic Load Balancer to help secure the website and make sure it stays up even if someone tried to take your blog down with a DDoS attack. Your creativity can take the reins to create just the project you were dreaming of with AWS Free Tier and other services.
+
+### **----- BULLET POINT NOTES -----**
+
+#### WordPress AMI on EC2
+- Elastic Compute Cloud (EC2) = Virtual Server on AWS
+- Host websites like WordPress
+- Amazon Machine Images = Preconfigured servers in AWS Marketplace
+- Free Tier eligible, and runs on Ubuntu server
+- WordPress blog on EC2
+
+#### Route 53
+- Domain name registrar
+- You can purchase a domain name for a WordPress blog on Route 53
 
 ---
 
