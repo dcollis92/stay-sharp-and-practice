@@ -14,11 +14,13 @@ Add to cart, checkout, confirm payment. Rejoice. I imagine most of you have expe
 ### 3.2 What is AWS?
 
 Transcript:
-
+Before I even knew what the cloud meant or what cloud computing does, I had heard of AWS and knew that it was a big deal in the tech industry. It took only a quick Google search to find out that AWS stands for Amazon Web Services. From the name, I surmised that it was an Amazon product. I was however, completely unprepared for the extent of the types and number of services AWS provided for organizations all over the world. AWS offers IT infrastructure services to businesses and organizations as web services to help them scale and grow efficiently. AWS provides what used to be purchased as hardware, such as network switches and servers, as resources to be accessed using the internet. Because of cloud computing's pay as you go model and robust resources, organizations are able to save time, money, and human resources by moving their resources to AWS. As of winter 2020, there are 24 groups of services offered by the platform ranging from compute to storage to game development. Each group contains anywhere between one to 12 services with more being added all the time. You can host your static files using simple stores service, host a WordPress blog using elastic compute cloud, send emails using work mail, stream desktops using workspaces or create games using game lift. It's probably not far from the truth to say that your imagination is the limit for what you can potentially architect and create using Amazon Web Services. As a cloud computing service provider, AWS boasts flexibility, scalability, and reliability alongside affordability that was impossible with traditional on premises IT infrastructure. With AWS, engineers can concentrate on building your products and features instead of worrying about the it infrastructure's ability to handle their scaling.
 
 ---
 
 ### 3.3 Big Companies using AWS
+
+Transcript:
 
 ---
 
