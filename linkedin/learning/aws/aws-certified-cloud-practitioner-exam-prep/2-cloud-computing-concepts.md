@@ -96,6 +96,83 @@ Knowing how to create a well-architected infrastructure allows organizations to 
 
 ### Study Break: Reviewing Cloud Computing
 
+Transcript:
+Welcome to the study break for cloud computing concepts that will come up in the AWS Certified Cloud Practitioner exam. The major concepts to remember are the advantages of cloud computing over legacy on-premises IT infrastructure, cloud computing models, types of cloud computing deployments, and design principles of cloud computing, such as the well architected framework of a solid cloud computing IT infrastructure. Let's start with the advantages of cloud computing over legacy on-premises IT infrastructure. AWS calls these the six advantages of cloud computing. The advantages are trade capital expense for variable expense, benefit from massive economies of scale, stop guessing about capacity, increase speed and agility, stop spending money running and maintaining data centers, and go global in minutes. There are three cloud computing models and there are three cloud computing deployments. The cloud computing models are Software as a Service, SaaS, Infrastructure as a Service, IaaS, and Platform as a Service, PaaS. The cloud computing deployments are public cloud, hybrid cloud and private cloud, otherwise known as on-premises cloud. Finally, the well architected framework of cloud computing provides best practices framework for designing a stable, robust and secure IT infrastructure on the cloud. The six pillars of a well architected framework are cost optimization, reliability, operational excellence, performance efficiency, security, and sustainability. If you are unsure about any of the concepts mentioned in this video, feel free to pause and go back to the specific videos. Knowing these concepts and models could mean a few extra points in exam which could go a long way in securing you the certification. Most importantly, the six advantages of cloud computing comes up again and again in exam. So it's well worth your time to make sure you know what these phrases mean in layman's terms.
+
+### **----- BULLET POINT NOTES -----**
+
+#### Main Notes
+  - Advantages of cloud computing over legacy on-premises IT infrastructure
+  - Cloud computing models
+  - Cloud computing deployments
+  - Design priciples of cloud computing (like Well-Architected Framework)
+
+#### Six Advantages of Cloud Computing
+- 1. Trade capital expense for variable expenses
+- 2. Benefit from massive economies of scale
+- 3. Stop guessing about capacitity
+- 4. Increase speed and agility
+- 5. Stop spending money running and maintaining data centers
+- 6. Go global in minutes
+
+#### Cloud Computing Models
+- 1. SaaS - Software
+- 2. IaaS - Infrastructure
+- 3. PaaS - Platform
+
+#### Cloud Computing Deployments
+- 1. Public Cloud
+- 2. Hybrid Cloud
+- 3. Private Cloud
+
+#### Six Pillars of a Well-Architected Framework
+- 1. Cost Optimization
+- 2. Reliability
+- 3. Operational Excellence
+- 4. Performance Efficiency
+- 5. Security
+- 6. Sustainability
+
 ---
 
 ### Chapter Quiz
+
+1. Which of the below is not a “best practice” concept for deploying Cloud infrastructure?
+
+- [ ] Security
+- [ ] Reliability
+- [ ] Performance Efficiency
+- [X] Hybrid Cloud
+  - Hybrid Cloud is a type of Cloud deployment, not part of the “best practice” concepts for deploying Cloud infrastructure
+
+2. Which cloud concepts are you responsible for knowing for the AWS Certified Cloud Practitioner Exam?
+
+- [X] advantages over legacy IT, models and deployments, and architecture
+  - These topics cover all areas, except perhaps historical ones.
+- [ ] history, security, and technology
+- [ ] economics, mass storage, and implementation
+- [ ] software, platforms, and infrastructure
+
+3. How do economies of scale provide an advantage for the use of cloud computing over establishing a data center?
+
+- [ ] with faster performance
+- [ ] with lower prices due to competition between cloud services
+- [ ] by providing the latest in hardware and software
+- [X] by offering a portion of a large, optimized service
+  - The cost of the accompanying infrastructure as a fraction of the total cost is reduced.
+
+4. Your team wants to configure custom applications without worrying as much about security and hardware configurations. Which service model is most appropriate?
+
+- [ ] SaaS
+- [X] PaaS
+  - A platform is provided on which to build your custom applications.
+- [ ] MaaS
+- [ ] IaaS
+
+5. MedOpal is an aggregator of personal medical records for professionals who need to travel extensively. Security is paramount. Which type of deployment suits MedOpal best?
+
+- [ ] hybrid
+- [ ] cluster
+- [ ] cloud
+- [X] private
+  - A private deployment satisfies the security that the business presently needs.
