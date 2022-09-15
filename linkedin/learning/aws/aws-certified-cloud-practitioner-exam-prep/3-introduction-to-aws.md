@@ -33,3 +33,10 @@ So you get it. Amazon Web Services is a pretty big deal and a lot of companies u
 - [X] to serve third-party vendors
 - [ ] to reduce costs
 - [ ] to facilitate scale-up
+
+2. Why do many large organizations use cloud computing?
+
+- [X] for scalability, rapid deployment, and efficiency
+- [ ] to modularize customer service operations
+- [ ] to segment customer populations by geography and age
+- [ ] for simplicity, popular appeal, and ease of obtaining expertise
