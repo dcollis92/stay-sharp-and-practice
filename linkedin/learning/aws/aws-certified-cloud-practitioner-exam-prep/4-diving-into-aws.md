@@ -22,3 +22,20 @@ Let's dig right in and create an AWS account. You'll need to go to aws.amazon.co
 
 Transcript:
 When you first log in to the AWS Management Console, you'll immediately notice that there's a lot going on. No worries. Most of the time, we only work with one or two of the resources on this dashboard. First off, let's take look at the right top corner of the browser. Here, you'll see your user name you chose for yourself when you signed up for an account. When you click on your user name, you can find out information and have a quick way of accessing your security credentials. The billing portion is important as you start exploring different services, as some of them will cost money, even during the free tier. Let's move on to the link near the user name labeled Support. Here, you can explore different ways of finding documentation and support resources for your issues or questions. You can create tickets in the support center or ask peers in the forum. You can also find documentation and tutorials on how to troubleshoot or create certain functions in the documentations and trainings offered by AWS for free. The Services link at the top left corner of the browser takes you to the list of all the services AWS offers. This list expands as new services are announced, and just in October of 2018, AWS added new categories, like Blockchain and Satellite. Some of the most popular categories of services are Storage, Commute, and Database. You can click on any of them and they will provide you information and introduction to the services, as well as resources you could check out to learn more about them. Back on the main dashboard, there are resources to learn about various services and what they can do for you, such as the Build a solution and Learn to build section. You can also go to the Explore AWS column to the right and see what AWS things you should check out now. There are many parts to the AWS Management Console dashboard, but we've gone over many of the main resources available for you to begin your dive in to AWS. A big portion of learning a new system or technology is knowing where to look for answers. And the support resources available on the dashboard can answer many of your potential questions and issues. Go ahead and take a little while to explore the dashboard on your own.
+
+---
+
+### AWS Free Tier
+
+Transcript: 
+Go to AWS.Amazon.com/free. AWS Free Tier allows new potential customers to test out and use many services offered by AWS for free. This allows you to become comfortable with many of the services and AWS gains a potential customer. When the 12 months are over, you begin to be charged for services you consume at regular rates. As a warning, you will get a notification when your 12 months are expiring, but you will then need to manually turn down or delete your services if you don't want to be charged. There are three different types of Free Tier offerings. They are 12 months free, always free, and trials. Let's take a look at each option. The first option is 12 months free. As the naming suggests, these are offers that expire 12 months after you sign up for your account. All of the services have usage limits, and if you go above the limit, you will be charged at normal rates even within the first 12 months. Some of the common limitations are use time, number of requests, amount of storage, number of characters, and actions per month. The second option is always free. And, you guessed it, it's always free, up to a certain point. The final type of Free Tier offering is trials. Most of the trials are for less than 12 months, and have stricter limits. Take note, one important thing is that being on the AWS Free Tier plan doesn't mean you have unlimited use of everything. Depending on the service, there are different limits. AWS Free Tier is a generous offering that helps bring in new customers for AWS, and as a brand new user of AWS, it allows you to test out the services and learn and explore this powerful system.
+
+---
+
+### Use Case: AWS Free Tier
+
+Transcript:
+
+---
+
+### Chapter Quiz
