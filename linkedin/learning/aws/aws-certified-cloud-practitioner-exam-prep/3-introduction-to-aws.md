@@ -27,3 +27,9 @@ So you get it. Amazon Web Services is a pretty big deal and a lot of companies u
 
 ### Chapter Quiz
 
+1. Why did Amazon originally venture into cloud computing?
+
+- [ ] to increase market share
+- [X] to serve third-party vendors
+- [ ] to reduce costs
+- [ ] to facilitate scale-up
