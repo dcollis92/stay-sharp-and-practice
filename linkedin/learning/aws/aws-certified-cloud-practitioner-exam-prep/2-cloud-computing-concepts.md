@@ -37,6 +37,28 @@ There are three main cloud computing models, software as a service or SaaS, plat
 
 ### 2.3 Cloud Computing Deployments
 
+Transcript:
+Analogous to different cloud computing services, there are also different deployment models that have organizations deploy their cloud infrastructure. And thankfully, their names are fairly intuitive. Cloud, on-premises, and hybrid deployment. When an organization utilizes cloud deployment, it means that all parts of its IT infrastructure reside and run on the cloud. All applications were either migrated to or created in the cloud. And the organization relies on internet and their cloud-computing service providers to fulfill their computational and IT requirements. Many small startups utilize this model, as it allows them to be flexible and scalable in their resources while removing the roadblock of costly and time-consuming procurement and management processes for on-premises infrastructure. They may use services like Office 365 for emails, Microsoft Teams for on-demand communication, and Microsoft Azure for their app development and hosting. All resources in a cloud deployment infrastructure live on the cloud. With on-premises deployment, often referred to as private cloud, organizations use virtualization to deploy resources in their on-premises data centers. In many cases, the execution of on-premises deployment looks like the traditional IT infrastructure with its servers, network cables, and data center management. The setup does not provide a lot of benefits of cloud computing. The resources are not accessed using the internet because they are on-site. This means you can access them really quickly because nothing has to be uploaded or downloaded using the internet. However, it could utilize application management and virtualization technologies to increase efficiency of the available resources, such as by deploying virtual machines and internet resources behind a firewall. On-premises deployment provides dedicated resources which means that the organization is not sharing any part of their resources with another organization. This may be a requirement for certain industries that take data privacy very seriously, such as the medical field. The last type of deployment is hybrid deployment which connects on-premises tech with cloud-based resources. This is a very common setup for many established companies that already have their own on-premises data centers, but are in the process of migrating over to the cloud. Hybrid deployment allows organizations to extend and scale their infrastructure into the cloud while still maintaining access to on-premises resources living on on-site servers. Another common use case is to use the cloud deployment as backup in disaster recovery solution. An organization can maintain a working copy on premises, but make sure they have durable backup in the cloud. Because migration of existing IT systems take a long time and is costly, hybrid deployment is a very effective in-between as resources are migrated to the cloud. Flexibility, scalability, and finding your perfect fit are features of cloud computing that shine when considering which model of cloud computing deployment is the best fit for your organization. For organizations that don't have very many IT resources deployed yet, cloud deployment would allow them to utilize the complete flexibility and affordability which are signatures of cloud computing services. For those who need all of their data secured and on-premises, either due to retrieval speed or security requirements, private cloud utilizing virtualization of legacy resources is a good fit. For companies with legacy IT resources that would take a long time to upload to the cloud, but would like to extend their computing stores capacity economically, hybrid cloud deployment might be preferable. Many companies utilize hybrid cloud deployment to have quick access to on-premises resources, but have a very safe backup in case of an emergency.
+
+### **----- BULLET POINT NOTES -----**
+
+### Cloud Deployment Models
+- Cloud
+  - 100% of IT infrastructure on the cloud
+  - All applications migrated to or created in the cloud
+  - Removes roadblock of costly and time-consuming procurement processes
+- On-Premises/Private Cloud
+  - Use virtualization to deploy resources in their on-premises data centers
+  - Often looks like traditional IT infrastructure
+  - Does not provide a lot of benefits of cloud computing
+  - Resources cannot be accessed using the Internet
+  - Security: Provides dedicated resources
+- Hybrid
+  - Connects on-premises technology wih cloud-based resources
+  - Great for established companies that are in the process of migrating over to the cloud
+  - Data partially on the cloud, and partially in the on-premises data center
+  - Can use as backup and disaster recovery solution
+
 ---
 
 ### Design Principles of Cloud Computing
