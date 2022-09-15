@@ -136,3 +136,43 @@ Welcome to the study break for cloud computing concepts that will come up in the
 ---
 
 ### Chapter Quiz
+
+1. Which of the below is not a “best practice” concept for deploying Cloud infrastructure?
+
+- [ ] Security
+- [ ] Reliability
+- [ ] Performance Efficiency
+- [X] Hybrid Cloud
+  - Hybrid Cloud is a type of Cloud deployment, not part of the “best practice” concepts for deploying Cloud infrastructure
+
+2. Which cloud concepts are you responsible for knowing for the AWS Certified Cloud Practitioner Exam?
+
+- [X] advantages over legacy IT, models and deployments, and architecture
+  - These topics cover all areas, except perhaps historical ones.
+- [ ] history, security, and technology
+- [ ] economics, mass storage, and implementation
+- [ ] software, platforms, and infrastructure
+
+3. How do economies of scale provide an advantage for the use of cloud computing over establishing a data center?
+
+- [ ] with faster performance
+- [ ] with lower prices due to competition between cloud services
+- [ ] by providing the latest in hardware and software
+- [X] by offering a portion of a large, optimized service
+  - The cost of the accompanying infrastructure as a fraction of the total cost is reduced.
+
+4. Your team wants to configure custom applications without worrying as much about security and hardware configurations. Which service model is most appropriate?
+
+- [ ] SaaS
+- [X] PaaS
+  - A platform is provided on which to build your custom applications.
+- [ ] MaaS
+- [ ] IaaS
+
+5. MedOpal is an aggregator of personal medical records for professionals who need to travel extensively. Security is paramount. Which type of deployment suits MedOpal best?
+
+- [ ] hybrid
+- [ ] cluster
+- [ ] cloud
+- [X] private
+  - A private deployment satisfies the security that the business presently needs.
