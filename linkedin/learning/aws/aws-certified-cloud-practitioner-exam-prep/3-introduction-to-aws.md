@@ -1,6 +1,6 @@
 # Introduction to AWS for Non-Engineers: 1 Cloud Concepts
 
-## **Introduction to Cloud Computing**
+## **Introduction to AWS**
 
 ---
 
