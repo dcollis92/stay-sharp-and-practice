@@ -53,3 +53,43 @@ So, now that we are armed with an AWS account and AWS Free Tier, let's explore a
 ---
 
 ### Chapter Quiz
+
+1. How can you find general documentation and help on the AWS dashboard?
+
+- [X] from the Support drop-down menu
+  - You can find detailed documentation and create help tickets.
+- [ ] from the Services drop-down menu
+- [ ] by accessing Learn to Build or Build a Solution
+- [ ] by using Resource Groups
+
+2. How should you use AWS Free Tier?
+
+- [X] as a way to explore
+  - The service provides an introduction to AWS, and lets you try various capabilities.
+- as an in-depth resource
+- as a routine service
+- as a toy
+
+3. How can you make the URL for your weblog simpler than the long AWS string?
+
+- [ ] by using the correct EC2
+- [ ] by using WordPress
+- [X] by using the paid AWS domain registrar
+  - This service is called Route 53.
+- [ ] by using an AMI
+
+4. Your team has some extensive calculations to conduct for an engineering design. Which type of service would be most helpful?
+
+- [ ] database
+- [ ] storage
+- [ ] machine learning
+- [X] compute
+   - Compute services are core to many scientific and engineering operations.
+
+5. What information is necessary for AWS account creation?
+
+- [X] telephone number and credit card credentials
+  - The telephone number can be mobile or other.
+- physical address and mobile phone number
+- name and banking details
+- Amazon ID and password
