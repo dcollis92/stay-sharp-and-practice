@@ -61,7 +61,36 @@ Analogous to different cloud computing services, there are also different deploy
 
 ---
 
-### Design Principles of Cloud Computing
+### 2.4 Design Principles of Cloud Computing
+
+Transcript:
+Knowing how to create a well-architected infrastructure allows organizations to build the most secure, durable, efficient, and high performing IT infrastructure possible. So how can we do that? First, avoid unnecessary costs. Use only what you need and turn off any servers or resources you aren't using. Reserve resources in advance if you know you'll need a certain amount of compute power, as many services give discounts for reservations and upfront payment. Don't forget to continue monitoring for more ways to optimize as your organizational needs change and know which resources are causing which charges on your bills. Best practice number two, reliability. A reliable system has the ability to recover from service disruptions, often by itself. They can also dynamically adjust computing resources to meet demand. You should be testing your disaster recovery settings and incorporating redundancies in your infrastructure. Redundancy refers to the concept of having duplicate copies of resources so that when one goes down, the other can take over to provide seamless cut-over experience for end users. The third best practice, efficiency. Performance efficiency is the ability to use computing resources to adjust to system requirements. It should allow for more experimentation and when a change is set in motion, should be able to go global in minutes. A fourth best practice to consider, infrastructure security. This includes security of information, systems and assets. Security best practices should be automated. Data should be protected in transit and at rest, which means when it's being moved from one location to another, as well as when it's being stored. For example, when someone sends an email, the data is in transit being transferred using the internet. If you have a file uploaded to a server, it's at rest. Traceability should be enabled along with strong identity foundation. This means that in case of a security breach, you are able to see who did what at any point, because every user has a unique user account or access key. Who can do and access what should be well-defined and followed. The fifth best practice is operational excellence. This is your ability to run and monitor systems while constantly improving processes and procedures. Everything should be documented and operational procedures should be frequently refined. Failures should be anticipated and learned from and systems and processes updated to take them into account. If an incident occurs, such as a major service downtime, the whole team should come together to discuss what went wrong, how it could have been prevented and set up procedures in case it happens again.The sixth best practice is sustainability. Cloud architects and cloud computing platforms share responsibilities for environmental sustainability when operating cloud resources. There should be a focus on achieving maximum benefit from already provisioned resources to minimize required total resources to minimize environmental impact. According to AWS, cloud computing providers have lower carbon footprints and are more energy efficient than typical on-premises environments, because these providers invest in efficient power technology, achieve higher server utilization rates and operate energy efficient resources. So there are six best practices when architecting cloud-based IT infrastructure, cost optimization, reliability, performance efficiency, security, operational excellence, and sustainability. When all six pillars are taken into account and optimized, you will have a highly performing stable IT infrastructure that allows your organizations to save money, time and resources.
+
+### **----- BULLET POINT NOTES -----**
+
+#### Well-Architected Framework
+- Build the most secure, durable, efficient, and high-performing IT infrastructure possible
+- Avoid unnecessary costs
+  - Use only what you need
+  - Reserve resources in advance
+  - Continue to monitor for optimization
+- Reliability
+  - Test diaster recovery settings
+  - Incorporate redundancy
+  - Have duplicate copies of resource
+- Efficiency
+- Security
+  - Best practices should be automated
+  - Data should always be protected
+  - Enable traceability
+  - Manage access
+- Operational excellence
+  - Document everything
+  - Refine operational procedures
+  - Anticipate failure
+  - Update processes
+  - Learn from failures
+- Sustainability
 
 ---
 
