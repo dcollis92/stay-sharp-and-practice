@@ -66,10 +66,20 @@ Transcript:
 
 ---
 
-### Next Steps
-
-Transcript:
-
----
-
 ### Chapter Quiz
+
+1. What does the acronym SIP PHO stand for?
+
+- [ ] Software, Infrastructure, Public, Private, Hybrid, Other
+- [ ] Stand-Alone, Independent, Private, Public, Hybrid, On-Premises
+- [ ] Stand-Alone, Independent, Public, Platform, Hybrid, Other
+- [X] Software, Infrastructure, Platform, Public, Hybrid, On-Premises
+  - These terms refer to the models and deployment methods.
+
+2. Which areas remain for you to learn about before taking the AWS Certified Cloud Practitioner exam?
+  
+  - encryption, operating systems, and storage
+  - pricing, machine learning, and storage
+  - security, privacy, and parallel computing
+  - [X] billing and pricing, technology, and security
+    - Technology can be referred to as core services.
