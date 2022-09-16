@@ -31,6 +31,29 @@ In AWS Cloud, IT Infrastructure Looks like...
 ### 1.2 Shared Responsibility Model
 
 Transcript:
+When utilizing the cloud to house any part of your technical infrastructure, you must first consider the security impacts of moving your resources onto the cloud. Unlike the on-premises data center that is protected by the virtue of being within your physical reach, data centers hosting your cloud resources are in an undisclosed location in data centers managed by AWS. So who's responsible for the security of the data center? The servers? The networks? The data itself? All those EC2 instances that are running computations. Who makes sure their security patches are up to date? Who protects the data from being corrupted? AWS has a model that helps to puzzle these questions out, called the Shared Responsibility Model. As you might expect from the name, the Shared Responsibility Model asserts that the security of cloud functioning infrastructures is a shared responsibility between the customer and AWS. While there are certain parts of the infrastructure that the customers no longer have to worry about, there are still components that are the customer's responsibilities to secure. In the most basic breakdown, AWS is responsible for the security of the cloud, while you, the customer, are responsible for security in the cloud. Let's see if we can deconstruct what AWS might mean by this. When AWS says that they are responsible for security of the cloud, they mean that AWS is responsible for protecting the infrastructure that runs all of the services offered by AWS Cloud. This includes hardware, software, networking and the data center facilities that run their cloud computing platform. You can think of it like, AWS is responsible for security of the components that make up the AWS Cloud, like the data centers and physical servers. On the other hand, when AWS says that the customers are responsible for security in the cloud, they mean that the customers are responsible for varying levels of security functions, depending on which services they are using. These could be in forms of protecting customer data, platform, application, and identity or access management. Or operating systems of virtual machines, configuring firewalls and data encryption. You can think about it like, we are responsible for the security of things inside the AWS Cloud, like data encryption and patching servers. There are many granular settings and concepts within the Shared Responsibility Model for AWS Cloud, which you can read on their website. But the basic concept that you need to know for the exam when this model is brought up is this, AWS is responsible for security of the cloud, while you, as the customer, are responsible for security in the cloud.
+
+### **----- BULLET POINT NOTES -----**
+
+#### Shared Responsibility Model
+  - Security of cloud computing infrastructres and data is shared responsiblity between the customer and AWS
+    - AWS: Security OF the Cloud
+    - Customer: Security IN the Cloud
+
+#### AWS: Security of the Cloud
+  - AWS is responsible for protecting the infrastructure, such as:
+    - Physical security of data centers hosting the AWS Cloud
+    - Security of hardware, software, networking, and so on, that runs the cloud computing services
+
+#### You: Security in the Cloud
+  - You are responsible of varying levels of security functions, depending on the AWS Cloud service used, such as:
+    - Protecting customer data and encryption
+    - Identity and Access Management
+    - Patching operating systems of VMs
+    - Configuring firewalls
+    - Data Encryption
+
+
 
 ---
 
