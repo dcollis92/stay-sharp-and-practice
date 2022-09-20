@@ -14,7 +14,6 @@ function reverse(str) {
    * join back into a string
    */
   //! return str.split('').reverse().join('');
-
   /*
    * Solution 2
    * create empty string called 'reversed'
@@ -23,13 +22,11 @@ function reverse(str) {
    * Return the variable 'reversed'
    */
   //! let reversed = "";
-
   //! for (let char of str) {
   //!   reversed = char + reversed;
+  // debugger;
   //! }
-
   //! return reversed;
-
   /*
    * Solution 3
    * split string into an array
@@ -38,7 +35,23 @@ function reverse(str) {
    * arrow function with a starting initial value ('')
    * similar to the For Of Loop, you add char each to the reversed string
    */
-  return str.split("").reduce((rev, char) => char + rev, "");
+  // debugger;
+  //! return str.split("").reduce((rev, char) => char + rev, "");
 }
 
+// reverse("asdf");
+
 module.exports = reverse;
+
+/*
+ * Debugger
+ * You can throw a debugger in your code to pause execution
+ * write "debugger" before your return statement
+ * call the function manually
+ * terminal command: 'node inspect file.js'
+ * each debug> pause, press 'c' then enter to continue
+ * to inspect instead of continue on, type 'repl' then enter
+ * cntrl + C to exit repl and the debugger
+ * NOTE: if the debugger is within a for loop
+ * it will run each time the for loop repeats
+ */
