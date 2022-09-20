@@ -27,15 +27,18 @@ function reverse(str) {
   //! for (let char of str) {
   //!   reversed = char + reversed;
   //! }
+
   //! return reversed;
 
-  /* 
-  * Solution 3
-  *
-  * 
-  * 
-  * 
-  */
+  /*
+   * Solution 3
+   * split string into an array
+   * takes all values of an array
+   * and condences them to 1 single value
+   * arrow function with a starting initial value ('')
+   * similar to the For Of Loop, you add char each to the reversed string
+   */
+  return str.split("").reduce((rev, char) => char + rev, "");
 }
 
 module.exports = reverse;
