@@ -8,12 +8,34 @@
 
 function reverse(str) {
   /*
-  * Solution 1
-  * turn string into an array
-  * reverse the array
-  * join back into a string
+   * Solution 1
+   * turn string into an array
+   * reverse the array
+   * join back into a string
+   */
+  //! return str.split('').reverse().join('');
+
+  /*
+   * Solution 2
+   * create empty string called 'reversed'
+   * for each char in the string
+   * Take the char and add it to the start of 'reversed
+   * Return the variable 'reversed'
+   */
+  //! let reversed = "";
+
+  //! for (let char of str) {
+  //!   reversed = char + reversed;
+  //! }
+  //! return reversed;
+
+  /* 
+  * Solution 3
+  *
+  * 
+  * 
+  * 
   */
-  return str.split('').reverse().join('');
 }
 
 module.exports = reverse;
