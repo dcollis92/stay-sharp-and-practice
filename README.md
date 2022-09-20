@@ -45,10 +45,12 @@
 - [Blind 75](https://www.techinterviewhandbook.org/best-practice-questions/)
   - Week 1 - Sequences
   - Week 2 - Data Structures
-  - Week 3 - Non-linear data structures
-  - Week 4 - More data structures
-  - Week 5 - Dynamic programming
 
 ### LinkedIn
 
 - LI Learning: Learning Regular Expressions (Regex)
+- LI Learning: AWS Cloud Practitioner Exam Prep (AWS)
+
+### Udemy
+
+- The Coding Interview Bootcamp: Algorithm & Data Structures 
