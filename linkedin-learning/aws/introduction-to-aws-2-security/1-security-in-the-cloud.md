@@ -133,10 +133,39 @@ AWS has many compliance programs available for your review in order to determine
 ### 1.6 Study Break: Security Domain
 
 Transcript:
+What are the differences between security in the Cloud and security in an on-premises data center? Security in the Cloud may look a little different, and include some added benefits. Let's review the security domain of the AWS Certified Cloud Practitioner Exam together. Some topics we'll be covering are the security in the Cloud, Shared Responsibility Model, security pillar of the Well-Architected Framework, Principle of Least Privilege, and AWS Cloud Compliance. Let's go. One of the biggest benefits of utilizing Cloud computing is that you no longer have to purchase equipment and maintain your own data center to run IT resources. Cloud computing providers like AWS manage the data centers so you can focus on other aspects of IT infrastructure management. When you deploy to the AWS Cloud, you benefit from the global network of data centers and architecture built with security in mind. There are dozens of compliance programs embedded into AWS to help you meet your industry's compliance requirements. AWS is designed to keep your data safe, no matter how big or small your Cloud usage is, so you are free to scale your business as quickly as you want. There are three major concepts that outline AWS' recommended security practices. These are: the Shared Responsibility Model, the Security Pillar of a Well-Architected Framework, and Principle of Least Privilege. In addition, we will review how AWS accounts for compliance requirements for data and resources stored in the Cloud. The first concept addresses the question who is responsible for security? The answer is slightly complex. You, as the consumer, are responsible for security in the Cloud. AWS, as the Cloud computing service provider, is responsible for security of the Cloud. This concept is called the Shared Responsibility Model, and it asserts that the security of the data and resources in the Cloud is a shared responsibility between the Cloud computing service provider and the customer. While the customer no longer has to worry about certain aspects of IT infrastructure, like securing the physical data center or hardware, there are other aspects that they are still responsible for, including patching virtual service regularly, and utilizing proper permission sets so only people who should be accessing certain resources, do access them. Next, AWS addresses how can you best protect your AWS Cloud infrastructure from both internal and external security threats? AWS has the five pillars of a Well-Architected Framework to help it's customers build the most secure, fault resilient, efficient, and high performing IT infrastructure possible. Within the five pillars, there is the security pillar, which outlines how you can secure your infrastructure adhering to best practices. Security in the Cloud is composed of five areas: Identity and Access Management, Detective Controls, Infrastructure Protection, Data Protection, and Incident Response. Architecting a Well-Architected Framework can go a long way to making your IT infrastructure stable and secure. Next is Principle of Least Privilege. What resources should you provide access to? The Principle of Least Privilege states that you should only be providing access to resources that an entity requires to do it's job. Every role has a set of access permissions necessary to effectively execute it's job, and the resources and individuals should have no more or no less than the optimal level of access. In AWS, you would make this happen by using a service called Identity and Access Management, or IAM, providing granular access permissions. Providing the minimum amount of access to entities to complete their work is a vital way to keep your IT infrastructure secure. The Principle of Least Privilege coincides with the Shared Responsibility Model, where the customer, you, are responsible for security in the Cloud by making sure access is provided responsibly. Lastly, here are many AWS Cloud Compliance programs available to help you determine if your industry allows you to store data on AWS. Many industries have compliance requirements for storing your data, such as HIPAA for medical organizations. You can learn more about the various compliance programs AWS offers by visiting aws.amazon.com/compliance. In the security domain of the AWS Certified Cloud Practitioner Exam, AWS wants you to be able to explain what concepts like the Shared Responsibility Model and Principle of Least Privilege may mean in real life scenarios. If you feel like you want or need a refresher for any of the concepts we reviewed in this video, feel free to go back and watch the videos again.
 
 ### **----- BULLET POINT NOTES -----**
 
+#### Reviewing the Security Domain
+  - Security in the cloud
+  - Shared responsibility model
+  - Security pillar of the Well-Architected Framework
+  - Principle of Least Privilege
+  - AWS Cloud Compliance
 
+#### Recommended Security Practices
+
+#### Shared responsibility model
+  - Customer: responsible for security IN the cloud
+  - AWS: responsible for security OF the cloud
+  - Security of data and resources IN the cloud is a shared responsibility between the cloud computing service provider and the customer
+  
+#### Security pillars of the Well-Architected Framework
+  - Identity of Access Management
+  - Detective Controls
+  - Infrastructure Protection
+  - Data Protection
+  - Incident Response
+
+#### Principle of Least Privilege
+  - Only provide access to resources an entity requires to do its job
+  - Permission should be no more or no less than the optimal level of access
+  - Use IAM (Identity and Access Management) in the AWS Cloud
+  - Coincides with the shared responsibility model
+
+#### AWS Cloud Compliance
+  - aws.amazon.com/compliance
 
 ---
 
