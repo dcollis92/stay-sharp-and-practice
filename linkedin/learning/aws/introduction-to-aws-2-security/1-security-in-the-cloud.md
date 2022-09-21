@@ -53,13 +53,47 @@ When utilizing the cloud to house any part of your technical infrastructure, you
     - Configuring firewalls
     - Data Encryption
 
-
-
 ---
 
 ### 1.3 Well-Architected Framework
 
-Transcript:
+Transcript: - Security in a Well-Architected IT infrastructure. When you're considering architecting how your AWS cloud IT infrastructure will look, you will have to put in a lot of considerations on how to make sure that it is secure from both external and internal threats. AWS has developed the concept called the five pillars of a well architected framework to help you build the most secure, fault resilient, efficient and high performing IT infrastructure possible. The pillars are discussed in detail in the first course of this series titled Introduction to AWS for non engineers, one cloud concepts. Since this course pertains to security, we'll be doing a deeper dive into you guessed it, the security pillar. They are Identity and Access Management or IAM, Detective Controls, Infrastructure Protection, Data Protection and Incident Response. To make sure user access is manage properly, you would want to implement a strong identity foundation. This would entail utilizing the principle of least privilege, which means that you only provide access to what people need to do their jobs, and no more. We will go over this concept in more detail in the next video. You should enable traceability by monitoring alerts, audit actions and changes to your environment in real time. Security should be applied on all layers instead of just on a single outer layer of your infrastructure. For a virtual server, this could mean that you make sure your infrastructure is secured at the organizational subnet, load balancer virtual machine in the operating system layers. Security best practices should also be automated, so that you can scale more rapidly and cost effectively. If the security methods are automated, You can just replicate that for every new instance or resource you deploy instead of having to manually set them up. Data should be protected At Rest and In Transit data is At Rest when it is stored somewhere like in an S3 bucket. Data is In Transit when it is moving from one place to another, such as when you send an email from your mail server to your friend's mail server. Security mechanisms should be adjusted depending on sensibility of the data. You should also keep people away from the data by eliminating the need for direct access or manual processing of data. In this way, human error and loss or modification of sensitive data can be prevented. Finally, when a security event occurs, you should be prepared to intervene, investigate and deal with the event. And once the issue is resolved, update the incident management process to learn from the security event. Security is a very vital part of running and architecting a well architected framework. You can strive for stability by focusing on protecting the data and resources against security events. And when an event occurs to learn from the event and update Incident Management procedures.
+
+### **----- BULLET POINT NOTES -----**
+
+#### AWS Five Pillars of a Well-Architected Framework
+- Operational Excellence
+- Security
+- Reliability
+- Performance Efficiency
+- Cost Optimization  
+
+#### Security
+- Identity and Access Management (IAM)
+  - Actively manage all-user access
+  - Use strong identity foundation
+  - Priciple of least privilege
+- Detective Controls
+  - Enable tracability: "Who did what, when?
+  - Actively monitor alerts
+  - Audit actions and changes to environment in real time
+- Infrastructure Protection
+  - Apply security on all layers of infrastructure
+  - Not just the outer layer like the physical data center
+  - Virtual servers: secure multiple layers like subnet, load balancer and OS
+  - Security best practices should be automated to save time and money when scaling
+- Data Protection
+  - At Rest:
+    - Image saved in S3 bucket
+  - In Transit:
+    - Email being sent from one server to another
+  - Security mechanisms should be adjusted depending on the sensitivity of the data
+  - Keep people away from data
+    - prevent human error
+- Incident Response
+  - Intervene, investigate, and deal with all security events
+  - Once issue is resolved, update incident management process
+  - Contiue to learn from past mistakes and security events
 
 ---
 
