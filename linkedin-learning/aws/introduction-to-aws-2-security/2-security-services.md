@@ -50,8 +50,20 @@ When utilizing the cloud to house any part of your technical infrastructure you 
 ### 1.2 Web Application Firewall (WAF)
 
 Transcript:
+Web Application Firewall or WAF. AWS Web Application Firewall, commonly referred to AWS WAF, protects web applications running on AWS Cloud from common web exploits. As the name suggests, it's a firewall service for your web applications. Fancy that. WAF can protect against exploits that could compromise security or availability of your web apps. It can also protect the application from exploits that could force your app to consume excessive resources which in turn could end up costing you a lot of money. With WAF, you only pay for what you use with no upfront commitments. Web Application Firewall improves web traffic visibility, provides cost-effective web application protection, and delivers increased security and protection against web attacks. It is also easy to deploy and maintain, as you can deploy it on Amazon CloudFront as part of your content delivery network solution or via Amazon API Gateway. There is no additional software that you need to deploy and you can reuse the centrally-defined roles across all of your web applications. AWS WAF is an affordable, malleable, and adaptable protection for your web applications running on AWS Cloud that is easy to manage and deploy.
 
 ### **----- BULLET POINT NOTES -----**
+
+### AWS Web Application Firewall (WAF)
+- Protects web apps running on the AWS Cloud from common web exploits
+- Firewall service for web applications
+- Protect web apps against exploits that could compromise security or availability
+- Protect apps from exploits that could force your app to consume excessive resources
+  - High consumption: Expensive
+- Improves web traffic visilibity
+- Provides cost-effective web app protection
+- Increased security and protection against web attacks
+- Easy to deploy and maintain
 
 ---
 
