@@ -126,12 +126,17 @@ Transcript: Principle of least privilege. Who can access what? When you start a 
 ### 1.5 AWS Cloud Compliance
 
 Transcript:
+AWS has many compliance programs available for your review in order to determine whether your industry allows you to store data or use AWS for your business. You can find the AWS Compliance Programs by going to aws.amazon.com/compliance/programs. Let's take a look together. Here, we can see that the AWS Compliance Programs are divided up into regions of the world. There's also a whole entire section on privacy. That's definitely a big one for the data on the cloud. If your organization deals with patient data in the United States, you would need to be cognizant of HIPAA. You can find out how AWS is compliant with HIPAA and how data is secured on AWS. Let's take a look. Let's see, here we go. Laws, regulations, privacy, HIPAA. If you had any questions, the quick FAQ will respond to many of the common questions. There are many compliance programs available for review. And this page allows you to easily find out whether your resources can or cannot be hosted on AWS if you have compliance requirements for your data. Again, you can find the information on aws.amazon.com/compliance/programs.
 
 ---
 
 ### 1.6 Study Break: Security Domain
 
 Transcript:
+
+### **----- BULLET POINT NOTES -----**
+
+
 
 ---
 
