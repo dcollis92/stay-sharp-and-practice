@@ -46,10 +46,10 @@
   - Week 1 - Sequences
   - Week 2 - Data Structures
 
-### LinkedIn
+### LinkedIn Learning
 
-- LI Learning: Learning Regular Expressions (Regex)
-- LI Learning: AWS Cloud Practitioner Exam Prep (AWS)
+- Learning Regular Expressions (Regex)
+- AWS Cloud Practitioner Exam Prep (AWS)
 
 ### Udemy
 
