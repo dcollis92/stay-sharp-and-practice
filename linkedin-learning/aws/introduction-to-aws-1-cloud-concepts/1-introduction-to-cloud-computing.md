@@ -41,14 +41,14 @@ Selecting transcript lines in this section will navigate to timestamp in the vid
 
 ### Chapter Quiz
 
-Q: Which description best characterizes the cloud?
+1. Which description best characterizes the cloud?
 
 - [ ] programs and applications existing offsite
 - [x] the internet
 - [ ] remote storage
 - [ ] remote coders and data analysts
 
-Q: How do you typically pay for the use of cloud resources?
+2. How do you typically pay for the use of cloud resources?
 
 - [ ] with annual contracts
 - [x] on a pay-as-you-go basis
@@ -56,7 +56,7 @@ Q: How do you typically pay for the use of cloud resources?
 - [ ] by purchasing a license
 - [ ] by contributing hardware
 
-Q: Which technology provides oversight for the cloud?
+3. Which technology provides oversight for the cloud?
 
 - [ ] dumb terminals
 - [ ] mainframes
@@ -65,7 +65,7 @@ Q: Which technology provides oversight for the cloud?
 - [x] hypervising
   - Together with connectivity, hypervising is the enabling technology.
 
-Q: Why do many people choose to use the cloud for everyday tasks?
+4. Why do many people choose to use the cloud for everyday tasks?
 
 - [ ] for enhanced security and privacy
 - [ ] for advertising and growing fans and customers
@@ -73,11 +73,10 @@ Q: Why do many people choose to use the cloud for everyday tasks?
     - You can use the latest technology and collaborate from anywhere.
 - for simplicity and ease of operations
 
-Q: What marks the origin of cloud computing, and when did it occur?
+5. What marks the origin of cloud computing, and when did it occur?
 
 - [ ] the development of networking in the 1960s
 - [x] the development of mainframe computing in the 1950s
-Correct
-- [ ] Electronic computing begins here, and the idea of having multiple, dumb terminals started the idea of the cloud.
+  - Electronic computing begins here, and the idea of having multiple, dumb terminals started the idea of the cloud.
 - [ ] the invention of the transistor in the 1940s
 - [ ] the invention of the web in the late 1980s
