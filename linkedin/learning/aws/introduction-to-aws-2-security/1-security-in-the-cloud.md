@@ -99,8 +99,28 @@ Transcript: - Security in a Well-Architected IT infrastructure. When you're cons
 
 ### 1.4 Principle of Least Privilege
 
-Transcript:
+Transcript: Principle of least privilege. Who can access what? When you start a new job, you get some accounts to log in. It can be your not so new computer with someone else's coffee stains on the keys, or your corporate email account that has fifty emails waiting for you already. Or, it could be your company's shared network drive on the server, where your team and your predecessors have been keeping documents that everyone needs to access. Say you work in the sales departmnet. You should have access only to resources and information that you require to do your job. That could be the client list for your team, or deck templates for slideshows you will now be creating to present to potential clients. Or, even the products you are selling, however, you will not expect and should not have access to resources like pending legal cases being handled by the legal department, the not-yet released product mock-ups being developed by your dev teams, or list of personnel reshuffling that the HR department is contemplating. This concept of providing access only to resources that a person needs to do his job, and no more, is called the principle of least privilege. The concept is this. The CEO of the company should have access to a lot of the corporate resources. The newly hired sales associate should not. The IT department should have the ability to administer the services, but probably not have access to the sensitive information and files themselves. Every role has a set of access permissions necessary to effectively complete its job, and the individual in the role should have no more or no less than the optimal level of access. To follow the principle of least privilege in AWS, you provide access to services and resources for your users and other AWS services by using a service called Identity Access Management, or IAM. When you provide users or services access using IAM policies you should start with a minimum set of permissions and grant additional permissions only as necessary. Determine what the user or service needs to be able to do and craft policies to allow them to perform only those specific tasks. For example, a marketing manager might need to access certain marketing-related S3 bucket to upload flat files for the company's website. You may remember that S3 is a file store service offered by AWS, and buckets are like folders inside the service that holds your files. However, he will not need access to the S3 buckets where air logs are being dumped into by an app being developed by the dev team. The IAM access granted to the marketing manager should provide him only the absolute necessary access in the company's AWS cloud infrastructure. Remember to provide only the minimum amount of access a person or service requires and nothing more to keep your AWS cloud infrastructure secured.
 
+### **----- BULLET POINT NOTES -----**
+
+#### Principle of Least Privilege
+- Every role has a set of access permissions necessary to effectively complete its job, and the individual in the role should have no more or no less than the optimal level of access.
+
+#### Principle of Least Privilege in AWS
+- Use Access Management (IAM) to provide access
+- You can provide access to resources to both users and other AWS services
+- Start with mimimum set of permissions, and grant additional only as necessary
+- Determine what user/service needs to be able to do and craft policies to perform only those specific tasks.
+  
+#### EXAMPLE:
+  - Marketing Manager
+    - WOULD NEED:
+      - S3 bucket upload access to company website
+      - S3 bucket view access to company access
+    - WOULD NOT NEED:
+    - S3 bucket view access toDevTeam error logs
+    - S3 bucket edit access to DevTeam production
+  
 ---
 
 ### 1.5 AWS Cloud Compliance
