@@ -171,9 +171,41 @@ What are the differences between security in the Cloud and security in an on-pre
 
 ### Chapter Quiz
 
-Transcript:
+1. Which statement best exemplifies the principle of least privilege?
+   
+  - [ ] Give as little access as possible to all workers.
+  - [ ] IT should have access to everything but should limit access for others.
+  - [X] Grant access to the optimal resources required for a job and no more.
+
+2. How does cloud security differ from security at private data centers?
+   
+  - [ ] Private data centers are often much less secure than cloud storage.
+  - [ ] Cloud security is often less strict than security at private data centers.
+  - [X] Cloud security can be at least as comprehensive as security at private data centers.
+    - Cloud data centers provide all the options that you expect, but you do not have to manage them.
+  - [ ] Security at private data centers is more adaptable to your needs.
+
+3. In the shared responsibility model with AWS Cloud, who should manage identity and access?
+   
+- [ ] both the customer and AWS
+- [X] the customer
+  - Only the customer will know which people should have access.
+- [ ] AWS
+
+4. In a well-architected framework, how should you implement infrastructure protection?
+
+- [ ] on the most vulnerable systems
+- [ ] at the OS level
+- [ ] on all layers
+  - Best practices require automated security on all systems.
+- [ ] on the physical data center
+
+5. You are engaged in educational record management and want to port your operations to AWS. How should you start examining security issues?
+
+- [ ] Consult with your local governmental department of education.
+- [ ] Examine the resources at studentprivacy.ed.gov.
+- [X] Peruse the site aws.amazon.com/compliance/programs/.
+  - From there, you may examine the resources at aws.amazon.com/compliance/ferpa/.
+- [ ] Interview your stakeholders to ascertain their security concerns.
 
 ---
-
-
-
