@@ -131,13 +131,41 @@ Amazon Inspector. If you or your company develops applications, there's a servic
 ### 1.5 Trusted Advisor
 
 Transcript:
+AWS Trusted Advisor. Have you ever looked at your finances and thought, "Well dang. "I wish someone would tell me what to do with my money, "so I could have a comfortable early retirement?" I've tried some investments, I've tried putting money into a 401k, but I have no idea if I'm doing any of this right. Oftentimes, the people you call up about your money health are called financial advisors. For your AWS Cloud infrastructure, you have Trusted Advisor. AWS Trusted Advisor is a service that guides the provisioning of your resources, so that you are following AWS best practices. Upon scanning your AWS infrastructure, Trusted Advisor advises you on how your infrastructure is or is not following AWS best practices based on five categories. The categories are cost optimization, performance, security, fault tolerance, and service limits. AWS then provides action recommendations to bring your infrastructure closer to best practice standards. All AWS customers have access to seven core trusted advisor checks for free. These checks are S3 bucket permissions, security groups, specific ports unrestricted, IAM use, MFA on root account, EBS public snapshots, RDS public snapshots, and service limits. For those with enterprise or business support plans, there are extended set of checks and recommendations available. On top of more types of checks, those with full trusted advisor access also get notifications through weekly updates, an ability to set up automated actions in response to alerts with Amazon CloudWatch. They also have programmatic access to the scan results via AWS Support API. AWS Trusted Advisor is a valuable ally in making sure that deployment of your AWS Cloud resources are aligned with best practices, as well as providing you customized recommendations based on proactive monitoring of your infrastructure.
+
+### **----- BULLET POINT NOTES -----**
+
+- Guides provisioning of resources to follow AWS best practices
+- Scans your infrastructure and advises you on how it is or is not following AWS best practices
+- Based on five categories:
+  - cost optimization
+  - performance
+  - security
+  - fault tolerance
+  - service limits
+- Provides action recommendations to meet best practices
+
+#### Seven Core Trusted Advisor Checks
+  - S3 bucket permissions
+  - Security groups - specific pots unresticted
+  - IAM use
+  - MFA on root account
+  - EBS public snapshots
+  - RDS public snapshots
+  - service limits
+
+#### Full Trusted Advisor Checks
+  - More types of checks on top of core checks
+  - Notification through weekly updates
+  - Set up automated actions in response to alerts using CloudWatch
+  - Programmatic access to scan results via AWS Support API
 
 ---
 
 ### 1.6 Study Break: Security Domain
 
 Transcript:
-Wyou no longer have to purchase equew how AWS addresses how can you best protect your AWS Cloud infrastructure from both internal and external security threats? AWS has the five pillars of a Well-Architected Framework to help it's customers build the most secure, fault resilient, efficient, and high performing IT infrastructure possible. Within the five pillars, there is the security pillar, which outlines how you can secure your infrastructure adhering to best practices. Security in the Cloud is composed of five areas: Identity and Access Management, Detective Controls, Infrastructure Protection, Data Protection, and Incident Response. Architecting a Well-Architected Framework can go a long way to making your IT infrastructure stable and secure. Next is Principle of Least Privilege. What resources should you provide access to? The Principle of Least Privilege states that you should only be providing access to resources that an entity requires to do it's job. Every role has a set of access permissions necessary to effectively execute it's job, and the resources and individuals should have no more or no less than the optimal level of access. In AWS, you would make this happen by using a service called Identity and Access Management, or IAM, providing granular access permissions. Providing the minimum amount of access to entities to complete their work is a vital way to keep your IT infrastructure secure. The Principle of Least Privilege coincides with the Shared Responsibility Model, where the customer, you, are responsible for security in the Cloud by making sure access is provided responsibly. Lastly, here are many AWS Cloud Compliance programs available to help you determine if your industry allows you to store data on AWS. Many industries have compliance requirements for storing your data, such as HIPAA for medical organizations. You can learn more about the various compliance programs AWS offers by visiting aws.amazon.com/compliance. In the security domain of the AWS Certified Cloud Practitioner Exam, AWS wants you to be able to explain what concepts like the Shared Responsibility Model and Principle of Least Privilege may mean in real life scenarios. If you feel like you want or need a refresher for any of the concepts we reviewed in this video, feel free to go back and watch the videos again.
+
 
 ### **----- BULLET POINT NOTES -----**
 
