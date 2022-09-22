@@ -162,87 +162,79 @@ AWS Trusted Advisor. Have you ever looked at your finances and thought, "Well da
 
 ---
 
-### 1.6 Study Break: Security Domain
+### 1.6 GuardDuty
 
 Transcript:
+Amazon GuardDuty. In a perfect world, you wouldn't need to sleep so that you can be up at all times of the day and night monitoring your cloud infrastructure for threats and malicious activities. Unfortunately, we all need sleep, and some departments don't have the budget to have people staring at dashboards 24/7. Thankfully, you don't have to, because AWS Cloud has a service that stays up all day and night for you. It's called Amazon GuardDuty, and it's a threat detection service that monitors for malicious activity and unauthorized behavior to protect your AWS Cloud instance 24/7. It analyzes billions of events across multiple AWS data sources which can then send actionable alerts via AWS CloudWatch events. GuardDuty uses machine learning, anomaly detection, and integrative threat intelligence to identify and prioritize potential threats that may impact your AWS Cloud infrastructure. Best of all, you can deploy GuardDuty within a few clicks as there is no additional software or infrastructure to manage to take advantage of that protection. Amazon GuardDuty continuously monitors your AWS Cloud infrastructure, intelligently detects threats using machine learning and helps you take action immediately if a threat is found so that you and your team can have a good night's sleep knowing your infrastructure is being monitored at all times.
 
 
 ### **----- BULLET POINT NOTES -----**
 
-#### Reviewing the Security Domain
+- 24/7 threat detection service for the AWS Cloud
+- Monitors for malicious activity and unauthorized behavior
+- Analyzes events to send actionable alerts via CloudWatch
+- Uses machine learning, anomaly detection, and integrated threat intelligence to identify potential threats
+- Easy to deploy
 
-- Security in the cloud
-- Shared responsibility model
-- Security pillar of the Well-Architected Framework
-- Principle of Least Privilege
-- AWS Cloud Compliance
+---
 
-#### Recommended Security Practices
+### 1.7 Study Break: Reviewing Security Services
 
-#### Shared responsibility model
+Transcript:
+Welcome to the Study Break. Let's review the security related services that may be relevant to the AWS Certified Cloud Practitioner exam. The security services we will be reviewing in this video are; AWS Identity and Access Management or IAM, AWS Web Application Firewall or WAF, AWS Shield, Amazon Inspector, AWS Trusted Advisor, and Amazon GuardDuty. First, AWS Identity and Access Management, more commonly referred simply as IAM, is a free service that enables you to securely manage access to services and resources in the AWS cloud. The permission sets are extremely granular, helping you allow or deny access by users or other services to various resources. You can set access by using IAM to manage users utilizing granular permission sets. You could also create and manage IAM roles which has specific permission sets. You can allow entities to assume a role to do specific actions in your AWS cloud instance. In this way, you don't have to manually set up every entities permission sets, which could result in human errors and inconsistencies. Finally, you can enable identity Federation, which will allow existing identities in your enterprise accounts. Many organizations allow identity Federation for their Microsoft active directory. Allowing employees to access their AWS cloud instance without having to create a new IAM user for every single employee. IAM allows you to have enhanced security, granular control over permission sets, ability to provide temporary credentials, flexible security credential management, inability to utilize identity Federation. Second, the AWS Web Application Firewall of WAF, is as it sounds. A firewall service for web applications running on AWS cloud. It protects web apps from common web exploits as well as potential compromises that could force your apps to consume excessive AWS resources, which could be detrimental to your finances. It improves web traffic visibility, provides cost-effective web application protection and delivers increased security against web attacks. It's an affordable protection for your web applications that can be deployed within minutes. Another security service is AWS Shield, which can protect your web applications from a distributed denial of service or DDoS attack. It provides detection and automatic mitigation of DDoS attacks to applications, helping you minimize the negative consequences and application downtime. There are two tiers available for customers. The standard tier is automatic, free and protects web apps against majority of common DDoS attacks. The shield Advanced tier provides 24/7 access to AWS DDoS response team and detects and mitigates sophisticated DDoS attacks with near real time visibility into events. And even provides financial protection against DDoS-related spikes in AWS resource usages. You can receive comprehensive DDoS protection catered around your budget and needs with AWS shield. Next, the Amazon Inspector is an automated security assessment service for your AWS applications, which helps you improve security and compliance. It inspects your applications automatically assessing them for exposure, vulnerabilities, and derivations from best practices. After an assessment is completed, it generates detailed reports to help you check for vulnerabilities. Utilizing Amazon specter helps to reduce the risk of introducing security issues by proactively identifying potential security vulnerabilities that do not align with best practices and policies. You can define your own standards to check against and create reports that validate that specific tests were performed. You can continue enforcing best practices within your AWS cloud infrastructure. What the help of AWS has constantly updated standards made available through inspector. Another crucial security service is the AWS Trusted Advisor, AWS trusted advisor guides provisioning of resources to AWS cloud. So you're following AWS best practices. As the name suggests, it advises you on how your infrastructure is or is not following AWS best practices based on five categories; Optimization, Performance, Security, Fault tolerance and Service limits. It then offers recommendations to bring your infrastructure closer to standards. The Seven core Trusted Advisor checks are free and those with Business Support plans and above have access to Full Trusted Advisor checks. AWS trusted advisor provides customized recommendations based on proactive monitoring to make sure your AWS cloud deployments are aligned with best practices. Lastly, Amazon GuardDuty is a threat detection service that monitors for malicious activity and unauthorized behavior 24/7. Utilizing machine learning, anomaly detection and integrated threat intelligence. GuardDuty identifies and prioritizes potential threats that may impact your AWS infrastructure. It's deployable with just a few clicks and helps you take action immediately against the threat. It works as a 24/7 monitoring solution to help your human infrastructure team get a good night's rest. So, this was a quick study break review of the security related services AWS offers to help protect your cloud infrastructure. If you are unsure about your understanding of any, feel free to go back to the individual videos to get more in depth summaries of each, before moving on.
 
-- Customer: responsible for security IN the cloud
-- AWS: responsible for security OF the cloud
-- Security of data and resources IN the cloud is a shared responsibility between the cloud computing service provider and the customer
+### **----- BULLET POINT NOTES -----**
 
-#### Security pillars of the Well-Architected Framework
+#### IAM: AWS Identity and Access Management
+  - Securely manage access to services and resources in AWS with extremely grandular permissions set
+  - Set access permissions for users or other services to a resource
+  - Create and manage IAM roles with specific permission sets
+  - Don't have to manually set every entity's permission sets, which could result in inconsistencies
+  - Utilize identity federation for already existing users in non-AWS services
 
-- Identity of Access Management
-- Detective Controls
-- Infrastructure Protection
-- Data Protection
-- Incident Response
+#### WAF: AWS Web Application Firewall
+  - Firewall for web applications running on the AWS Cloud
+  - Protects web apps from common web exploits and potential compromises that can jack up your AWS usage bill
+  - Improves traffic visibility
+  - Can be deployed within minutes
 
-#### Principle of Least Privilege
+#### AWS Shield
+- Detection and automatic mitigations of distributed denial of service (DDoS) attacks to web applications
+- Standard tier:
+  - Automatic
+  - Free
+  - Protects against majority of common DDoS attacks
+- Advanced tier:
+- Continuous, 24/7 access to AWS DDoS response team
+- Detects and mitigates sophisticated DDoS attacks
+- Provides financial protection against DDoS-related spikes in AWS resource usages
 
-- Only provide access to resources an entity requires to do its job
-- Permission should be no more or no less than the optimal level of access
-- Use IAM (Identity and Access Management) in the AWS Cloud
-- Coincides with the shared responsibility model
+#### Amazon Inspector
+  - Automated security assessment service to improve security and compliance
+  - Automatically assesses applications for exposure, vulnerabilities, and derivations from best practices
+  - Generated detailed reports
+  - Define standards to check against and create reports to validate specific tests were performed
 
-#### AWS Cloud Compliance
+#### AWS Trusted Advisor
+  - Guides resource provisioning to align with AWS best practices
+  - Advises you on how your infrastructure is or is not following AWS best practices, based on five categories:
+    - Optimization
+    - Performance
+    - Security
+    - Fault tolerance
+    - Service limits
+  - Seven core Trusted Advisor checks are free
+  - Full Trusted Advisor checks are free with Business Support plans and above
 
-- aws.amazon.com/compliance
+#### Amazon GuardDuty
+  - Threat detection service that monitors for mailicious activity and unauthorized behavior non-stop, 24/7
+  - Identifies and prioritizes potential threats
+  - Quick to deploy
 
 ---
 
 ### Chapter Quiz
 
-1. Which statement best exemplifies the principle of least privilege?
 
-- [ ] Give as little access as possible to all workers.
-- [ ] IT should have access to everything but should limit access for others.
-- [x] Grant access to the optimal resources required for a job and no more.
-
-2. How does cloud security differ from security at private data centers?
-
-- [ ] Private data centers are often much less secure than cloud storage.
-- [ ] Cloud security is often less strict than security at private data centers.
-- [x] Cloud security can be at least as comprehensive as security at private data centers.
-  - Cloud data centers provide all the options that you expect, but you do not have to manage them.
-- [ ] Security at private data centers is more adaptable to your needs.
-
-3. In the shared responsibility model with AWS Cloud, who should manage identity and access?
-
-- [ ] both the customer and AWS
-- [x] the customer
-  - Only the customer will know which people should have access.
-- [ ] AWS
-
-4. In a well-architected framework, how should you implement infrastructure protection?
-
-- [ ] on the most vulnerable systems
-- [ ] at the OS level
-- [ ] on all layers
-  - Best practices require automated security on all systems.
-- [ ] on the physical data center
-
-5. You are engaged in educational record management and want to port your operations to AWS. How should you start examining security issues?
-
-- [ ] Consult with your local governmental department of education.
-- [ ] Examine the resources at studentprivacy.ed.gov.
-- [x] Peruse the site aws.amazon.com/compliance/programs/.
-  - From there, you may examine the resources at aws.amazon.com/compliance/ferpa/.
-- [ ] Interview your stakeholders to ascertain their security concerns.
 
 ---
