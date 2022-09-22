@@ -70,8 +70,33 @@ Web Application Firewall or WAF. AWS Web Application Firewall, commonly referred
 ### 1.3 Shield
 
 Transcript:
+AWS Shield. Have you ever experienced Distributed Denial of Service or DDoS attacks, you might have tried to access your favorite social network platform, only to find that the website is glitchy, or nothing is loading on your browser? You might Google the website or complain about it on another social media network. And you might find out that the website is experiencing a DDoS attack. A Distributed Denial of Service Attack or DDoS attack is an attempt to make a machine or network resource unavailable temporarily or indefinitely, most often by making excessive repeated access requests to the website using thousands of unique IP addresses. Basically, a hacker or malicious personal organization would overload the server with access requests so that real users can't access the website because it's to busy. Have you ever felt extremely overwhelmed by multiple requests coming from all different places? Maybe you worked on extremely busy restaurant when a coworker called out or you had multiple project deadlines at the office while some dumpster fire was going on, that you needed to fix, you likely felt overwhelmed, exhausted and unsure how to deal with the workload. And perhaps you mentally shut down unable to process all the different requests. This is what happens to the servers when it's under a DDoS attack. AWS has a service called AWS Shield, which provides detection and automatic mitigations to minimize the effects of DDoS attack on your applications. AWS Shield helps to minimize application downtime and latency when an attack happens. There are two tiers to AWS Shield in terms of protection and cost. The standard tier is automatically enabled, free to use and protects your web application against majority of common DDoS attacks. When used with CloudFront and Route 53. You can obtain comprehensive availability protection against all known infrastructure attacks. The second tier is called Shield Advanced and it provides 24/7 access to the AWS DDoS response team. It detects and mitigates sophisticated DDoS attacks with near real-time visibility into the events and integrates with AWS WAF. Shield Advanced provides higher level protections, network and transport layer protections and automated application traffic monitoring. Shield Advanced also provides financial protection against DDoS related spikes for charges for EC2, elastic load balancers, CloudFront and Route 53. It is available globally on all CloudFront and Route 53 Edge locations. This means that your web application can be hosted anywhere in the world but still be protected by AWS Shield as long as you're able to deploy CloudFront instance in front of the server. With two-tiered support, AWS Shield can provide comprehensive protection against DDoS attacks small and large that is catered to your budget and needs. If you have a small product, you can get started with the standard protection and as it scaled, you can upgrade your protection to suit your needs.
 
 ### **----- BULLET POINT NOTES -----**
+
+#### Distributed Denial of Service (DDoS) Attack
+  - An attempt to make a machine or network resource unavailable
+  - Most often by making excessive repeated requests to the website using thousand of unique IP addresses
+
+#### AWS Shield
+  - Provides detection and automatic mitiations
+  - Minimize effects of DDoS attacks to your apps
+  - Helps minimize application downtime and latency when an attack happens
+
+#### AWS Shield: Standard
+  - Automatically enabled
+  - Free
+  - Protects web applications against a majority of common DDos attacks
+  - Get comprehensive availability protection against all known infrastructure attacks when used with CloudFront and Route 53
+
+#### AWS Shield: Advanced
+  - Continuous, 24/7 access to AWS DDoS response team
+  - Near real-time visibility into events
+  - Integrates with AWS WAF
+  - Provides higher-level protections, network and transport layer protections, and automated application traffic monitoring.
+  - Financial protection against DDoS-related spikes in charges for EC2, elastic load balancers, CloudFront, and Route 53
+  - Available globally on all CloudFront and Route 53 Edge locations
+  - Your web application can be hosted anywhere in the world and still be protected by AWS Shield
 
 ---
 
