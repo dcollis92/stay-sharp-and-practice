@@ -118,13 +118,14 @@ Amazon Inspector. If you or your company develops applications, there's a servic
 ### **----- BULLET POINT NOTES -----**
 
 #### Amazon Inspector
-  - Automated security assessment service for applications
-  - Automatically assess for exposure, vulnerabilities, and derivations from best practices
-  - Generates detailed reports to help check for vulnerabilities
-  - Security teams can get reports validating that tests were performed
-  - Reduce risk of indtroducing security issues during deployment and development
-  - You can define standards and best practices
-  - Or use the AWS constantly updated standards
+
+- Automated security assessment service for applications
+- Automatically assess for exposure, vulnerabilities, and derivations from best practices
+- Generates detailed reports to help check for vulnerabilities
+- Security teams can get reports validating that tests were performed
+- Reduce risk of indtroducing security issues during deployment and development
+- You can define standards and best practices
+- Or use the AWS constantly updated standards
 
 ---
 
@@ -146,19 +147,21 @@ AWS Trusted Advisor. Have you ever looked at your finances and thought, "Well da
 - Provides action recommendations to meet best practices
 
 #### Seven Core Trusted Advisor Checks
-  - S3 bucket permissions
-  - Security groups - specific pots unresticted
-  - IAM use
-  - MFA on root account
-  - EBS public snapshots
-  - RDS public snapshots
-  - service limits
+
+- S3 bucket permissions
+- Security groups - specific pots unresticted
+- IAM use
+- MFA on root account
+- EBS public snapshots
+- RDS public snapshots
+- service limits
 
 #### Full Trusted Advisor Checks
-  - More types of checks on top of core checks
-  - Notification through weekly updates
-  - Set up automated actions in response to alerts using CloudWatch
-  - Programmatic access to scan results via AWS Support API
+
+- More types of checks on top of core checks
+- Notification through weekly updates
+- Set up automated actions in response to alerts using CloudWatch
+- Programmatic access to scan results via AWS Support API
 
 ---
 
@@ -166,7 +169,6 @@ AWS Trusted Advisor. Have you ever looked at your finances and thought, "Well da
 
 Transcript:
 Amazon GuardDuty. In a perfect world, you wouldn't need to sleep so that you can be up at all times of the day and night monitoring your cloud infrastructure for threats and malicious activities. Unfortunately, we all need sleep, and some departments don't have the budget to have people staring at dashboards 24/7. Thankfully, you don't have to, because AWS Cloud has a service that stays up all day and night for you. It's called Amazon GuardDuty, and it's a threat detection service that monitors for malicious activity and unauthorized behavior to protect your AWS Cloud instance 24/7. It analyzes billions of events across multiple AWS data sources which can then send actionable alerts via AWS CloudWatch events. GuardDuty uses machine learning, anomaly detection, and integrative threat intelligence to identify and prioritize potential threats that may impact your AWS Cloud infrastructure. Best of all, you can deploy GuardDuty within a few clicks as there is no additional software or infrastructure to manage to take advantage of that protection. Amazon GuardDuty continuously monitors your AWS Cloud infrastructure, intelligently detects threats using machine learning and helps you take action immediately if a threat is found so that you and your team can have a good night's sleep knowing your infrastructure is being monitored at all times.
-
 
 ### **----- BULLET POINT NOTES -----**
 
@@ -186,55 +188,106 @@ Welcome to the Study Break. Let's review the security related services that may 
 ### **----- BULLET POINT NOTES -----**
 
 #### IAM: AWS Identity and Access Management
-  - Securely manage access to services and resources in AWS with extremely grandular permissions set
-  - Set access permissions for users or other services to a resource
-  - Create and manage IAM roles with specific permission sets
-  - Don't have to manually set every entity's permission sets, which could result in inconsistencies
-  - Utilize identity federation for already existing users in non-AWS services
+
+- Securely manage access to services and resources in AWS with extremely grandular permissions set
+- Set access permissions for users or other services to a resource
+- Create and manage IAM roles with specific permission sets
+- Don't have to manually set every entity's permission sets, which could result in inconsistencies
+- Utilize identity federation for already existing users in non-AWS services
 
 #### WAF: AWS Web Application Firewall
-  - Firewall for web applications running on the AWS Cloud
-  - Protects web apps from common web exploits and potential compromises that can jack up your AWS usage bill
-  - Improves traffic visibility
-  - Can be deployed within minutes
+
+- Firewall for web applications running on the AWS Cloud
+- Protects web apps from common web exploits and potential compromises that can jack up your AWS usage bill
+- Improves traffic visibility
+- Can be deployed within minutes
 
 #### AWS Shield
+
 - Detection and automatic mitigations of distributed denial of service (DDoS) attacks to web applications
 - Standard tier:
   - Automatic
   - Free
   - Protects against majority of common DDoS attacks
 - Advanced tier:
-- Continuous, 24/7 access to AWS DDoS response team
+  - Continuous, 24/7 access to AWS DDoS response team
 - Detects and mitigates sophisticated DDoS attacks
 - Provides financial protection against DDoS-related spikes in AWS resource usages
 
 #### Amazon Inspector
-  - Automated security assessment service to improve security and compliance
-  - Automatically assesses applications for exposure, vulnerabilities, and derivations from best practices
-  - Generated detailed reports
-  - Define standards to check against and create reports to validate specific tests were performed
+
+- Automated security assessment service to improve security and compliance
+- Automatically assesses applications for exposure, vulnerabilities, and derivations from best practices
+- Generated detailed reports
+- Define standards to check against and create reports to validate specific tests were performed
 
 #### AWS Trusted Advisor
-  - Guides resource provisioning to align with AWS best practices
-  - Advises you on how your infrastructure is or is not following AWS best practices, based on five categories:
-    - Optimization
-    - Performance
-    - Security
-    - Fault tolerance
-    - Service limits
-  - Seven core Trusted Advisor checks are free
-  - Full Trusted Advisor checks are free with Business Support plans and above
+
+- Guides resource provisioning to align with AWS best practices
+- Advises you on how your infrastructure is or is not following AWS best practices, based on five categories:
+  - Optimization
+  - Performance
+  - Security
+  - Fault tolerance
+  - Service limits
+- Seven core Trusted Advisor checks are free
+- Full Trusted Advisor checks are free with Business Support plans and above
 
 #### Amazon GuardDuty
-  - Threat detection service that monitors for mailicious activity and unauthorized behavior non-stop, 24/7
-  - Identifies and prioritizes potential threats
-  - Quick to deploy
+
+- Threat detection service that monitors for mailicious activity and unauthorized behavior non-stop, 24/7
+- Identifies and prioritizes potential threats
+- Quick to deploy
 
 ---
 
 ### Chapter Quiz
 
+1. How does AWS GuardDuty deal with threats?
 
+- [ ] It uses operator surveillance of resource anomalies.
+- [ ] It employs AI methods to combat malicious behavior.
+  - AWS GuardDuty is continuously active.
+- [ ] It constantly monitors activity and deploys machine learning techniques for analysis.
+- [ ] It creates a checklist of bad actors to exclude from all interaction.
+
+2. What does AWS Inspector examine?
+
+- [ ] database encryption
+- [ ] user fidelity
+- [ ] network efficiency
+- [x] application security
+  - If you develop your own application, AWS Inspector can help you find any security flaws.
+
+3. What action does AWS Trusted Advisor take upon implementation?
+
+- [ ] It reduces your security vulnerabilities automatically.
+- [x] It looks at your setup and suggests changes to meet best practices.
+  - Security is just one issue that Trusted Advisor examines.
+- [ ] It scans your infrastructure and documents any intrusions into your systems.
+
+4. Why would you employ federated users?
+
+- [ ] to include all users in the same group
+- [ ] to delegate security management to the department level
+- [ ] to provide granular control
+- [x] to integrate with external operations and across AWS systems
+  - For example, you might integrate Microsoft Active Directory with AWS IAM.
+
+5. What is the purpose of a WAF?
+
+  - [x] to protect applications from malicious activity
+    - A WAF, or web application firewall, protects your applications from web exploits.
+  - [ ] to encrypt all data
+  - [ ] to prevent frivolous resource use
+  - [ ] to seek out bad actors
+
+6. Why would you need the advanced instead of the standard AWS Shield?
+   
+  - [x] to get real-time tools for balancing loads
+    - The advanced AWS Shield provides more dynamic responses and financial protection.
+  - [ ] to protect against DDoS attacks
+  - [ ] to prevent access corruption
+  - [ ] to ensure data redundancy and security
 
 ---
