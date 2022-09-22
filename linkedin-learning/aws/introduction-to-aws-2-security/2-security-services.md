@@ -12,38 +12,43 @@ When utilizing the cloud to house any part of your technical infrastructure you 
 ### **----- BULLET POINT NOTES -----**
 
 #### IAM
-  - Manage access to services and resources on the AWS Cloud
-  - Manage users and groups
-  - Can provide access to users or other AWS services
-  - Permissions are global: any access setting will be true across all regions
-  - Follow principle of least privilege
+
+- Manage access to services and resources on the AWS Cloud
+- Manage users and groups
+- Can provide access to users or other AWS services
+- Permissions are global: any access setting will be true across all regions
+- Follow principle of least privilege
 
 #### Method 1: Manage Users
-  - Create users in IAM and assign them security credentials
-  - Users can have precise permission sets
-  - User can access AWS through AWS Management Console
-  - You can provide programmatic access to data/resources
-  - Programmatic access: applications directly accessing resources instead of humans doing the same activity
+
+- Create users in IAM and assign them security credentials
+- Users can have precise permission sets
+- User can access AWS through AWS Management Console
+- You can provide programmatic access to data/resources
+- Programmatic access: applications directly accessing resources instead of humans doing the same activity
 
 #### Method 2: Manage IAM Roles
-  - Create roles to manage permissions and what those roles can do
-  - An entity assumes a role to obtain temporary security credentials to make API calls to your resources
-  - Used to provide access to a user from another AWS acct to your AWS acct
+
+- Create roles to manage permissions and what those roles can do
+- An entity assumes a role to obtain temporary security credentials to make API calls to your resources
+- Used to provide access to a user from another AWS acct to your AWS acct
 
 #### Method 3: Manage Federated Users
-  - Enable identity federation: 
-    - allow existing identities in your enterprise to access AWS without having to create IAM user for each identityIdeal for lists
-  - Can use any identity management solution using SAML 2.0 or one of AWS's federation samples 
-  - EXAMPLE:
-    - Microsoft Active Director ->Federated Access-> AWS IAM
+
+- Enable identity federation:
+  - allow existing identities in your enterprise to access AWS without having to create IAM user for each identityIdeal for lists
+- Can use any identity management solution using SAML 2.0 or one of AWS's federation samples
+- EXAMPLE:
+  - Microsoft Active Director ->Federated Access-> AWS IAM
 
 #### Benefits of Identity and Access Management (IAM)
-  - Enhanced security
-  - Granular control
-  - Ability to provide temporary credentials
-  - Flexibility security credential management
-  - Federated access
-  - Seamless integration across various AWS services
+
+- Enhanced security
+- Granular control
+- Ability to provide temporary credentials
+- Flexibility security credential management
+- Federated access
+- Seamless integration across various AWS services
 
 ---
 
@@ -55,6 +60,7 @@ Web Application Firewall or WAF. AWS Web Application Firewall, commonly referred
 ### **----- BULLET POINT NOTES -----**
 
 ### AWS Web Application Firewall (WAF)
+
 - Protects web apps running on the AWS Cloud from common web exploits
 - Firewall service for web applications
 - Protect web apps against exploits that could compromise security or availability
@@ -75,105 +81,123 @@ AWS Shield. Have you ever experienced Distributed Denial of Service or DDoS atta
 ### **----- BULLET POINT NOTES -----**
 
 #### Distributed Denial of Service (DDoS) Attack
-  - An attempt to make a machine or network resource unavailable
-  - Most often by making excessive repeated requests to the website using thousand of unique IP addresses
+
+- An attempt to make a machine or network resource unavailable
+- Most often by making excessive repeated requests to the website using thousand of unique IP addresses
 
 #### AWS Shield
-  - Provides detection and automatic mitiations
-  - Minimize effects of DDoS attacks to your apps
-  - Helps minimize application downtime and latency when an attack happens
+
+- Provides detection and automatic mitiations
+- Minimize effects of DDoS attacks to your apps
+- Helps minimize application downtime and latency when an attack happens
 
 #### AWS Shield: Standard
-  - Automatically enabled
-  - Free
-  - Protects web applications against a majority of common DDos attacks
-  - Get comprehensive availability protection against all known infrastructure attacks when used with CloudFront and Route 53
+
+- Automatically enabled
+- Free
+- Protects web applications against a majority of common DDos attacks
+- Get comprehensive availability protection against all known infrastructure attacks when used with CloudFront and Route 53
 
 #### AWS Shield: Advanced
-  - Continuous, 24/7 access to AWS DDoS response team
-  - Near real-time visibility into events
-  - Integrates with AWS WAF
-  - Provides higher-level protections, network and transport layer protections, and automated application traffic monitoring.
-  - Financial protection against DDoS-related spikes in charges for EC2, elastic load balancers, CloudFront, and Route 53
-  - Available globally on all CloudFront and Route 53 Edge locations
-  - Your web application can be hosted anywhere in the world and still be protected by AWS Shield
+
+- Continuous, 24/7 access to AWS DDoS response team
+- Near real-time visibility into events
+- Integrates with AWS WAF
+- Provides higher-level protections, network and transport layer protections, and automated application traffic monitoring.
+- Financial protection against DDoS-related spikes in charges for EC2, elastic load balancers, CloudFront, and Route 53
+- Available globally on all CloudFront and Route 53 Edge locations
+- Your web application can be hosted anywhere in the world and still be protected by AWS Shield
 
 ---
 
 ### 1.4 Inspector
 
-Transcript: 
+Transcript:
+Amazon Inspector. If you or your company develops applications, there's a service that can provide your auditors and your development team a peace of mind knowing that the applications adhere to security standards set by the company and the industry as a whole. Amazon Inspector is an automated security assessment service for your applications deployed on AWS. This means that it helps you improve the security and compliance of these applications by automatically assessing them for exposure, vulnerabilities, and derivations from best practices. Once the assessment is completed, it generates detailed reports to help you check for unintended vulnerabilities. Security teams can then get reports validating that tests were performed. Inspector helps you reduce the risk of introducing security issues during deployment and development by proactively identifying potential issues that do not align with best practices and policies. You can define your own standards and best practices, and make sure that they're being followed. Or you can choose to utilize AWS's constantly updated standards. As the name suggests, Amazon Inspector inspects your applications to find security issues and bring them to your attention.
 
 ### **----- BULLET POINT NOTES -----**
-  
+
+#### Amazon Inspector
+  - Automated security assessment service for applications
+  - Automatically assess for exposure, vulnerabilities, and derivations from best practices
+  - Generates detailed reports to help check for vulnerabilities
+  - Security teams can get reports validating that tests were performed
+  - Reduce risk of indtroducing security issues during deployment and development
+  - You can define standards and best practices
+  - Or use the AWS constantly updated standards
+
 ---
 
 ### 1.5 Trusted Advisor
 
 Transcript:
 
-
 ---
 
 ### 1.6 Study Break: Security Domain
 
 Transcript:
-Wyou no longer have to purchase equew how AWS  addresses how can you best protect your AWS Cloud infrastructure from both internal and external security threats? AWS has the five pillars of a Well-Architected Framework to help it's customers build the most secure, fault resilient, efficient, and high performing IT infrastructure possible. Within the five pillars, there is the security pillar, which outlines how you can secure your infrastructure adhering to best practices. Security in the Cloud is composed of five areas: Identity and Access Management, Detective Controls, Infrastructure Protection, Data Protection, and Incident Response. Architecting a Well-Architected Framework can go a long way to making your IT infrastructure stable and secure. Next is Principle of Least Privilege. What resources should you provide access to? The Principle of Least Privilege states that you should only be providing access to resources that an entity requires to do it's job. Every role has a set of access permissions necessary to effectively execute it's job, and the resources and individuals should have no more or no less than the optimal level of access. In AWS, you would make this happen by using a service called Identity and Access Management, or IAM, providing granular access permissions. Providing the minimum amount of access to entities to complete their work is a vital way to keep your IT infrastructure secure. The Principle of Least Privilege coincides with the Shared Responsibility Model, where the customer, you, are responsible for security in the Cloud by making sure access is provided responsibly. Lastly, here are many AWS Cloud Compliance programs available to help you determine if your industry allows you to store data on AWS. Many industries have compliance requirements for storing your data, such as HIPAA for medical organizations. You can learn more about the various compliance programs AWS offers by visiting aws.amazon.com/compliance. In the security domain of the AWS Certified Cloud Practitioner Exam, AWS wants you to be able to explain what concepts like the Shared Responsibility Model and Principle of Least Privilege may mean in real life scenarios. If you feel like you want or need a refresher for any of the concepts we reviewed in this video, feel free to go back and watch the videos again.
+Wyou no longer have to purchase equew how AWS addresses how can you best protect your AWS Cloud infrastructure from both internal and external security threats? AWS has the five pillars of a Well-Architected Framework to help it's customers build the most secure, fault resilient, efficient, and high performing IT infrastructure possible. Within the five pillars, there is the security pillar, which outlines how you can secure your infrastructure adhering to best practices. Security in the Cloud is composed of five areas: Identity and Access Management, Detective Controls, Infrastructure Protection, Data Protection, and Incident Response. Architecting a Well-Architected Framework can go a long way to making your IT infrastructure stable and secure. Next is Principle of Least Privilege. What resources should you provide access to? The Principle of Least Privilege states that you should only be providing access to resources that an entity requires to do it's job. Every role has a set of access permissions necessary to effectively execute it's job, and the resources and individuals should have no more or no less than the optimal level of access. In AWS, you would make this happen by using a service called Identity and Access Management, or IAM, providing granular access permissions. Providing the minimum amount of access to entities to complete their work is a vital way to keep your IT infrastructure secure. The Principle of Least Privilege coincides with the Shared Responsibility Model, where the customer, you, are responsible for security in the Cloud by making sure access is provided responsibly. Lastly, here are many AWS Cloud Compliance programs available to help you determine if your industry allows you to store data on AWS. Many industries have compliance requirements for storing your data, such as HIPAA for medical organizations. You can learn more about the various compliance programs AWS offers by visiting aws.amazon.com/compliance. In the security domain of the AWS Certified Cloud Practitioner Exam, AWS wants you to be able to explain what concepts like the Shared Responsibility Model and Principle of Least Privilege may mean in real life scenarios. If you feel like you want or need a refresher for any of the concepts we reviewed in this video, feel free to go back and watch the videos again.
 
 ### **----- BULLET POINT NOTES -----**
 
 #### Reviewing the Security Domain
-  - Security in the cloud
-  - Shared responsibility model
-  - Security pillar of the Well-Architected Framework
-  - Principle of Least Privilege
-  - AWS Cloud Compliance
+
+- Security in the cloud
+- Shared responsibility model
+- Security pillar of the Well-Architected Framework
+- Principle of Least Privilege
+- AWS Cloud Compliance
 
 #### Recommended Security Practices
 
 #### Shared responsibility model
-  - Customer: responsible for security IN the cloud
-  - AWS: responsible for security OF the cloud
-  - Security of data and resources IN the cloud is a shared responsibility between the cloud computing service provider and the customer
-  
+
+- Customer: responsible for security IN the cloud
+- AWS: responsible for security OF the cloud
+- Security of data and resources IN the cloud is a shared responsibility between the cloud computing service provider and the customer
+
 #### Security pillars of the Well-Architected Framework
-  - Identity of Access Management
-  - Detective Controls
-  - Infrastructure Protection
-  - Data Protection
-  - Incident Response
+
+- Identity of Access Management
+- Detective Controls
+- Infrastructure Protection
+- Data Protection
+- Incident Response
 
 #### Principle of Least Privilege
-  - Only provide access to resources an entity requires to do its job
-  - Permission should be no more or no less than the optimal level of access
-  - Use IAM (Identity and Access Management) in the AWS Cloud
-  - Coincides with the shared responsibility model
+
+- Only provide access to resources an entity requires to do its job
+- Permission should be no more or no less than the optimal level of access
+- Use IAM (Identity and Access Management) in the AWS Cloud
+- Coincides with the shared responsibility model
 
 #### AWS Cloud Compliance
-  - aws.amazon.com/compliance
+
+- aws.amazon.com/compliance
 
 ---
 
 ### Chapter Quiz
 
 1. Which statement best exemplifies the principle of least privilege?
-   
-  - [ ] Give as little access as possible to all workers.
-  - [ ] IT should have access to everything but should limit access for others.
-  - [X] Grant access to the optimal resources required for a job and no more.
+
+- [ ] Give as little access as possible to all workers.
+- [ ] IT should have access to everything but should limit access for others.
+- [x] Grant access to the optimal resources required for a job and no more.
 
 2. How does cloud security differ from security at private data centers?
-   
-  - [ ] Private data centers are often much less secure than cloud storage.
-  - [ ] Cloud security is often less strict than security at private data centers.
-  - [X] Cloud security can be at least as comprehensive as security at private data centers.
-    - Cloud data centers provide all the options that you expect, but you do not have to manage them.
-  - [ ] Security at private data centers is more adaptable to your needs.
+
+- [ ] Private data centers are often much less secure than cloud storage.
+- [ ] Cloud security is often less strict than security at private data centers.
+- [x] Cloud security can be at least as comprehensive as security at private data centers.
+  - Cloud data centers provide all the options that you expect, but you do not have to manage them.
+- [ ] Security at private data centers is more adaptable to your needs.
 
 3. In the shared responsibility model with AWS Cloud, who should manage identity and access?
-   
+
 - [ ] both the customer and AWS
-- [X] the customer
+- [x] the customer
   - Only the customer will know which people should have access.
 - [ ] AWS
 
@@ -189,7 +213,7 @@ Wyou no longer have to purchase equew how AWS  addresses how can you best protec
 
 - [ ] Consult with your local governmental department of education.
 - [ ] Examine the resources at studentprivacy.ed.gov.
-- [X] Peruse the site aws.amazon.com/compliance/programs/.
+- [x] Peruse the site aws.amazon.com/compliance/programs/.
   - From there, you may examine the resources at aws.amazon.com/compliance/ferpa/.
 - [ ] Interview your stakeholders to ascertain their security concerns.
 
