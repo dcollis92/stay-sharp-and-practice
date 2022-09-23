@@ -1,4 +1,4 @@
-# Introduction to AWS for Non-Engineers: 1 Cloud Concepts
+# Introduction to AWS for Non-Engineers: 2 Security
 
 ## **Security in the Cloud**
 
