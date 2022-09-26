@@ -8,6 +8,45 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+  /*
+   * Solution 1
+   * Create empty aray to hold chunks called 'chunked'
+   * For each element in the "unchunked array"
+   * Retrieve the last element in "chunked"
+   * If last element does not exist, or if its length is equal to chunk size
+   * Push a new chunk into "chunked" with the current element
+   * ELSE add the current element into the chunk
+   * chunk size refers to # of elements per array
+   * not number of sub arrays
+   */
+  //! const chunked = [];
+
+  //! for (let element of array) {
+  //!   const last = chunked[chunked.length - 1];
+
+  //!   if (!last || last.length === size) {
+  //!     chunked.push([element]);
+  //!   } else {
+  //!     last.push(element);
+  //!   }
+  //! }
+  //! return chunked;
+
+  /*
+   * Solution 2
+   * utilize .slice fn
+   * loop through the array
+   * .slice produces a copy, thus the size needs to adjust with the index change
+   */
+  const chunked = [];
+  let index = 0;
+
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size; // update index for the while loop
+  }
+  return chunked;
+}
 
 module.exports = chunk;
