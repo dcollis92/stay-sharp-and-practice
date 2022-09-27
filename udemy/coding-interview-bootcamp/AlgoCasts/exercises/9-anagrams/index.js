@@ -25,9 +25,9 @@ function anagrams(stringA, stringB) {
   //! return true;
 
   /* Solution 2
-   * RegEx
+   * RegEx & array sorting
    * /[^\w]/g to clean up the string to only characters
-   * .toLowerCase()
+   * .toLowerCase() to make all characters lowercase
    * .split("") to split the string into an array
    */
 
