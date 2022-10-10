@@ -18,7 +18,7 @@ function maxChar(str) {
    */
   const charMap = {};
   let max = 0; // init max value
-  let marChar = ""; // init key of max value
+  let maxChar = ""; // init key of max value
 
   for (let char of str) {
     if (!charMap[char]) {
