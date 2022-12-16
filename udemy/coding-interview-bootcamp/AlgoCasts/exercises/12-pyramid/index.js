@@ -48,7 +48,7 @@
 
 function pyramid(n, row = 0, level = "") {
   /**
-   * Solution 2: Recurssion
+   * Solution 2: Recursion
    */
   // if row === n, then we have hit the end of our problem
   if (row === n) {
