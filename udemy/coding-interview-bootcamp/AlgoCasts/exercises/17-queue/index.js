@@ -23,7 +23,7 @@ class Queue {
   remove() {
     // return the last item in the queue
     return this.data.pop();
-  }
+  }peek
 }
 
 module.exports = Queue;
