@@ -8,7 +8,7 @@
 // queues of different lengths without inserting
 // 'undefined' into the new one.
 // *Do not* access the array inside of any queue, only
-// use the 'add', 'remove', and 'peek' functions.
+// *use the 'add', 'remove', and 'peek' functions.
 // --- Example
 //    const queueOne = new Queue();
 //    queueOne.add(1);
@@ -22,8 +22,25 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+const Queue = require("./queue");
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  // create a new queue
+  const q = new Queue();
+
+  // while both queues have data
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    // if sourceOne has data, add it to the queue
+    if (sourceOne.peek()) {
+      q.add(sourceOne.remove());
+    }
+    // if sourceTwo has data, add it to the queue
+    if (sourceTwo.peek()) {
+      q.add(sourceTwo.remove());
+    }
+  }
+  // return the queue
+  return q;
+}
 
 module.exports = weave;
