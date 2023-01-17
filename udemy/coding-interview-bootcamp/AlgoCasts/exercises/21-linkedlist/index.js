@@ -70,6 +70,12 @@ class LinkedList {
     return node;
   }
 
+  // create a clear method
+  clear() {
+    // update the head property to null
+    this.head = null;
+  }
+  
 }
 
 module.exports = { Node, LinkedList };
