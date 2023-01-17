@@ -47,6 +47,29 @@ class LinkedList {
     // return the head property
     return this.head;
   }
+
+  // create a getLast method
+  getLast() {
+    // if there is no head
+    if (!this.head) {
+      return null;
+    }
+    // create a node variable
+    let node = this.head;
+    // while there is a node
+    while (node) {
+      // if there is no next node
+      if (!node.next) {
+        // return the node
+        return node;
+      }
+      // update the node to the next node
+      node = node.next;
+    }
+    // return the node
+    return node;
+  }
+
 }
 
 module.exports = { Node, LinkedList };
