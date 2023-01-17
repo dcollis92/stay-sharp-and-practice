@@ -24,6 +24,23 @@ class LinkedList {
     // update the head property to the new node
     this.head = node;
   }
+
+  // create a size method
+  size() {
+    // create a counter variable
+    let counter = 0;
+    // create a node variable
+    let node = this.head;
+    // while there is a node
+    while (node) {
+      // increment the counter
+      counter++;
+      // update the node to the next node
+      node = node.next;
+    }
+    // return the counter
+    return counter;
+  }
 }
 
 module.exports = { Node, LinkedList };
