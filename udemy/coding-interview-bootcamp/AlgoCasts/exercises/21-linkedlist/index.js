@@ -16,6 +16,14 @@ class LinkedList {
     // create a head property assigning it to null
     this.head = null;
   }
+
+  // create an insertFirst method
+  insertFirst(data) {
+    // create a new node
+    const node = new Node(data, this.head);
+    // update the head property to the new node
+    this.head = node;
+  }
 }
 
 module.exports = { Node, LinkedList };
